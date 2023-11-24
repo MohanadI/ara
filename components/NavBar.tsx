@@ -1,9 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Dialog } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import {
+  Bars3Icon,
+  XMarkIcon,
+  MagnifyingGlassIcon,
+} from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 const navigation = [
@@ -18,12 +22,38 @@ const navigation = [
 
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check the scroll position and update the state
+      if (window.scrollY > 0) {
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+
+    // Attach the event listener when the component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
       <nav
-        className="flex xl:w-7/12 items-center p-6 m-auto xl:mt-6 xl:rounded-full xl:px-8"
-        style={{ background: "#FFFFFF1A" }}
+        className={`flex items-center p-6 m-auto ${
+          isSticky
+            ? "fixed top-0 w-full"
+            : "xl:w-7/12 xl:mt-6 xl:px-8 xl:rounded-full"
+        }`}
+        style={
+          isSticky ? { background: "#002D3F" } : { background: "#FFFFFF1A" }
+        }
         aria-label="Global"
       >
         <div className="flex grow lg:flex-1">
