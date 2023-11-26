@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./VerticalSlider.module.css";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import styles from "./VerticalSlider.module.css";
 
 const VerticalSlider = () => {
   const [selectedTab, setSelectedTab] = useState(1);
@@ -55,7 +55,7 @@ const VerticalSlider = () => {
             </p>
             <p className="leading-relaxed text-white text-opacity-90 mb-8">
               At our core, we believe that collaboration is key. By partnering
-              with us, you're not just gaining a solution provider. You're
+              with us, you are not just gaining a solution provider. You are
               joining forces with a team that genuinely cares about your
               success.
             </p>
