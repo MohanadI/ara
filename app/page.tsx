@@ -1,4 +1,5 @@
 // 'use client';
+import VerticalSlider from "@/components/VerticalSlider/VerticalSlider";
 import { ActionBanner } from "@/components/sections/ActionBanner";
 import { ProductsSection } from "@/components/sections/Products";
 import { ServicesSection } from "@/components/sections/services";
@@ -17,7 +18,9 @@ export default function Home() {
           backgroundSize: "cover",
         }}
       >
-        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-80"></div>
+        <div className="mx-auto max-w-4xl py-32 sm:py-48 lg:py-50">
+          <VerticalSlider />
+        </div>
       </div>
       <ServicesSection />
       <ProductsSection />

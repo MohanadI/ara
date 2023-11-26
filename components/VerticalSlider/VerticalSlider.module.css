@@ -1,0 +1,64 @@
+.container {
+  display: flex;
+}
+
+.contentContainer {
+  flex: 1;
+  padding: 0 20px; /* Adjust the padding as needed */
+}
+
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 340px;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.line {
+  width: 2px;
+  height: 60px;
+  background-color: #ffffff;
+  margin: 10px 0;
+  transition: height 0.4s ease-in-out; /* Adjust the duration */
+}
+
+.tabNumber {
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 200;
+  margin: 4px 0;
+}
+
+.tab.active .circle {
+  transform: scale(1.4); /* or any other scaling effect */
+}
+
+.tab.active .line {
+  height: 0; /* Set height to 0 for the inactive lines in the active tab */
+  transition: height 0.1s ease-in-out; /* Adjust the duration */
+}
+
+.tab.active + .tab .line,
+.tab + .tab.active .line {
+  height: 60px; /* Set height for the lines adjacent to the active tab */
+  transition: height 0.3s ease-in-out; /* Adjust the duration */
+}
+
+.tab.active .tabNumber {
+  opacity: 0; /* Hide the number for the selected tab */
+}
