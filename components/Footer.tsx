@@ -75,14 +75,14 @@ export const Footer = () => {
             </span>
           </div>
           <div className="flex justify-center my-1 gap-2">
-            <Image src="/mdi_twitter.svg" width={30} height={30} alt="Logo" />
-            <Image src="/mdi_linkedin.svg" width={30} height={30} alt="Logo" />
-            <Image src="/jam_facebook.svg" width={30} height={30} alt="Logo" />
+            <Image src="/mdi_twitter.svg" width={30} height={30} alt="X" />
+            <Image src="/mdi_linkedin.svg" width={30} height={30} alt="LinkedIn" />
+            <Image src="/jam_facebook.svg" width={30} height={30} alt="Facebook" />
             <Image
               src="/ri_instagram-fill.svg"
               width={30}
               height={30}
-              alt="Logo"
+              alt="Instagram"
             />
           </div>
         </div>

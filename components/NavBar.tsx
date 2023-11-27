@@ -57,10 +57,9 @@ export default function NavBar() {
         aria-label="Global"
       >
         <div className="flex grow lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <Link href="/" className="-m-1.5 p-1.5">
             <Image src="/Logo.svg" width={64} height={40} alt="Logo" />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden justify-end">
           <button
