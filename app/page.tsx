@@ -12,7 +12,7 @@ export default function Home() {
         className="relative isolate px-6 pt-14 lg:px-8"
         style={{
           background:
-            "linear-gradient(122.96deg, rgba(0, 17, 24, 0.9) 26.5%, rgba(0, 38, 53, 0.725518) 60.15%, rgba(0, 83, 117, 0) 100%), url('/Rectangle 1.png')",
+            "linear-gradient(122.96deg, rgba(0, 17, 24, 0.9) 26.5%, rgba(0, 38, 53, 0.725518) 60.15%, rgba(0, 83, 117, 0) 100%), url('/Rectangle 1.svg')",
           backgroundPosition: "right",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
