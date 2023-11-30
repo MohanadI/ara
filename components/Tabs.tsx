@@ -66,16 +66,16 @@ const Tabs = ({
 
   return (
     <div
-      className="flex mx-auto flex-wrap mb-2"
+      className="flex xl:w-9/12 2xl:w-8/12 m-auto mb-2"
       style={{
-        background: "rgba(78, 131, 152, 0.9)",
-        height: "80px",
+        background: "rgba(78, 131, 152, 0.8)",
+        height: "112px",
         borderRadius: "10px",
         marginBottom: 0,
         boxShadow: "0px 0px 2px 0px rgba(0, 0, 0, 0.25)",
-        zIndex: 1,
+        zIndex: 2,
+        backdropFilter: "blur(10px)",
         overflowX: "auto", // Enable horizontal scrolling on small screens
-        whiteSpace: "nowrap", // Prevent tabs from wrapping to the next line
       }}
     >
       <button
@@ -89,12 +89,22 @@ const Tabs = ({
           key={index}
           className={`sm:px-6 py-3 justify-center text-center sm:justify-start ${
             firstVisibleTab + index === selectedTab
-              ? "text-white"
+              ? "text-cyan-200"
               : "text-gray-100"
           } inline-flex items-center leading-none tracking-wider`}
           onClick={() => onTabClick(firstVisibleTab + index)}
         >
-          <span className="title-font cursor-pointer font-normal text-[13px]">
+          <span
+            className="cursor-pointer hover:text-cyan-200"
+            style={{
+              fontSize: "18px",
+              lineHeight: "21px",
+              letterSpacing: "0em",
+              textAlign: "center",
+              whiteSpace: "initial",
+              transition: "all .4s cubic-bezier(0,0,.5,1)",
+            }}
+          >
             {tab}
           </span>
         </div>

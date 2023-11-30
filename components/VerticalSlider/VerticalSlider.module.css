@@ -30,7 +30,7 @@
 
 .line {
   width: 2px;
-  height: 60px;
+  height: 80px;
   background-color: #ffffff;
   margin: 10px 0;
   transition: height 0.4s ease-in-out; /* Adjust the duration */
@@ -40,7 +40,7 @@
   color: #ffffff;
   font-size: 16px;
   cursor: pointer;
-  font-weight: 200;
+  font-weight: 400;
   margin: 4px 0;
 }
 

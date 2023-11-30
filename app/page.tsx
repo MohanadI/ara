@@ -2,7 +2,7 @@
 import VerticalSlider from "@/components/VerticalSlider/VerticalSlider";
 import { ActionBanner } from "@/components/sections/ActionBanner";
 import { ProductsSection } from "@/components/sections/Products";
-import { ServicesSection } from "@/components/sections/services";
+import { ServicesSection } from "@/components/sections/Services";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
@@ -18,7 +18,7 @@ export default function Home() {
           backgroundSize: "cover",
         }}
       >
-        <div className="mx-auto max-w-4xl py-32 sm:py-48 lg:py-50">
+        <div className="mx-auto max-w-5xl py-32 pt-44">
           <VerticalSlider />
         </div>
       </div>
@@ -35,20 +35,42 @@ export default function Home() {
           backgroundSize: "cover",
         }}
       >
-        <div className="mx-auto max-w-2xl py-32 sm:py-20 lg:py-20 text-center font-bold">
-          <h1 className="text-white text-4xl">
+        <div className="mx-auto max-w-3xl py-32 sm:py-20 lg:py-20 text-center font-bold">
+          <h1
+            className="text-white"
+            style={{
+              fontSize: "48px",
+              fontWeight: 700,
+              lineHeight: "57px",
+              letterSpacing: "0em",
+              textAlign: "center",
+            }}
+          >
             Take your business to new heights with SAP Business One
           </h1>
           <h4
             className="text-white text-base pt-10"
-            style={{ color: "#D7DEE1" }}
+            style={{
+              color: "#D7DEE1",
+              fontSize: "20px",
+              fontWeight: 400,
+              lineHeight: "24px",
+              letterSpacing: "0em",
+              textAlign: "center",
+            }}
           >
             Explore our website and contact us today to learn more about how we
             can empower your organization to thrive in the digital age
           </h4>
-          <button className="flex mx-auto text-black rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base mt-10">
+          <button
+            className="flex mx-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base mt-10"
+            style={{ color: "rgba(0, 83, 117, 1)" }}
+          >
             Learn More{" "}
-            <ArrowLongRightIcon className="text-black pl-1 h-6 w-6" />
+            <ArrowLongRightIcon
+              className="pl-1 h-6 w-6"
+              style={{ color: "rgba(0, 83, 117, 1)" }}
+            />
           </button>
         </div>
       </div>

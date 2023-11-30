@@ -42,26 +42,65 @@ const VerticalSlider = () => {
       </div>
       <div className={styles.contentContainer}>
         {selectedTab === 1 && (
-          <div className="p-0 sm:px-4 w-full flex flex-col items-start">
-            <span className="inline-block p-2 rounded-full bg-white bg-opacity-20 text-white text-xs font-medium tracking-widest">
-              Discover a world of potential and excellence with ara consulting
+          <div className="p-0 sm:px-4 sm:ml-5 w-full flex flex-col items-start">
+            <span
+              className="inline-block p-2 px-4 rounded-full bg-white bg-opacity-20
+             text-white text-base font-medium tracking-widest"
+            >
+              Discover a world of potential and excellence with{" "}
+              <span className="uppercase">ara consulting</span>
             </span>
-            <h2 className="sm:text-5xl text-xl title-font font-medium text-white mt-8 mb-4">
+            <h2
+              className="text-white mt-10 mb-4"
+              style={{
+                fontSize: "48px",
+                fontWeight: 700,
+                lineHeight: "57px",
+                letterSpacing: "0em",
+                textAlign: "left",
+              }}
+            >
               Take your business to new heights with SAP Business One
             </h2>
-            <p className="leading-relaxed text-white text-opacity-90 mb-2">
+            <p
+              className="mb-4"
+              style={{
+                fontSize: "20px",
+                fontWeight: 300,
+                lineHeight: "24px",
+                letterSpacing: "0em",
+                textAlign: "left",
+                color: "rgba(215, 222, 225, 1)",
+              }}
+            >
               Explore our website and contact us today to learn more about how
               we can empower your organization to thrive in the digital age
             </p>
-            <p className="leading-relaxed text-white text-opacity-90 mb-8">
+            <p
+              className="mb-8"
+              style={{
+                fontSize: "20px",
+                fontWeight: 300,
+                lineHeight: "24px",
+                letterSpacing: "0em",
+                textAlign: "left",
+                color: "rgba(215, 222, 225, 1)",
+              }}
+            >
               At our core, we believe that collaboration is key. By partnering
               with us, you are not just gaining a solution provider. You are
               joining forces with a team that genuinely cares about your
               success.
             </p>
-            <button className="flex text-black rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base">
+            <button
+              className="flex rounded-full bg-white border-0 py-3 px-8 focus:outline-none hover:bg-opacity-60 text-base"
+              style={{ color: "rgba(0, 83, 117, 1)" }}
+            >
               Get Started{" "}
-              <ArrowLongRightIcon className="text-black pl-1 h-6 w-6" />
+              <ArrowLongRightIcon
+                className="pl-1 h-6 w-6"
+                style={{ color: "rgba(0, 83, 117, 1)" }}
+              />
             </button>
           </div>
         )}

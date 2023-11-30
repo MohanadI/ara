@@ -3,6 +3,7 @@ import NavBar from "@/components/NavBar";
 
 import "./globals.css";
 import { Footer } from "@/components/Footer";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,6 +29,38 @@ export default function RootLayout({
           >
             <Footer />
           </footer>
+          <div className="fixed bottom-4 right-4 flex flex-col">
+            <button
+              className="  text-white font-bold p-2 rounded-full shadow-lg"
+              style={{
+                padding: "12px",
+                background: "#FFFFFFCC",
+              }}
+            >
+              <Image
+                src="/whatsapp_floating.svg"
+                alt="whatsapp_floating"
+                width={33}
+                height={33}
+              />
+            </button>
+            <button
+              className="  text-white font-bold rounded-full shadow-lg"
+              style={{
+                background: "#FFFFFFCC",
+                padding: "12px",
+                marginTop: "5px",
+              }}
+            >
+              <Image
+                src="/floating_up.svg"
+                alt="floating_up"
+                width={27}
+                height={27}
+                className="m-auto"
+              />
+            </button>
+          </div>
         </>
       </body>
     </html>

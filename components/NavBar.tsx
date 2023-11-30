@@ -46,85 +46,76 @@ export default function NavBar() {
   return (
     <>
       <nav
-        className={`flex items-center p-6 m-auto ${
+        className={`m-auto xl:px-10 ${
           isSticky
             ? "fixed top-0 w-full"
-            : "xl:w-7/12 xl:mt-6 xl:px-8 xl:rounded-full"
+            : "lg:w-10/12 xl:w-10/12 xl:mt-6 xl:rounded-full 2xl:w-8/12"
         }`}
         style={
           isSticky ? { background: "#002D3F" } : { background: "#FFFFFF1A" }
         }
         aria-label="Global"
       >
-        <div className="flex grow lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <Image src="/Logo.svg" width={64} height={40} alt="Logo" />
-          </Link>
-        </div>
-        <div className="flex lg:hidden justify-end">
-          <button
-            type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
-            onClick={() => setMobileMenuOpen(true)}
-          >
-            <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-          </button>
-        </div>
-        <div className="hidden lg:flex lg:gap-x-9">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-semibold leading-6 text-white text-opacity-80 hover:text-opacity-100"
-            >
-              {item.name}
+        <div
+          className={`flex items-center p-6 ${
+            isSticky ? "w-10/12 2xl:w-8/12 m-auto" : "w-full"
+          }`}
+        >
+          <div className="flex grow lg:flex-1">
+            <Link href="/" className="-m-1.5 p-1.5">
+              <Image src="/Logo.svg" width={64} height={40} alt="Logo" />
             </Link>
-          ))}
-        </div>
-        <div className="hidden md:hidden lg:flex lg:flex-1 ml-8">
-          <a href="#" className="">
-            <Image
-              src="/x.svg"
-              className="opacity-70 hover:opacity-100"
-              width={24}
-              height={24}
-              alt="X"
+          </div>
+          <div className="flex lg:hidden justify-end">
+            <button
+              type="button"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+              onClick={() => setMobileMenuOpen(true)}
+            >
+              <span className="sr-only">Open main menu</span>
+              <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:gap-x-9">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-sm font-semibold leading-6 text-white text-opacity-80 hover:text-opacity-100"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <div className="hidden md:hidden lg:flex lg:flex-1 ml-10">
+            <button
+              className="flex items-center p-2 rounded-full"
+              style={{
+                background: "#FFFFFF99",
+                fontSize: "16px",
+                fontWeight: 500,
+                lineHeight: "16px",
+                letterSpacing: "0em",
+                textAlign: "left",
+                height: "46px",
+                gap: "8px",
+              }}
+            >
+              <Image
+                src="./call-calling.svg"
+                width={36}
+                height={36}
+                alt="call-calling"
+              />
+              <span>Call Us</span>
+            </button>
+          </div>
+          <div className="hidden lg:flex lg:justify-end">
+            <MagnifyingGlassIcon
+              className="text-white h-6 w-6"
+              aria-hidden="true"
             />
-          </a>
-          <a href="#" className="">
-            <Image
-              src="/in.svg"
-              className="opacity-70 hover:opacity-100"
-              width={24}
-              height={24}
-              alt="LinkedIn"
-            />
-          </a>
-          <a href="#" className="">
-            <Image
-              src="/ins.svg"
-              className="opacity-70 hover:opacity-100"
-              width={24}
-              height={24}
-              alt="Instagram"
-            />
-          </a>
-          <a href="#" className="">
-            <Image
-              src="/f.svg"
-              className="opacity-70 hover:opacity-100"
-              width={24}
-              height={24}
-              alt="Facebook"
-            />
-          </a>
-        </div>
-        <div className="hidden lg:flex lg:justify-end">
-          <MagnifyingGlassIcon
-            className="text-white h-6 w-6"
-            aria-hidden="true"
-          />
+          </div>
         </div>
       </nav>
       <Dialog
