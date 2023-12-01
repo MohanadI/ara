@@ -2,7 +2,7 @@
 import VerticalSlider from "@/components/VerticalSlider/VerticalSlider";
 import { ActionBanner } from "@/components/sections/ActionBanner";
 import { ProductsSection } from "@/components/sections/Products";
-import { ServicesSection } from "@/components/sections/Services";
+import { ServicesSection } from "@/components/sections/services";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 
 export default function Home() {
