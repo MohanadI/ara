@@ -55,7 +55,7 @@ export default function Home() {
               fontSize: "20px",
               fontWeight: 400,
               lineHeight: "24px",
-              letterSpacing: "0em",
+              letterSpacing: "0.1em",
               textAlign: "center",
             }}
           >
