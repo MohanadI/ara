@@ -81,7 +81,7 @@ export default function NavBar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-white text-opacity-80 hover:text-opacity-100"
+                className="text-base font-semibold leading-6 text-white text-opacity-80 hover:text-opacity-100"
               >
                 {item.name}
               </Link>

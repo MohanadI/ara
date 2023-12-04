@@ -24,3 +24,39 @@ body {
   color: var(--main-color);
   background: var(--background-main);
 }
+
+.description-paragraph {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 19px;
+  letter-spacing: 0em;
+}
+
+.custom-box {
+  position: relative;
+  border: 1px solid #fff;
+  padding: 20px 5px 10px 5px;
+  text-align: center;
+}
+
+.box-title {
+  position: absolute;
+  top: -15px; /* Adjust this value as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 25px;
+  margin: 0;
+  padding: 0 10px;
+  color: #ffffff;
+  background-color: rgba(0, 52, 74, 1);
+}
+
+.box-body {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+}

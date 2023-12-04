@@ -7,7 +7,7 @@ export default function PageHeader({
 }: {
   helpText: String;
   title: String;
-  description: String;
+  description: any;
 }) {
   return (
     <div
@@ -20,7 +20,7 @@ export default function PageHeader({
         backgroundSize: "cover",
       }}
     >
-      <div className="mx-auto max-w-4xl py-32 sm:py-32 sm:pb-8 text-center">
+      <div className="mx-auto max-w-5xl py-32 sm:py-32 sm:pb-8 text-center">
         <p className="w-full leading-relaxed text-gray-100 text-xs font-light">
           {helpText}
         </p>
@@ -28,9 +28,7 @@ export default function PageHeader({
           {title}
         </h1>
         <div className="h-1 w-8 rounded m-auto bg-white"></div>
-        <p className="w-full mt-7 leading-relaxed text-gray-200 text-xs font-light">
-          {description}
-        </p>
+        {description}
       </div>
     </div>
   );
