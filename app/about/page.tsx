@@ -58,7 +58,7 @@ export default function About() {
                 ></div>
               </div>
               <p className="p-2 text-center description-paragraph ">
-                At the core of ARA CONSULTING's mission is a commitment to
+                At the core of ARA CONSULTING&apos;s mission is a commitment to
                 empower small, medium and large enterprises with the
                 transformative capabilities of SAP solutions.
               </p>
