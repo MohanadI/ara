@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -19,8 +18,29 @@
   }
 }
 
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display'), local('SFProDisplay-Regular'),
+       url('../fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display Bold'), local('SFProDisplay-Bold'),
+       url('../fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SF Pro Display';
+  src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
+       url('../fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 body {
-  /* font-family: 'SF Pro Display', sans-serif; */
+  font-family: 'SF Pro Display';
   color: var(--main-color);
   background: var(--background-main);
 }

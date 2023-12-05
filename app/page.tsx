@@ -3,7 +3,7 @@ import VerticalSlider from "@/components/VerticalSlider/VerticalSlider";
 import { ActionBanner } from "@/components/sections/ActionBanner";
 import { ProductsSection } from "@/components/sections/Products";
 import { ServicesSection } from "@/components/sections/services";
-import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -67,9 +67,12 @@ export default function Home() {
             style={{ color: "rgba(0, 83, 117, 1)" }}
           >
             Learn More{" "}
-            <ArrowLongRightIcon
-              className="pl-1 h-6 w-6"
-              style={{ color: "rgba(0, 83, 117, 1)" }}
+            <Image
+              src="./arrow_right_button.svg"
+              alt="arrow_right_button.svg"
+              width={24}
+              height={24}
+              className="ml-2"
             />
           </button>
         </div>

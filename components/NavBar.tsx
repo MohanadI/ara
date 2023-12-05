@@ -15,7 +15,7 @@ const navigation = [
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Media", href: "/media" },
-  { name: "Career", href: "/career" },
+  { name: "Talent", href: "/career" },
   { name: "Support", href: "/support" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -23,6 +23,7 @@ const navigation = [
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
+  const [selectedMenu, setSelectedMenu] = useState("Home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +47,7 @@ export default function NavBar() {
   return (
     <>
       <nav
-        className={`m-auto xl:px-10 ${
+        className={`m-auto xl:px-5 ${
           isSticky
             ? "fixed top-0 w-full"
             : "lg:w-10/12 xl:w-10/12 xl:mt-6 xl:rounded-full 2xl:w-8/12"
@@ -81,7 +82,11 @@ export default function NavBar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-base font-semibold leading-6 text-white text-opacity-80 hover:text-opacity-100"
+                className={`text-lg leading-6 text-opacity-80 hover:text-opacity-100 ${
+                  selectedMenu === item.name ? "font-bold" : "font-thin"
+                }`}
+                style={{ color: "#D7DEE1" }}
+                onClick={() => setSelectedMenu(item.name)}
               >
                 {item.name}
               </Link>

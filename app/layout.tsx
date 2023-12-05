@@ -26,12 +26,12 @@ export default function RootLayout({
           </header>
           <main className="grow gap-2">{children}</main>
           <footer
-            className="border-t py-3 text-center text-xs"
+            className="py-3 text-center text-xs"
             style={{ background: "#005375" }}
           >
             <Footer />
           </footer>
-          <div className="fixed bottom-4 right-4 flex flex-col">
+          <div className="fixed bottom-10 right-10 flex flex-col">
             <button
               className="  text-white font-bold p-2 rounded-full shadow-lg"
               style={{

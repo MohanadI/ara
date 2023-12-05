@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import styles from "./VerticalSlider.module.css";
+import Image from "next/image";
 
 const VerticalSlider = () => {
   const [selectedTab, setSelectedTab] = useState(1);
@@ -42,7 +42,7 @@ const VerticalSlider = () => {
       </div>
       <div className={styles.contentContainer}>
         {selectedTab === 1 && (
-          <div className="p-0 sm:px-4 sm:ml-5 w-full flex flex-col items-start">
+          <div className="p-0 sm:px-20 sm:pl-10 w-full flex flex-col items-start">
             <span
               className="inline-block p-2 px-4 rounded-full bg-white bg-opacity-20
              text-white text-base font-medium tracking-widest"
@@ -93,13 +93,16 @@ const VerticalSlider = () => {
               success.
             </p>
             <button
-              className="flex rounded-full bg-white border-0 py-3 px-8 focus:outline-none hover:bg-opacity-60 text-base"
+              className="flex rounded-full bg-white border-0 py-3 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold"
               style={{ color: "rgba(0, 83, 117, 1)" }}
             >
               Get Started{" "}
-              <ArrowLongRightIcon
-                className="pl-1 h-6 w-6"
-                style={{ color: "rgba(0, 83, 117, 1)" }}
+              <Image
+                src="./arrow_right_button.svg"
+                alt="Arrow Right Button"
+                width={24}
+                height={24}
+                className="ml-2"
               />
             </button>
           </div>

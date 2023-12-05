@@ -1,4 +1,4 @@
-import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 export const ActionBanner = () => {
   return (
@@ -21,13 +21,16 @@ export const ActionBanner = () => {
           </div>
           <div className="flex flex-col w-full mt-3 lg:mt-0 lg:w-1/3 lg:pl-12">
             <button
-              className="flex mx-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-normal"
+              className="flex mx-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold"
               style={{ color: "rgba(0, 83, 117, 1)" }}
             >
               Get Started{" "}
-              <ArrowLongRightIcon
-                className=" pl-1 h-6 w-6"
-                style={{ color: "rgba(0, 83, 117, 1)" }}
+              <Image
+                src="./arrow_right_button.svg"
+                alt="arrow_right_button.svg"
+                width={24}
+                height={24}
+                className="ml-2"
               />
             </button>
           </div>

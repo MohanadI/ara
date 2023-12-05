@@ -6,9 +6,9 @@ export const Footer = () => {
       <div className="pt-10 p-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl grid lg:grid-cols-3 gap-4">
         <div className="lg:text-left">
           <p className="font-bold tracking-wide text-gray-300 text-base">
-            Important links
+            Company
           </p>
-          <ul className="mt-2 space-y-2 lg:list-disc pt-0 p-5">
+          <ul className="mt-4 space-y-2 pt-0">
             <li>
               <a
                 href="/"
@@ -53,31 +53,26 @@ export const Footer = () => {
         </div>
         <div className="text-center">
           <Image
-            src="/Logo.svg"
+            src="/footer_icon.svg"
             className="m-auto"
-            width={121}
-            height={76}
-            alt="Logo"
+            width={206}
+            height={120}
+            alt="Footer Logo"
           />
-          <h4 className="text-white text-sm">ARA CONSULTING</h4>
-          <div className="p-4 text-gray-400">
-            <span className="p-1">
-              <b className="text-white">A</b>nalyze
-              <b className="text-white">.</b>
-            </span>
-            <span className="p-1">
-              <b className="text-white">R</b>ealize
-              <b className="text-white">.</b>
-            </span>
-            <span className="p-1">
-              <b className="text-white">A</b>utomate
-              <b className="text-white">.</b>
-            </span>
-          </div>
-          <div className="flex justify-center my-1 gap-2">
+          <div className="flex justify-center my-1 mt-5 gap-3">
             <Image src="/mdi_twitter.svg" width={30} height={30} alt="X" />
-            <Image src="/mdi_linkedin.svg" width={30} height={30} alt="LinkedIn" />
-            <Image src="/jam_facebook.svg" width={30} height={30} alt="Facebook" />
+            <Image
+              src="/mdi_linkedin.svg"
+              width={30}
+              height={30}
+              alt="LinkedIn"
+            />
+            <Image
+              src="/jam_facebook.svg"
+              width={30}
+              height={30}
+              alt="Facebook"
+            />
             <Image
               src="/ri_instagram-fill.svg"
               width={30}
@@ -139,7 +134,7 @@ export const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="flex flex-col text-center pt-5 pb-5 border-t border-gray-300 sm:flex-row">
+      <div className="flex flex-col text-center pt-5 pb-5 border-t border-white border-opacity-30 sm:flex-row">
         <p className="text-sm text-gray-400 m-auto">
           Copyright © 2023 ARA CONSULTING, All Right Reserved
         </p>
