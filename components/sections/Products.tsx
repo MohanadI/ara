@@ -11,23 +11,16 @@ export const ProductsSection = () => {
     "Human Resources Management",
     "Media Production Management",
     "Intercompany Solution",
-    "test",
+    "Enterprise Resource Planning (ERP)",
+    "E-Commerce Solution",
+    "E- Invoice Management",
+    "Fleet Management",
   ];
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTab, setSelectedTab] = useState("");
 
-  const onTabClick = (index: any) => {
-    setSelectedTab(index);
+  const onTabClick = (tab: any) => {
+    setSelectedTab(tab);
   };
-
-  const onArrowClick = (direction: any) => {
-    if (direction === "left") {
-      setSelectedTab((prev) => Math.max(prev - 1, 0));
-    } else if (direction === "right") {
-      setSelectedTab((prev) => Math.min(prev + 1, tabs.length - 1));
-    }
-  };
-
-  const showArrows = tabs.length > 4;
 
   return (
     <section className="text-gray-600 body-font">
@@ -68,7 +61,7 @@ export const ProductsSection = () => {
               <div className="h-1 w-8 rounded m-auto bg-white"></div>
             </div>
             <div className="w-full md:w-4/5 2xl:w-2/3 mb-6 lg:mb-5 self-center 2xl:mr-10">
-              <div className=" bg-white rounded-md w-full md:w-1/2 relative py-12">
+              <div className="bg-white rounded-md w-full md:w-1/2 relative py-12">
                 <Image
                   src="/VectorR.svg"
                   width={18}
@@ -76,38 +69,25 @@ export const ProductsSection = () => {
                   alt="arrow-left"
                   className="absolute -right-3 top-7"
                 />
-                {selectedTab === 0 && (
-                  <p
-                    className="w-full leading-relaxed text-sm"
-                    style={{
-                      color: "#005375",
-                      fontSize: "18px",
-                      fontWeight: 300,
-                      lineHeight: "20px",
-                      letterSpacing: "0em",
-                      textAlign: "center",
-                    }}
-                  >
-                    Bibendum nisi justo Aliquet arcu praesent condimentum
-                    feugiat phasellus mauris. Aliquet arcu praesent.
-                  </p>
-                )}
-                {selectedTab === 1 && (
-                  <p
-                    className="w-full leading-relaxed text-sm"
-                    style={{
-                      color: "#005375",
-                      fontSize: "18px",
-                      fontWeight: 300,
-                      lineHeight: "20px",
-                      letterSpacing: "0em",
-                      textAlign: "center",
-                    }}
-                  >
-                    Lorem ipsum dolor sit amet consectetur. Bibendum nisi justo
-                    condimentum feugiat phasellus mauris. Aliquet arcu praesent.
-                  </p>
-                )}
+
+                <p
+                  className="w-full leading-relaxed px-2 h-12"
+                  style={{
+                    color: "#005375",
+                    fontSize: "18px",
+                    fontWeight: 300,
+                    lineHeight: "22px",
+                    letterSpacing: "0em",
+                    textAlign: "center",
+                  }}
+                >
+                  {selectedTab === "Warehouse Management" && (
+                    <>
+                      Bibendum nisi justo Aliquet arcu praesent condimentum
+                      feugiat phasellus mauris. Aliquet arcu praesentasda.
+                    </>
+                  )}
+                </p>
 
                 <h4
                   className=" font-medium text-sm mt-4"

@@ -1,5 +1,6 @@
 import PageHeader from "@/components/PageHeader";
 import { SectionTitle } from "@/components/SectionTitle";
+import { DefaultImageSlider } from "@/components/sliders/DefaultImageSlider";
 import Image from "next/image";
 
 export default function About() {
@@ -35,7 +36,7 @@ export default function About() {
         }
       />
       <section className="text-gray-600 body-font">
-        <div className="container px-10 lg:px-36 2xl:px-60 py-10 pt-20 mx-auto">
+        <div className="container px-10 lg:px-2 xl:px-24 2xl:px-60 py-10 pt-20 mx-auto">
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white rounded-xl pb-8">
               <div className="w-full mb-9 mt-9">
@@ -82,18 +83,32 @@ export default function About() {
               }}
             ></div>
           </div>
+
           <div className="grid grid-cols-2 gap-1 mt-20">
-            <div
-              className="flex items-center justify-around rounded-l-xl"
-              style={{
-                background:
-                  "linear-gradient(111.31deg, rgba(1, 83, 116, 0.3) 3.88%, rgba(0, 83, 117, 0.2) 100%), url('./adaptability_image.svg')",
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              <h2 className="text-5xl text-white font-bold">Adaptability</h2>
-            </div>
+            <DefaultImageSlider
+              slides={[
+                {
+                  img: "./adaptability_image.svg",
+                  label: "Innovation",
+                },
+                {
+                  img: "./adaptability_image.svg",
+                  label: "Integrity",
+                },
+                {
+                  img: "./adaptability_image.svg",
+                  label: "Collaboration",
+                },
+                {
+                  img: "./adaptability_image.svg",
+                  label: "Excellence",
+                },
+                {
+                  img: "./adaptability_image.svg",
+                  label: "Adaptability",
+                },
+              ]}
+            />
             <div className="bg-white pb-8 rounded-r-xl">
               <div className="w-full mb-9 mt-9">
                 <h1
@@ -115,26 +130,32 @@ export default function About() {
                 ></div>
               </div>
               <p className="px-5 py-2 description-paragraph ">
-                We embrace <b>innovation</b> as a driving force, staying ahead
-                of industry trends to provide cutting-edge solutions.
+                We embrace <span className="font-semibold">innovation</span> as
+                a driving force, staying ahead of industry trends to provide
+                cutting-edge solutions.
               </p>
               <p className="px-5 py-2 mt-2 description-paragraph ">
-                Our commitment to <b>integrity</b> is unwavering, ensuring
-                transparency, honesty, and trust in all our interactions.
+                Our commitment to{" "}
+                <span className="font-semibold">integrity</span> is unwavering,
+                ensuring transparency, honesty, and trust in all our
+                interactions.
               </p>
               <p className="px-5 py-2 mt-2 description-paragraph ">
-                We believe in the power of <b>collaboration</b>, fostering
+                We believe in the power of{" "}
+                <span className="font-semibold">collaboration</span>, fostering
                 strong partnerships with our clients to achieve shared success
               </p>
               <p className="px-5 py-2 mt-2 description-paragraph ">
-                Striving for <b>excellence</b> is at the core of everything we
-                do, from setting the bar high for ourselves and our clients to
-                providing exceptional client service.
+                Striving for <span className="font-semibold">excellence</span>{" "}
+                is at the core of everything we do, from setting the bar high
+                for ourselves and our clients to providing exceptional client
+                service.
               </p>
               <p className="px-5 py-2 mt-2 description-paragraph ">
                 In the ever-changing landscape of technology,{" "}
-                <b>adaptability</b> is key. We are agile and responsive, ready
-                to meet the evolving needs of our clients.
+                <span className="font-semibold">adaptability</span> is key. We
+                are agile and responsive, ready to meet the evolving needs of
+                our clients.
               </p>
             </div>
           </div>
@@ -159,7 +180,7 @@ export default function About() {
           </h1>
           <div className="h-1 w-10 rounded m-auto bg-white"></div>
         </div>
-        <div className="container px-10 lg:px-36 2xl:px-60 py-10 pt-5 mx-auto">
+        <div className="container px-10 lg:px-2 xl:px-24 2xl:px-60 py-10 pt-5 mx-auto">
           <div className="grid grid-cols-3 gap-6">
             <p className="p-2 description-paragraph text-white text-base leading-relaxed">
               We provide a diverse range of SAP solutions, unlocking the full

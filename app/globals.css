@@ -4,7 +4,7 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-main: #F2F6F7;
+  --background-main: #f2f6f7;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
@@ -19,28 +19,28 @@
 }
 
 @font-face {
-  font-family: 'SF Pro Display';
-  src: local('SF Pro Display'), local('SFProDisplay-Regular'),
-       url('../fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), local("SFProDisplay-Regular"),
+    url("../fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
   font-style: normal;
 }
 @font-face {
-  font-family: 'SF Pro Display';
-  src: local('SF Pro Display Bold'), local('SFProDisplay-Bold'),
-       url('../fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display Bold"), local("SFProDisplay-Bold"),
+    url("../fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
   font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: 'SF Pro Display';
-  src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
-       url('../fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"),
+    url("../fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 
 body {
-  font-family: 'SF Pro Display';
+  font-family: "SF Pro Display";
   color: var(--main-color);
   background: var(--background-main);
 }
@@ -48,15 +48,19 @@ body {
 .description-paragraph {
   font-size: 16px;
   font-weight: 300;
-  line-height: 19px;
+  line-height: 21px;
   letter-spacing: 0em;
 }
 
 .custom-box {
   position: relative;
-  border: 1px solid #fff;
+  border: 1px solid #FFFFFF99;
   padding: 20px 5px 10px 5px;
   text-align: center;
+  height: 95px;
+}
+.custom-box:hover{
+  border: 1px solid #ffffff;
 }
 
 .box-title {

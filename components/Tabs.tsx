@@ -88,21 +88,18 @@ const Tabs = ({
         <div
           key={index}
           className={`sm:px-6 py-3 justify-center text-center sm:justify-start ${
-            firstVisibleTab + index === selectedTab
-              ? "text-cyan-200"
-              : "text-gray-100"
+            tab === selectedTab ? " text-white font-semibold" : "text-gray-100"
           } inline-flex items-center leading-none tracking-wider`}
-          onClick={() => onTabClick(firstVisibleTab + index)}
+          onClick={() => onTabClick(tab)}
         >
           <span
-            className="cursor-pointer hover:text-cyan-200"
+            className="cursor-pointer"
             style={{
               fontSize: "18px",
               lineHeight: "21px",
               letterSpacing: "0em",
               textAlign: "center",
               whiteSpace: "initial",
-              transition: "all .4s cubic-bezier(0,0,.5,1)",
             }}
           >
             {tab}

@@ -63,7 +63,7 @@ export default function Home() {
             can empower your organization to thrive in the digital age
           </h4>
           <button
-            className="flex mx-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base mt-10"
+            className="flex mx-auto rounded-full bg-white border-0 py-3 px-9 focus:outline-none hover:bg-opacity-60 text-base mt-10"
             style={{ color: "rgba(0, 83, 117, 1)" }}
           >
             Learn More{" "}

@@ -5,14 +5,12 @@ export const Footer = () => {
     <>
       <div className="pt-10 p-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl grid lg:grid-cols-3 gap-4">
         <div className="lg:text-left">
-          <p className="font-bold tracking-wide text-gray-300 text-base">
-            Company
-          </p>
+          <p className="tracking-wide text-gray-100 text-lg">Company</p>
           <ul className="mt-4 space-y-2 pt-0">
             <li>
               <a
                 href="/"
-                className="text-gray-300 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:text-gray-50"
+                className="text-gray-50 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:font-semibold"
               >
                 Home
               </a>
@@ -20,7 +18,7 @@ export const Footer = () => {
             <li>
               <a
                 href="/"
-                className="text-gray-300 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:text-gray-50"
+                className="text-gray-50 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:font-semibold"
               >
                 About Us
               </a>
@@ -28,7 +26,7 @@ export const Footer = () => {
             <li>
               <a
                 href="/"
-                className="text-gray-300 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:text-gray-50"
+                className="text-gray-50 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:font-semibold"
               >
                 Services
               </a>
@@ -36,7 +34,7 @@ export const Footer = () => {
             <li>
               <a
                 href="/"
-                className="text-gray-300 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:text-gray-50"
+                className="text-gray-50 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:font-semibold"
               >
                 Privacy policy
               </a>
@@ -44,7 +42,7 @@ export const Footer = () => {
             <li>
               <a
                 href="/"
-                className="text-gray-300 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:text-gray-50"
+                className="text-gray-50 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:font-semibold"
               >
                 Terms of service
               </a>
@@ -82,9 +80,10 @@ export const Footer = () => {
           </div>
         </div>
         <div className="text-right m-auto lg:-m-0">
-          <p className="font-bold tracking-wide text-gray-300 text-base pr-2 pb-2">
+          <p className="tracking-wide text-gray-100 text-lg pr-2 pb-2">
             Contact Information
           </p>
+
           <ul className="mt-2 space-y-2 pt-0 p-5 float-right">
             <li>
               <a
@@ -135,8 +134,8 @@ export const Footer = () => {
         </div>
       </div>
       <div className="flex flex-col text-center pt-5 pb-5 border-t border-white border-opacity-30 sm:flex-row">
-        <p className="text-sm text-gray-400 m-auto">
-          Copyright © 2023 ARA CONSULTING, All Right Reserved
+        <p className="text-sm text-white text-opacity-80 m-auto">
+          © 2023 ARA CONSULTING, All Right Reserved
         </p>
       </div>
     </>
