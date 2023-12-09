@@ -8,7 +8,11 @@ export const DefaultImageSlider = ({ slides }: { slides: any }) => {
       <div className="relative overflow-hidden rounded-l-xl h-full">
         {slides.map((slide: { img: string; label: string }) => {
           return (
-            <div key={slide.label} className="hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              key={slide.label}
+              className="hidden duration-700 ease-in-out"
+              data-carousel-item
+            >
               <div
                 className="flex items-center justify-around h-full"
                 style={{
@@ -25,13 +29,13 @@ export const DefaultImageSlider = ({ slides }: { slides: any }) => {
         })}
       </div>
       <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-        {slides.map(({ slide, index }: { slide: any; index: Number }) => (
+        {slides.map((slide: { img: string; label: string }) => (
           <button
-            key={index + "slide_button"}
+            key={slide.label + "slide_button"}
             type="button"
             className="w-3 h-3 rounded-full"
             aria-current="true"
-            aria-label={"Slide" + index}
+            aria-label={"Slide" + slide.label}
             data-carousel-slide-to="0"
           ></button>
         ))}

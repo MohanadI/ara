@@ -4,17 +4,18 @@ export default function PageHeader({
   helpText,
   title,
   description,
+  background = "linear-gradient(111.31deg, rgba(1, 83, 116, 0.9) 3.88%, rgba(0, 83, 117, 0.4) 100%), url('/rm373batch2-09 1.svg')",
 }: {
-  helpText: String;
-  title: String;
+  helpText: string;
+  title: string;
   description: any;
+  background?: string;
 }) {
   return (
     <div
       className="relative isolate px-6 pt-10 lg:px-8"
       style={{
-        background:
-          "linear-gradient(111.31deg, rgba(1, 83, 116, 0.9) 3.88%, rgba(0, 83, 117, 0.4) 100%), url('/rm373batch2-09 1.svg')",
+        background: background,
         backgroundPosition: "right",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
