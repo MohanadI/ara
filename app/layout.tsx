@@ -3,10 +3,11 @@
 import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 
-import "./globals.css";
 import { Footer } from "@/components/Footer";
-import Image from "next/image";
 import "flowbite";
+import Image from "next/image";
+
+import "./globals.css";
 
 const metadata: Metadata = {
   title: "Create Next App",

@@ -3,6 +3,7 @@
 import PageHeader from "@/components/PageHeader";
 import ContactUsForm from "./Form";
 import Image from "next/image";
+// import MapChart from "@/components/Map";
 
 export default function Contact() {
   return (
@@ -111,6 +112,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      {/* <MapChart /> */}
     </>
   );
 }

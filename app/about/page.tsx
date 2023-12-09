@@ -1,7 +1,5 @@
 import PageHeader from "@/components/PageHeader";
-import { SectionTitle } from "@/components/SectionTitle";
 import { DefaultImageSlider } from "@/components/sliders/DefaultImageSlider";
-import Image from "next/image";
 
 export default function About() {
   return (

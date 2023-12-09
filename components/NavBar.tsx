@@ -86,6 +86,7 @@ export default function NavBar() {
                   selectedMenu === item.name ? "font-bold" : "font-thin"
                 }`}
                 style={{ color: "#D7DEE1" }}
+                rel="preload"
                 onClick={() => setSelectedMenu(item.name)}
               >
                 {item.name}
