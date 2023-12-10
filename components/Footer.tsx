@@ -52,7 +52,7 @@ export const Footer = () => {
         <div className="text-center">
           <Image
             src="/footer_icon.svg"
-            className="m-auto"
+            className="m-auto w-[206px] h-[120px]"
             width={206}
             height={120}
             alt="Footer Logo"
@@ -122,7 +122,7 @@ export const Footer = () => {
               >
                 <Image
                   src="/mobile_icon.svg"
-                  className="mr-3 ml-1"
+                  className="mr-3 ml-1 w-[15px] h-[20px]"
                   width={15}
                   height={20}
                   alt="calling_phone"

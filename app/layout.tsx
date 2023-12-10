@@ -46,6 +46,7 @@ export default function RootLayout({
                 alt="whatsapp_floating"
                 width={33}
                 height={33}
+                className="w-[33px] h-[33px]"
               />
             </button>
             <button
@@ -62,7 +63,7 @@ export default function RootLayout({
                 alt="floating_up"
                 width={27}
                 height={27}
-                className="m-auto"
+                className="m-auto w-[27px] h-[27px]"
               />
             </button>
           </div>

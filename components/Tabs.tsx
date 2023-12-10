@@ -82,7 +82,13 @@ const Tabs = ({
         onClick={() => handleArrowClick("left")}
         disabled={firstVisibleTab === 0}
       >
-        <Image src="/arrow-left.svg" width={30} height={30} alt="arrow-left" />
+        <Image
+          src="/arrow-left.svg"
+          className="w-[30px] h-[30px]"
+          width={30}
+          height={30}
+          alt="arrow-left"
+        />
       </button>
       {getTabsToShow().map((tab: any, index: any) => (
         <div

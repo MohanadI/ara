@@ -16,7 +16,7 @@ export const ProductsSection = () => {
     "E- Invoice Management",
     "Fleet Management",
   ];
-  const [selectedTab, setSelectedTab] = useState("");
+  const [selectedTab, setSelectedTab] = useState("Warehouse Management");
 
   const onTabClick = (tab: any) => {
     setSelectedTab(tab);
@@ -67,7 +67,7 @@ export const ProductsSection = () => {
                   width={18}
                   height={38}
                   alt="arrow-left"
-                  className="absolute -right-3 top-7"
+                  className="absolute w-[18px] h-[38px] -right-3 top-7"
                 />
 
                 <p

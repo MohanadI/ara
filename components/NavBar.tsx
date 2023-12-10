@@ -9,6 +9,7 @@ import {
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -21,9 +22,10 @@ const navigation = [
 ];
 
 export default function NavBar() {
+  const pathname = usePathname();
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSticky, setSticky] = useState(false);
-  const [selectedMenu, setSelectedMenu] = useState("Home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,7 +66,13 @@ export default function NavBar() {
         >
           <div className="flex grow lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
-              <Image src="/Logo.svg" width={64} height={40} alt="Logo" />
+              <Image
+                src="/Logo.svg"
+                width={64}
+                height={40}
+                alt="Logo"
+                priority={true}
+              />
             </Link>
           </div>
           <div className="flex lg:hidden justify-end">
@@ -82,12 +90,11 @@ export default function NavBar() {
               <Link
                 key={item.name}
                 href={item.href}
+                prefetch={false}
                 className={`text-lg leading-6 text-opacity-80 hover:text-opacity-100 ${
-                  selectedMenu === item.name ? "font-bold" : "font-thin"
+                  pathname === item.href ? "font-semibold" : "font-thin"
                 }`}
                 style={{ color: "#D7DEE1" }}
-                rel="preload"
-                onClick={() => setSelectedMenu(item.name)}
               >
                 {item.name}
               </Link>
@@ -111,6 +118,7 @@ export default function NavBar() {
                 src="./call-calling.svg"
                 width={36}
                 height={36}
+                className="w-[36px] h-[36px]"
                 alt="call-calling"
               />
               <span>Call Us</span>
@@ -137,6 +145,7 @@ export default function NavBar() {
               <span className="sr-only">ARA</span>
               <Image
                 src="/Logo.svg"
+                priority={true}
                 width={100}
                 height={100}
                 className="h-8 w-auto"

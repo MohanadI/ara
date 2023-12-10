@@ -56,7 +56,7 @@ export const ServicesSection = () => {
             >
               <div className="p-6 rounded-lg">
                 <Image
-                  className="rounded m-auto object-cover object-center mb-6"
+                  className="rounded w-[128px] h-[128px] m-auto object-cover object-center mb-6"
                   src={item.image}
                   width={128}
                   height={128}
