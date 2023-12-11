@@ -6,7 +6,7 @@ export const SectionTitle = ({
   Title: String;
 }) => {
   return (
-    <div className="flex flex-wrap w-full mb-20 text-center">
+    <div className="flex flex-wrap w-full mb-10 text-center">
       <p
         className="w-full leading-relaxed"
         style={{

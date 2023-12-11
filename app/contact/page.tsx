@@ -3,7 +3,8 @@
 import PageHeader from "@/components/PageHeader";
 import ContactUsForm from "./Form";
 import Image from "next/image";
-// import MapChart from "@/components/Map";
+import MapChart from "@/components/Map";
+import { SectionTitle } from "@/components/SectionTitle";
 
 export default function Contact() {
   return (
@@ -112,7 +113,15 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      {/* <MapChart /> */}
+      <section className="text-gray-600 body-font">
+        <div className="container px-10 lg:px-2 xl:px-24 2xl:px-60 py-10 pt-20 mx-auto">
+          <SectionTitle
+            subTitle="Local Expertise, Global Reach: Dubai to MENA and Beyond"
+            Title="Our Presence"
+          />
+          <MapChart />
+        </div>
+      </section>
     </>
   );
 }
