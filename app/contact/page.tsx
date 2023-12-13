@@ -28,7 +28,7 @@ export default function Contact() {
             <div className="left_cards">
               <a
                 href="#"
-                className="flex flex-col p-3 items-center bg-white border border-gray-200 rounded-lg shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                className="flex flex-col p-3 items-center bg-white  rounded-lg shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <Image
                   src="./vaadin_phone-landline.svg"
@@ -48,7 +48,7 @@ export default function Contact() {
               </a>
               <a
                 href="#"
-                className="flex flex-col p-3 mt-4 items-center bg-white border border-gray-200 rounded-lg shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                className="flex flex-col p-3 mt-4 items-center bg-white  rounded-lg shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <Image
                   src="./material-symbols_phone-iphone.svg"
@@ -68,7 +68,7 @@ export default function Contact() {
               </a>
               <a
                 href="#"
-                className="flex flex-col p-3 mt-4 items-center bg-white border border-gray-200 rounded-lg shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                className="flex flex-col p-3 mt-4 items-center bg-white  rounded-lg shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <Image
                   src="./whatsapp_contact.svg"
@@ -88,7 +88,7 @@ export default function Contact() {
               </a>
               <a
                 href="#"
-                className="flex flex-col p-3 mt-4 items-center bg-white border border-gray-200 rounded-lg shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                className="flex flex-col p-3 mt-4 items-center bg-white  rounded-lg shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
               >
                 <Image
                   src="./sms.svg"

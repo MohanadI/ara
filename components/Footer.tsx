@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export const Footer = () => {
   return (
-    <>
-      <div className="pt-10 p-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl grid lg:grid-cols-3 gap-4">
+    <section className="">
+      <div className="container px-10 py-4 lg:px-2 xl:px-24 2xl:px-60 mx-auto grid lg:grid-cols-3 gap-4">
         <div className="lg:text-left">
           <p className="tracking-wide text-gray-100 text-lg">Company</p>
           <ul className="mt-4 space-y-2 pt-0">
@@ -138,6 +138,6 @@ export const Footer = () => {
           © 2023 ARA CONSULTING, All Right Reserved
         </p>
       </div>
-    </>
+    </section>
   );
 };

@@ -55,7 +55,9 @@ export default function NavBar() {
             : "lg:w-10/12 xl:w-10/12 xl:mt-6 xl:rounded-full 2xl:w-8/12"
         }`}
         style={
-          isSticky ? { background: "#002D3F" } : { background: "#FFFFFF1A" }
+          isSticky
+            ? { background: "#002D3F" }
+            : { background: "#FFFFFF1A", backdropFilter: "blur(10px)" }
         }
         aria-label="Global"
       >
@@ -91,10 +93,11 @@ export default function NavBar() {
                 key={item.name}
                 href={item.href}
                 prefetch={false}
-                className={`text-lg leading-6 text-opacity-80 hover:text-opacity-100 ${
-                  pathname === item.href ? "font-semibold" : "font-thin"
+                className={`text-lg leading-6 hover:text-white ${
+                  pathname === item.href
+                    ? "font-semibold text-white"
+                    : "font-thin text-[#D7DEE1] text-opacity-80"
                 }`}
-                style={{ color: "#D7DEE1" }}
               >
                 {item.name}
               </Link>

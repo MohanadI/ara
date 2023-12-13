@@ -79,14 +79,15 @@ const Tabs = ({
       }}
     >
       <button
+        className="mr-auto"
         onClick={() => handleArrowClick("left")}
         disabled={firstVisibleTab === 0}
       >
         <Image
           src="/arrow-left.svg"
-          className="w-[30px] h-[30px]"
-          width={30}
-          height={30}
+          className="w-[40px] h-[40px]"
+          width={40}
+          height={40}
           alt="arrow-left"
         />
       </button>
@@ -95,7 +96,7 @@ const Tabs = ({
           key={index}
           className={`sm:px-6 py-3 justify-center text-center sm:justify-start ${
             tab === selectedTab ? " text-white font-semibold" : "text-gray-100"
-          } inline-flex items-center leading-none tracking-wider`}
+          } inline-flex items-center leading-none tracking-wider w-52`}
           onClick={() => onTabClick(tab)}
         >
           <span
@@ -113,10 +114,17 @@ const Tabs = ({
         </div>
       ))}
       <button
+        className="ml-auto"
         onClick={() => handleArrowClick("right")}
         disabled={firstVisibleTab === tabs.length - getTabsToShow().length}
       >
-        <Image src="/arrow-right.svg" width={30} height={30} alt="arrow-left" />
+        <Image
+          src="/arrow-right.svg"
+          width={40}
+          height={40}
+          className="w-[40] h-[40]"
+          alt="arrow-left"
+        />
       </button>
     </div>
   );

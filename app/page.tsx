@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <div
-        className="relative isolate px-6 pt-14 lg:px-8"
+        className="relative isolate px-6 pt-14 lg:px-6"
         style={{
           background:
             "linear-gradient(122.96deg, rgba(0, 17, 24, 0.9) 26.5%, rgba(0, 38, 53, 0.725518) 60.15%, rgba(0, 83, 117, 0) 100%), url('/Rectangle 1.svg')",
@@ -26,7 +26,7 @@ export default function Home() {
       <ProductsSection />
       <ActionBanner />
       <div
-        className="relative isolate px-6 pt-14 lg:px-8"
+        className="relative isolate px-6 pt-14 lg:px-6"
         style={{
           background:
             "linear-gradient(122.96deg, rgba(0, 17, 24, 0.9) 26.5%, rgba(0, 38, 53, 0.725518) 60.15%, rgba(0, 83, 117, 0) 100%), url('/Rectangle 74.svg')",

@@ -56,16 +56,16 @@ export default function About() {
                   style={{ background: "#003E57" }}
                 ></div>
               </div>
-              <p className="p-2 text-center description-paragraph ">
+              <p className="p-2 text-center description-paragraph text-[#316377]">
                 At the core of ARA CONSULTING&apos;s mission is a commitment to
                 empower small, medium and large enterprises with the
                 transformative capabilities of SAP solutions.
               </p>
-              <p className="p-2 text-center mt-6 description-paragraph ">
+              <p className="p-2 text-center mt-6 description-paragraph text-[#316377]">
                 We understand the unique demands of each sector and tailor our
                 SAP services to meet the specific needs of your industry.
               </p>
-              <p className="p-2 text-center mt-6 description-paragraph ">
+              <p className="p-2 text-center mt-6 description-paragraph text-[#316377]">
                 We believe that every business, regardless of size or industry,
                 deserves access to cutting-edge technology that can propel them
                 to new heights of efficiency and success by fostering growth at
@@ -127,29 +127,29 @@ export default function About() {
                   style={{ background: "#003E57" }}
                 ></div>
               </div>
-              <p className="px-5 py-2 description-paragraph ">
+              <p className="px-5 py-2 description-paragraph text-[#316377]">
                 We embrace <span className="font-semibold">innovation</span> as
                 a driving force, staying ahead of industry trends to provide
                 cutting-edge solutions.
               </p>
-              <p className="px-5 py-2 mt-2 description-paragraph ">
+              <p className="px-5 py-2 mt-2 description-paragraph text-[#316377]">
                 Our commitment to{" "}
                 <span className="font-semibold">integrity</span> is unwavering,
                 ensuring transparency, honesty, and trust in all our
                 interactions.
               </p>
-              <p className="px-5 py-2 mt-2 description-paragraph ">
+              <p className="px-5 py-2 mt-2 description-paragraph text-[#316377]">
                 We believe in the power of{" "}
                 <span className="font-semibold">collaboration</span>, fostering
                 strong partnerships with our clients to achieve shared success
               </p>
-              <p className="px-5 py-2 mt-2 description-paragraph ">
+              <p className="px-5 py-2 mt-2 description-paragraph text-[#316377]">
                 Striving for <span className="font-semibold">excellence</span>{" "}
                 is at the core of everything we do, from setting the bar high
                 for ourselves and our clients to providing exceptional client
                 service.
               </p>
-              <p className="px-5 py-2 mt-2 description-paragraph ">
+              <p className="px-5 py-2 mt-2 description-paragraph text-[#316377]">
                 In the ever-changing landscape of technology,{" "}
                 <span className="font-semibold">adaptability</span> is key. We
                 are agile and responsive, ready to meet the evolving needs of

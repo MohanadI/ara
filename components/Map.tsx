@@ -41,10 +41,6 @@ const MapChart: React.FC = () => {
     setPosition((pos) => ({ ...pos, zoom: pos.zoom / 2 }));
   }
 
-  function handleMoveEnd(position: { coordinates: any; zoom: number }) {
-    setPosition(position);
-  }
-
   return (
     <div className="relative border border-[#cbcbcb]">
       <div className="absolute left-2 top-5 bg-[#467c92] p-7 px-9">
@@ -69,11 +65,19 @@ const MapChart: React.FC = () => {
           <li>Australia</li>
         </ul>
       </div>
-      <ComposableMap>
+      <ComposableMap
+        projection="geoMercator"
+        projectionConfig={{
+          // rotate: [0, 0],
+          center: [0, 30],
+          // parallels: [0, 0],
+          scale: 120,
+        }}
+      >
         <ZoomableGroup
           zoom={position.zoom}
+          minZoom={2}
           center={[position.coordinates[0], position.coordinates[1]]}
-          onMoveEnd={handleMoveEnd}
         >
           <Sphere
             id="mySphere" // Add a unique id
@@ -113,6 +117,11 @@ const MapChart: React.FC = () => {
                       geography={geo}
                       onClick={(coordinates) => {
                         console.log(coordinates);
+                      }}
+                      style={{
+                        default: { outline: "none" },
+                        hover: { outline: "none" },
+                        pressed: { outline: "none" },
                       }}
                       fill={
                         isJordan ||
