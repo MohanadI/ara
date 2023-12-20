@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 
 import { Footer } from "@/components/Footer";
-import "flowbite";
 import Image from "next/image";
 
 import "./globals.css";
@@ -26,7 +25,9 @@ export default function RootLayout({
           <header className="absolute inset-x-0 top-0 z-50">
             <NavBar />
           </header>
-          <main className="grow gap-2">{children}</main>
+          <main className="grow gap-2">
+            {children}
+          </main>
           <footer
             className="py-3 text-center text-xs"
             style={{ background: "#005375" }}

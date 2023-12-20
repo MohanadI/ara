@@ -46,7 +46,7 @@ const Tabs = ({
   const size = useWindowSize();
   const getTabsToShow = () => {
     if (size.width >= 1024) {
-      return tabs.slice(firstVisibleTab, firstVisibleTab + 4);
+      return tabs.slice(firstVisibleTab, firstVisibleTab + 5);
     } else if (size.width >= 600) {
       return tabs.slice(firstVisibleTab, firstVisibleTab + 2);
     } else {
@@ -96,7 +96,7 @@ const Tabs = ({
           key={index}
           className={`sm:px-6 py-3 justify-center text-center sm:justify-start ${
             tab === selectedTab ? " text-white font-semibold" : "text-gray-100"
-          } inline-flex items-center leading-none tracking-wider w-52`}
+          } inline-flex items-center leading-none tracking-wider w-48`}
           onClick={() => onTabClick(tab)}
         >
           <span

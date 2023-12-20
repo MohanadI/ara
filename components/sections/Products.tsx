@@ -23,8 +23,8 @@ export const ProductsSection = () => {
   };
 
   return (
-    <section className="text-gray-600 body-font">
-      <div className="py-24 mx-auto flex flex-wrap flex-col pb-0">
+    <section>
+      <div className="mx-auto flex flex-wrap flex-col">
         <SectionTitle
           subTitle="Strong variety of products"
           Title="Our Products"

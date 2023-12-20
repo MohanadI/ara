@@ -6,7 +6,7 @@ export default function ContactUsForm() {
       style={{
         boxShadow: "0px 0px 10px 0px #00000008",
         background: "#ffffff",
-        borderRadius: "5px",
+        borderRadius: "6px",
         padding: "25px",
       }}
     >

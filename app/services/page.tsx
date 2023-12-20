@@ -24,8 +24,8 @@ export default function Services() {
       <section className="text-gray-600 body-font">
         <div className="container px-10 lg:px-2 xl:px-24 2xl:px-60 py-10 pt-20 mx-auto">
           {/* ERP */}
-          <div className="grid grid-cols-2 gap-3">
-            <div className="bg-white rounded-xl pb-8">
+          <div className="grid grid-cols-2">
+            <div className="bg-white rounded-xl rounded-tr-none rounded-br-none pb-8">
               <div className="w-full mb-4 mt-4">
                 <h1 className="sm:text-2xl text-2xl text-[#003E57] font-medium ml-3">
                   ERP Implementation
@@ -51,7 +51,7 @@ export default function Services() {
               </p>
             </div>
             <div
-              className="rounded-xl"
+              className="rounded-xl rounded-tl-none rounded-bl-none"
               style={{
                 background:
                   "linear-gradient(111.31deg, rgba(1, 83, 116, 0.3) 3.88%, rgba(0, 83, 117, 0.2) 100%), url('./enterprise-resource-management-erp-software-system-business-resources-plan 4.svg') no-repeat center center / cover",
@@ -59,15 +59,15 @@ export default function Services() {
             ></div>
           </div>
           {/* Support and Service Level Agreements */}
-          <div className="grid grid-cols-2 gap-3 mt-20">
+          <div className="grid grid-cols-2 mt-20">
             <div
-              className="rounded-xl"
+              className="rounded-xl rounded-tr-none rounded-br-none"
               style={{
                 background:
                   "linear-gradient(111.31deg, rgba(1, 83, 116, 0.3) 3.88%, rgba(0, 83, 117, 0.2) 100%), url('./enterprise-resource-management-erp-software-system-business-resources-plan 2.svg') no-repeat center center / cover",
               }}
             ></div>
-            <div className="bg-white rounded-xl pb-8">
+            <div className="bg-white rounded-xl rounded-tl-none rounded-bl-none pb-8">
               <div className="w-full mb-4 mt-4">
                 <h1 className="sm:text-2xl text-2xl text-[#003E57] font-medium ml-3">
                   Support and Service Level Agreements
@@ -93,8 +93,8 @@ export default function Services() {
             </div>
           </div>
           {/* Integration of Multiple Systems */}
-          <div className="grid grid-cols-2 gap-3 mt-20">
-            <div className="bg-white rounded-xl pb-8">
+          <div className="grid grid-cols-2 mt-20">
+            <div className="bg-white rounded-xl rounded-tr-none rounded-br-none pb-8">
               <div className="w-full mb-4 mt-4">
                 <h1 className="sm:text-2xl text-2xl text-[#003E57] font-medium ml-3">
                   Integration of Multiple Systems
@@ -119,7 +119,7 @@ export default function Services() {
               </p>
             </div>
             <div
-              className="rounded-xl"
+              className="rounded-xl rounded-tl-none rounded-bl-none"
               style={{
                 background:
                   "linear-gradient(111.31deg, rgba(1, 83, 116, 0.3) 3.88%, rgba(0, 83, 117, 0.2) 100%), url('./enterprise-resource-management-erp-software-system-business-resources-plan 5.svg') no-repeat center center / cover",
@@ -127,15 +127,15 @@ export default function Services() {
             ></div>
           </div>
           {/* Data Migration and Management */}
-          <div className="grid grid-cols-2 gap-3 mt-20">
+          <div className="grid grid-cols-2 mt-20">
             <div
-              className="rounded-xl"
+              className="rounded-xl rounded-tr-none rounded-br-none"
               style={{
                 background:
                   "linear-gradient(111.31deg, rgba(1, 83, 116, 0.3) 3.88%, rgba(0, 83, 117, 0.2) 100%), url('./enterprise-resource-management-erp-software-system-business-resources-plan 6.svg') no-repeat center center / cover",
               }}
             ></div>
-            <div className="bg-white rounded-xl pb-8">
+            <div className="bg-white rounded-xl rounded-tl-none rounded-bl-none pb-8">
               <div className="w-full mb-4 mt-4">
                 <h1 className="sm:text-2xl text-2xl text-[#003E57] font-medium ml-3">
                   Data Migration and Management
@@ -144,11 +144,11 @@ export default function Services() {
               <p className="pr-3 pl-3 text-left description-paragraph text-[#316377]">
                 Effortlessly transition your data to SAP systems with our
                 comprehensive data migration and management services. Whether
-                you&apos;re adopting SAP for the first time or upgrading to a new
-                version, our skilled professionals ensure a secure and smooth
-                data migration process. We meticulously assess your existing
-                data, develop a strategic migration plan, and execute the
-                transfer with minimal disruption to your operations.
+                you&apos;re adopting SAP for the first time or upgrading to a
+                new version, our skilled professionals ensure a secure and
+                smooth data migration process. We meticulously assess your
+                existing data, develop a strategic migration plan, and execute
+                the transfer with minimal disruption to your operations.
               </p>
               <p className="pr-3 pl-3 text-left mt-6 description-paragraph text-[#316377]">
                 Beyond migration, we provide ongoing data management services to
@@ -161,8 +161,8 @@ export default function Services() {
             </div>
           </div>
           {/* Training and User Enablement */}
-          <div className="grid grid-cols-2 gap-3 mt-20">
-            <div className="bg-white rounded-xl pb-8">
+          <div className="grid grid-cols-2 mt-20">
+            <div className="bg-white rounded-xl rounded-tr-none rounded-br-none pb-8">
               <div className="w-full mb-4 mt-4">
                 <h1 className="sm:text-2xl text-2xl text-[#003E57] font-medium ml-3">
                   Training and User Enablement
@@ -171,24 +171,24 @@ export default function Services() {
               <p className="pr-3 pl-3 text-left description-paragraph text-[#316377]">
                 Empower your team with our tailored training and user enablement
                 services. A successful SAP implementation is not just about
-                technology; it&apos;s about ensuring that your users are equipped
-                with the knowledge and skills needed to leverage the full
-                potential of SAP solutions. At ARA CONSULTING, we offer hands-on
-                training sessions, workshops, and documentation to ensure that
-                your team is proficient in using SAP effectively.
+                technology; it&apos;s about ensuring that your users are
+                equipped with the knowledge and skills needed to leverage the
+                full potential of SAP solutions. At ARA CONSULTING, we offer
+                hands-on training sessions, workshops, and documentation to
+                ensure that your team is proficient in using SAP effectively.
               </p>
               <p className="pr-3 pl-3 text-left mt-6 description-paragraph text-[#316377]">
                 Our training programs cover various aspects, from basic system
                 navigation to advanced functionalities. We understand that user
                 adoption is key to realizing the benefits of SAP, and our
                 approach emphasizes engaging and informative training to make
-                the transition seamless. Elevate your team&apos;s capabilities with
-                ARA CONSULTING as your dedicated SAP training and user
+                the transition seamless. Elevate your team&apos;s capabilities
+                with ARA CONSULTING as your dedicated SAP training and user
                 enablement partner.
               </p>
             </div>
             <div
-              className="rounded-xl"
+              className="rounded-xl rounded-tl-none rounded-bl-none"
               style={{
                 background:
                   "linear-gradient(111.31deg, rgba(1, 83, 116, 0.3) 3.88%, rgba(0, 83, 117, 0.2) 100%), url('./enterprise-resource-management-erp-software-system-business-resources-plan 7.svg') no-repeat center center / cover",

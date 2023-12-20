@@ -3,7 +3,7 @@ import Image from "next/image";
 export const ActionBanner = () => {
   return (
     <section className="body-font">
-      <div className="containerpx-80 py-24 mx-auto md:px-10 lg:px-20 xl:px-40 2xl:px-80">
+      <div className="w-full m-auto md:w-4/5 2xl:w-2/3 mb-20 mt-20 self-center">
         <div
           className="flex flex-wrap px-5 py-3 mx-auto items-center lg:rounded-full sm:px-5 md:px-5 lg:py-0 lg:px-14"
           style={{
