@@ -48,7 +48,7 @@ export const ServicesSection = () => {
             border-b-[0.5px] hover:shadow-[2px_4px_16px_rgba(0,0,0,0.16)]
             border-b-[rgba(0,83,117,1)] border-solid rounded-[5px]"
             style={{
-              backgroundColor: "#ECF1F3",
+              backgroundColor: "#ffffff",
               transform: "scale3d(1.01, 1.01, 1.01)",
               transition: "all .3s cubic-bezier(0,0,.5,1)",
             }}

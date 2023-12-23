@@ -131,15 +131,15 @@ export default function Contact() {
                 ensuring that our clients receive solutions that are both
                 culturally attuned and internationally competitive.
               </p>
-              <div className="mt-14 h-36">
+              <div className="mt-16 pt-2 h-36">
                 <Carousel
                   key="contact-us-slider"
                   theme={{
                     root: {
                       leftControl:
-                        "absolute bottom-0 left-0 flex h-20 items-center justify-center focus:outline-none",
+                        "absolute -bottom-1 left-0 flex h-20 items-center justify-center focus:outline-none",
                       rightControl:
-                        "absolute bottom-0 left-14 flex h-20 items-center justify-center focus:outline-none",
+                        "absolute -bottom-1 left-14 flex h-20 items-center justify-center focus:outline-none",
                     },
                     indicators: {
                       active: {

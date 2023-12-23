@@ -52,7 +52,7 @@ export default function NavBar() {
         className={`m-auto xl:px-5 ${
           isSticky
             ? "fixed top-0 w-full"
-            : "lg:w-10/12 xl:w-10/12 xl:mt-6 xl:rounded-full 2xl:w-8/12"
+            : "lg:w-10/12 xl:w-11/12 xl:mt-6 xl:rounded-full 2xl:w-8/12"
         }`}
         style={
           isSticky
@@ -63,7 +63,7 @@ export default function NavBar() {
       >
         <div
           className={`flex items-center p-6 ${
-            isSticky ? "w-10/12 2xl:w-8/12 m-auto" : "w-full"
+            isSticky ? "w-11/12 2xl:w-8/12 m-auto" : "w-full"
           }`}
         >
           <div className="flex grow lg:flex-1">

@@ -1,9 +1,11 @@
 export const SectionTitle = ({
   subTitle,
   Title,
+  Description
 }: {
   subTitle: String;
   Title: String;
+  Description?: String;
 }) => {
   return (
     <div className="flex flex-wrap w-full mb-10 text-center">
@@ -38,6 +40,7 @@ export const SectionTitle = ({
           className="h-1 w-10 rounded m-auto"
           style={{ background: "#003E57" }}
         ></div>
+        <p>{Description}</p>
       </div>
     </div>
   );
