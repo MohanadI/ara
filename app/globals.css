@@ -17,18 +17,17 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display"), local("SFProDisplay-Light"),
+    url("../fonts/FontsFree-Net-SFProDisplay-Light-1.ttf") format("truetype");
+  font-weight: 300;
+}
 @font-face {
   font-family: "SF Pro Display";
   src: local("SF Pro Display"), local("SFProDisplay-Regular"),
     url("../fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
-  font-style: normal;
-}
-@font-face {
-  font-family: "SF Pro Display";
-  src: local("SF Pro Display Bold"), local("SFProDisplay-Bold"),
-    url("../fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
@@ -36,6 +35,13 @@
   src: local("SF Pro Display Medium"), local("SFProDisplay-Medium"),
     url("../fonts/SFPRODISPLAYMEDIUM.OTF") format("opentype");
   font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: local("SF Pro Display Bold"), local("SFProDisplay-Bold"),
+    url("../fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+  font-weight: 900;
   font-style: normal;
 }
 
