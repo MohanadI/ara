@@ -34,7 +34,7 @@ export default function About() {
         }
       />
       <section className="text-gray-600 body-font">
-        <div className="container px-10 lg:px-2 xl:px-24 2xl:px-60 py-10 pt-20 mx-auto">
+        <div className="container py-10 pt-20 mx-auto">
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white rounded-xl pb-8">
               <div className="w-full mb-9 mt-9">
@@ -178,7 +178,7 @@ export default function About() {
           </h1>
           <div className="h-1 w-10 rounded m-auto bg-white"></div>
         </div>
-        <div className="container px-10 lg:px-2 xl:px-24 2xl:px-60 py-10 pt-5 mx-auto">
+        <div className="container py-10 pt-5 mx-auto">
           <div className="grid grid-cols-3 gap-6">
             <p className="p-2 description-paragraph text-white text-base leading-relaxed">
               We provide a diverse range of SAP solutions, unlocking the full
@@ -222,9 +222,11 @@ export default function About() {
         </div>
       </section>
       <section className="text-center text-4xl py-32">
-        <h1 style={{ color: "#005375" }}>
-          Take your business to new heights with SAP Business One
-        </h1>
+        <div className="container mx-auto">
+          <h3 className="font-light" style={{ color: "#005375" }}>
+            Join ARA Consulting on a journey of innovation, growth, and digital excellence. Let us be your SAP partner in turning aspirations into achievements, challenges into opportunities, and dreams into reality. Analyze your potential, Realize your ambitions, and Automate your path to success with ARA CONSULTING
+          </h3>
+        </div>
       </section>
     </>
   );

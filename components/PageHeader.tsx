@@ -5,23 +5,25 @@ export default function PageHeader({
   title,
   description,
   background = "linear-gradient(111.31deg, rgba(1, 83, 116, 0.9) 3.88%, rgba(0, 83, 117, 0.4) 100%), url('/rm373batch2-09 1.svg')",
+  bottomPadding = "0px",
 }: {
   helpText: string;
   title: string;
   description: any;
   background?: string;
+  bottomPadding?: string;
 }) {
   return (
-    <div
-      className="relative isolate px-6 pt-10 lg:px-8"
+    <section
       style={{
         background: background,
         backgroundPosition: "right",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        paddingBottom: bottomPadding,
       }}
     >
-      <div className="mx-auto max-w-5xl py-32 sm:py-32 sm:pb-8 text-center">
+      <div className="container mx-auto py-20 pt-40 text-center">
         <p className="w-full leading-relaxed text-gray-100 text-xs font-light">
           {helpText}
         </p>
@@ -31,6 +33,6 @@ export default function PageHeader({
         <div className="h-1 w-8 rounded m-auto bg-white"></div>
         {description}
       </div>
-    </div>
+    </section>
   );
 }

@@ -5,6 +5,13 @@ export const DefaultImageSlider = ({ slides }: { slides: any }) => {
   return (
     <Carousel
       slideInterval={5000}
+      theme={{
+        "root": {
+          "base": "relative h-full w-full",
+          "leftControl": "hidden",
+          "rightControl": "hidden"
+        }
+      }}
       style={{
         borderRadius: 0,
       }}

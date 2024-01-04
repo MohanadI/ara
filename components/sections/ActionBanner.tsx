@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export const ActionBanner = () => {
   return (
-    <section className="body-font">
-      <div className="w-full m-auto md:w-4/5 2xl:w-2/3 mb-20 mt-20 self-center">
+    <section className="px-4 pb-20 pt-20">
+      <div className="container mx-auto">
         <div
           className="flex flex-wrap px-5 py-3 mx-auto items-center lg:rounded-full sm:px-5 md:px-5 lg:py-0 lg:px-14"
           style={{
@@ -16,7 +16,7 @@ export const ActionBanner = () => {
               Free trial
             </h1>
             <p className="leading-relaxed text-base text-white">
-              Free 3-day trial. Fill the form and experience our expertise
+              Free 30-day trial. Fill the form and experience our expertise
             </p>
           </div>
           <div className="flex flex-col w-full mt-3 lg:mt-0 lg:w-1/3 lg:pl-12">

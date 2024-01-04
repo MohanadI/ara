@@ -15,8 +15,8 @@ const navigation = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Media", href: "/media" },
-  { name: "Talent", href: "/career" },
+  { name: "Products", href: "/products" },
+  { name: "Talent", href: "/talent" },
   { name: "Support", href: "/support" },
   { name: "Contact Us", href: "/contact" },
 ];
@@ -49,25 +49,30 @@ export default function NavBar() {
   return (
     <>
       <nav
-        className={`m-auto xl:px-5 ${
-          isSticky
+        className={`z-20 ${isSticky
             ? "fixed top-0 w-full"
-            : "lg:w-10/12 xl:w-11/12 xl:mt-6 xl:rounded-full 2xl:w-8/12"
-        }`}
+            : ""
+          }`}
         style={
           isSticky
             ? { background: "#002D3F" }
-            : { background: "#FFFFFF1A", backdropFilter: "blur(10px)" }
+            : { background: "none"}
         }
         aria-label="Global"
       >
         <div
-          className={`flex items-center p-6 ${
-            isSticky ? "w-11/12 2xl:w-8/12 m-auto" : "w-full"
-          }`}
+          className={`container flex flex-wrap items-center justify-between mx-auto py-4 ${isSticky
+            ? ""
+            : "rounded-full px-5"
+            }`}
+          style={
+            isSticky
+              ? { background: "#002D3F" }
+              : { background: "#FFFFFF1A", backdropFilter: "blur(10px)" }
+          }
         >
           <div className="flex grow lg:flex-1">
-            <Link href="/" className="-m-1.5 p-1.5">
+            <Link href="/" className="p-1.5">
               <Image
                 src="/Logo.svg"
                 width={64}
@@ -80,24 +85,23 @@ export default function NavBar() {
           <div className="flex lg:hidden justify-end">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+              className="inline-flex items-center justify-center rounded-md p-2.5 text-white"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-9">
+          <div className="hidden lg:flex lg:gap-x-11">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 prefetch={false}
-                className={`text-lg leading-6 hover:text-white ${
-                  pathname === item.href
+                className={`text-lg leading-6 hover:text-white ${pathname === item.href
                     ? "font-semibold text-white"
                     : "font-thin text-[#D7DEE1] text-opacity-80"
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -105,17 +109,7 @@ export default function NavBar() {
           </div>
           <div className="hidden md:hidden lg:flex lg:flex-1 ml-10">
             <button
-              className="flex items-center p-2 rounded-full"
-              style={{
-                background: "#FFFFFF99",
-                fontSize: "16px",
-                fontWeight: 500,
-                lineHeight: "16px",
-                letterSpacing: "0em",
-                textAlign: "left",
-                height: "46px",
-                gap: "8px",
-              }}
+              className="flex items-center p-2 rounded-full text-base font-medium leading-4 tracking-normal text-left h-[46px] gap-2 text-[#005375] pr-[15px] bg-[#FFFFFF99]"
             >
               <Image
                 src="./call-calling.svg"

@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col min-h-screen">
         <>
-          <header className="absolute inset-x-0 top-0 z-50">
+          <header className="w-full absolute top-5 z-20">
             <NavBar />
           </header>
           <main className="grow gap-2">

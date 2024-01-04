@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+.container {
+    width: 100%
+}
+
+@media(min-width: 540px) {
+    .container {
+        max-width:540px
+    }
+}
+
+@media(min-width: 720px) {
+    .container {
+        max-width:720px
+    }
+}
+
+@media(min-width: 960px) {
+    .container {
+        max-width:960px
+    }
+}
+
+@media(min-width: 1140px) {
+    .container {
+        max-width:1140px
+    }
+}
+
+@media(min-width: 1320px) {
+    .container {
+        max-width:1180px
+    }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-main: #f2f6f7;

@@ -5,78 +5,50 @@ import { ProductsSection } from "@/components/sections/Products";
 import { ServicesSection } from "@/components/sections/services";
 import Image from "next/image";
 
+import styles from "./home.module.css"; // Import your styles
+
 export default function Home() {
   return (
     <>
-      <div
-        className="relative isolate px-6 pt-14 lg:px-6"
-        style={{
-          background:
-            "linear-gradient(122.96deg, rgba(0, 17, 24, 0.9) 26.5%, rgba(0, 38, 53, 0.725518) 60.15%, rgba(0, 83, 117, 0) 100%), url('/Rectangle 1.svg')",
-          backgroundPosition: "right",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="mx-auto max-w-5xl py-32 pt-44">
+      <section className={styles.heroSection}>
+        <div className="container m-auto py-20 pt-40">
           <VerticalSlider />
         </div>
-      </div>
+      </section>
       <ServicesSection />
       <ProductsSection />
       <ActionBanner />
-      <div
-        className="relative isolate px-6 pt-14 lg:px-6"
-        style={{
-          background:
-            "linear-gradient(122.96deg, rgba(0, 17, 24, 0.9) 26.5%, rgba(0, 38, 53, 0.725518) 60.15%, rgba(0, 83, 117, 0) 100%), url('/Rectangle 74.svg')",
-          backgroundPosition: "right",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="mx-auto max-w-3xl py-32 sm:py-20 lg:py-20 text-center font-bold">
-          <h1
-            className="text-white"
-            style={{
-              fontSize: "48px",
-              fontWeight: 700,
-              lineHeight: "57px",
-              letterSpacing: "0em",
-              textAlign: "center",
-            }}
-          >
-            Take your business to new heights with SAP Business One
-          </h1>
-          <h4
-            className="text-white text-base pt-10"
-            style={{
-              color: "#D7DEE1",
-              fontSize: "20px",
-              fontWeight: 400,
-              lineHeight: "24px",
-              letterSpacing: "0.1em",
-              textAlign: "center",
-            }}
-          >
-            Explore our website and contact us today to learn more about how we
-            can empower your organization to thrive in the digital age
-          </h4>
-          <button
-            className="flex mx-auto rounded-full bg-white border-0 py-3 px-9 focus:outline-none hover:bg-opacity-60 text-base mt-10"
-            style={{ color: "rgba(0, 83, 117, 1)" }}
-          >
-            Learn More{" "}
-            <Image
-              src="./arrow_right_button.svg"
-              alt="arrow_right_button.svg"
-              width={24}
-              height={24}
-              className="ml-2"
-            />
-          </button>
+      <section className={styles.footerHeroSection}>
+        <div className="container mx-auto">
+          <div className="mx-auto max-w-3xl py-32 sm:py-20 lg:py-20 text-center font-bold">
+            <h1
+              className="text-white"
+              style={{
+                fontSize: "48px",
+                fontWeight: 700,
+                lineHeight: "57px",
+                letterSpacing: "0em",
+                textAlign: "center",
+              }}
+            >
+              Take your business to new heights with SAP Business One
+            </h1>
+            <h4
+              className="text-white text-base pt-10"
+              style={{
+                color: "#D7DEE1",
+                fontSize: "20px",
+                fontWeight: 400,
+                lineHeight: "24px",
+                letterSpacing: "0.1em",
+                textAlign: "center",
+              }}
+            >
+              Join ARA Consulting on a journey of innovation, growth, and digital excellence. Let us be your SAP partner in turning aspirations into achievements, challenges into opportunities, and dreams into reality. Analyze your potential, Realize your ambitions, and Automate your path to success with ARA CONSULTING
+            </h4>
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

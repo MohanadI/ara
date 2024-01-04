@@ -66,7 +66,7 @@ const Tabs = ({
 
   return (
     <div
-      className="flex xl:w-9/12 2xl:w-8/12 m-auto mb-2"
+      className="flex m-auto mb-2"
       style={{
         background: "rgba(78, 131, 152, 0.8)",
         height: "112px",
@@ -94,19 +94,17 @@ const Tabs = ({
       {getTabsToShow().map((tab: any, index: any) => (
         <div
           key={index}
-          className={`sm:px-6 py-3 justify-center text-center sm:justify-start ${
-            tab === selectedTab ? " text-white font-semibold" : "text-gray-100"
-          } inline-flex items-center leading-none tracking-wider w-48`}
+          className={`sm:px-6 py-3 cursor-pointer justify-center text-center m-auto ${
+            tab === selectedTab ? " text-white font-medium" : "text-gray-100"
+          } inline-flex items-center leading-none tracking-wider w-56`}
           onClick={() => onTabClick(tab)}
         >
           <span
-            className="cursor-pointer"
             style={{
               fontSize: "18px",
               lineHeight: "21px",
-              letterSpacing: "0em",
-              textAlign: "center",
-              whiteSpace: "initial",
+              letterSpacing: "1px",
+              whiteSpace: "pre-line",
             }}
           >
             {tab}
