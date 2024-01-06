@@ -2,7 +2,14 @@
 
 import PageHeader from "@/components/PageHeader";
 import TabsWithContent from "@/components/TabsWithContent";
-import SAPBusinessOne from "../services/products/SAPBusinessOne";
+import SAPBusinessOne from "./list/SAPBusinessOne";
+import HumanResourcesManagement from "./list/HumanResourcesManagement";
+import IntercompanyManagement from "./list/IntercompanyManagement";
+import WarehouseManagement from "./list/WarehouseManagement";
+import FleetManagement from "./list/FleetManagement";
+import AssetManagement from "./list/AssetManagement";
+import PropertyManagement from "./list/PropertyManagement";
+import FacilityManagement from "./list/FacilityManagement";
 
 export default function Products() {
   const productsTabs = [
@@ -14,37 +21,37 @@ export default function Products() {
     {
       key: "Human Resources Management",
       title: "Human Resources\nManagement",
-      content: <>Hello 2</>,
+      content: <HumanResourcesManagement />,
     },
     {
       key: "Intercompany Management",
       title: "Intercompany\nManagement",
-      content: <>Hello 3</>,
+      content: <IntercompanyManagement />,
     },
     {
       key: "Warehouse Management",
       title: "Warehouse\nManagement",
-      content: <>Hello 4</>,
+      content: <WarehouseManagement />,
     },
     {
       key: "Fleet Management",
       title: "Fleet\nManagement",
-      content: <>Hello 5</>,
+      content: <FleetManagement />,
     },
     {
       key: "Asset Management",
       title: "Asset\nManagement",
-      content: <>Hello 6</>,
+      content: <AssetManagement />,
     },
     {
       key: "Property Management",
       title: "Property\nManagement",
-      content: <>Hello 7</>,
+      content: <PropertyManagement />,
     },
     {
       key: "Facility Management",
       title: "Facility\nManagement",
-      content: <>Hello 8</>,
+      content: <FacilityManagement />,
     },
   ];
 

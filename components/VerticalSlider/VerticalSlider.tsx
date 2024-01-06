@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./VerticalSlider.module.css";
 import Image from "next/image";
+import { List } from 'flowbite-react';
 
 const VerticalSlider = () => {
   const [selectedTab, setSelectedTab] = useState(1);
@@ -105,6 +106,171 @@ const VerticalSlider = () => {
                 className="ml-2"
               />
             </button>
+          </div>
+        )}
+        {selectedTab === 2 && (
+          <div className="p-0 sm:px-20 sm:pl-10 w-full flex flex-col items-start">
+            <span
+              className="inline-block p-2 px-4 rounded-full bg-white bg-opacity-20
+             text-white text-base font-medium tracking-widest"
+            >
+              Discover a world of potential and excellence with{" "}
+              <span className="uppercase">ara consulting</span>
+            </span>
+            <h2
+              className="text-white mt-10 mb-4"
+              style={{
+                fontSize: "48px",
+                fontWeight: 700,
+                lineHeight: "57px",
+                letterSpacing: "0em",
+                textAlign: "left",
+              }}
+            >
+              Take your business to new heights with SAP Business One
+            </h2>
+            <List theme={{
+              "root": {
+                "base": "space-y-2 pt-1 text-[#d7dee1] text-2xl font-light list-inside dark:text-gray-400"
+              }
+            }
+            }>
+              <List.Item>Instant access for employees who need to view and update data from anywhere</List.Item>
+              <List.Item>Integrated analytics enable decisions to be made in real time</List.Item>
+              <List.Item>Comprehensive sales and service functions</List.Item>
+              <List.Item>Increase productivity of employees on the road</List.Item>
+            </List>
+          </div>
+        )}
+        {selectedTab === 3 && (
+          <div className="p-0 sm:px-20 sm:pl-10 w-full flex flex-col items-start">
+            <span
+              className="inline-block p-2 px-4 rounded-full bg-white bg-opacity-20
+             text-white text-base font-medium tracking-widest"
+            >
+              Discover a world of potential and excellence with{" "}
+              <span className="uppercase">ara consulting</span>
+            </span>
+            <h2
+              className="text-white mt-10 mb-4"
+              style={{
+                fontSize: "48px",
+                fontWeight: 700,
+                lineHeight: "57px",
+                letterSpacing: "0em",
+                textAlign: "left",
+              }}
+            >
+              Take your business to new heights with SAP Business One
+            </h2>
+            <List theme={{
+              "root": {
+                "base": "space-y-2 pt-1 text-[#d7dee1] text-2xl font-light list-inside dark:text-gray-400"
+              }
+            }
+            }>
+              <List.Item>Become relevant in the global economy by implementing robust business processes</List.Item>
+              <List.Item>Allow your business to adapt to market changes, and anticipate business trends</List.Item>
+            </List>
+          </div>
+        )}
+        {selectedTab === 4 && (
+          <div className="p-0 sm:px-20 sm:pl-10 w-full flex flex-col items-start">
+            <span
+              className="inline-block p-2 px-4 rounded-full bg-white bg-opacity-20
+             text-white text-base font-medium tracking-widest"
+            >
+              Discover a world of potential and excellence with{" "}
+              <span className="uppercase">ara consulting</span>
+            </span>
+            <h2
+              className="text-white mt-10 mb-4"
+              style={{
+                fontSize: "48px",
+                fontWeight: 700,
+                lineHeight: "57px",
+                letterSpacing: "0em",
+                textAlign: "left",
+              }}
+            >
+              Take your business to new heights with SAP Business One
+            </h2>
+            <List theme={{
+              "root": {
+                "base": "space-y-2 pt-1 text-[#d7dee1] text-2xl font-light list-inside dark:text-gray-400"
+              }
+            }
+            }>
+              <List.Item>Integrated analytics and reports should always keep you informed on the health of your business</List.Item>
+              <List.Item>Better decisions can be made on the back of real time data insight</List.Item>
+            </List>
+          </div>
+        )}
+        {selectedTab === 5 && (
+          <div className="p-0 sm:px-20 sm:pl-10 w-full flex flex-col items-start">
+            <span
+              className="inline-block p-2 px-4 rounded-full bg-white bg-opacity-20
+             text-white text-base font-medium tracking-widest"
+            >
+              Discover a world of potential and excellence with{" "}
+              <span className="uppercase">ara consulting</span>
+            </span>
+            <h2
+              className="text-white mt-10 mb-4"
+              style={{
+                fontSize: "48px",
+                fontWeight: 700,
+                lineHeight: "57px",
+                letterSpacing: "0em",
+                textAlign: "left",
+              }}
+            >
+              Easy to Set Up, Use and Optimize
+            </h2>
+            <List theme={{
+              "root": {
+                "base": "space-y-2 pt-1 text-[#d7dee1] text-2xl font-light list-inside dark:text-gray-400"
+              }
+            }
+            }>
+              <List.Item>Simple and Affordable</List.Item>
+              <List.Item>Quick to set up and optimize</List.Item>
+              <List.Item>Easy to use</List.Item>
+              <List.Item>Get the latest technology priced for small and growing businesses</List.Item>
+            </List>
+          </div>
+        )}
+        {selectedTab === 6 && (
+          <div className="p-0 sm:px-20 sm:pl-10 w-full flex flex-col items-start">
+            <span
+              className="inline-block p-2 px-4 rounded-full bg-white bg-opacity-20
+             text-white text-base font-medium tracking-widest"
+            >
+              Discover a world of potential and excellence with{" "}
+              <span className="uppercase">ara consulting</span>
+            </span>
+            <h2
+              className="text-white mt-10 mb-4"
+              style={{
+                fontSize: "48px",
+                fontWeight: 700,
+                lineHeight: "57px",
+                letterSpacing: "0em",
+                textAlign: "left",
+              }}
+            >
+              Fast Time to Value
+            </h2>
+            <List theme={{
+              "root": {
+                "base": "space-y-2 pt-1 text-[#d7dee1] text-2xl font-light list-inside dark:text-gray-400"
+              }
+            }
+            }>
+              <List.Item>Intuitive and easy for your employees to adopt and use</List.Item>
+              <List.Item>Implement in a short time period</List.Item>
+              <List.Item>Embedded implementation tools based on the proven Accelerated Implementation Program</List.Item>
+            </List>
           </div>
         )}
       </div>

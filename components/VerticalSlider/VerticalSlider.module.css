@@ -31,7 +31,7 @@
 
 .line {
   width: 2px;
-  height: 80px;
+  height: 60px;
   background-color: #ffffff;
   margin: 10px 0;
   transition: height 0.4s ease-in-out; /* Adjust the duration */

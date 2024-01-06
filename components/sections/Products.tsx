@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from 'next/navigation'
 import Tabs from "../Tabs";
 import Image from "next/image";
 import { SectionTitle } from "../SectionTitle";
@@ -17,6 +18,7 @@ export const ProductsSection = () => {
     "Facility\nManagement"
   ];
   const [selectedTab, setSelectedTab] = useState("SAP Business One");
+  const router = useRouter()
 
   const onTabClick = (tab: any) => {
     setSelectedTab(tab);
@@ -59,7 +61,7 @@ export const ProductsSection = () => {
               {selectedTab}
             </h1>
             <div className="h-1 w-8 rounded m-auto bg-white"></div>
-            <div className="flex">
+            <div className="flex pb-5">
               <div className="flex items-center bg-white my-5 rounded-md w-full md:w-1/2 h-32 relative px-4 py-5">
                 <Image
                   src="/VectorR.svg"
@@ -85,13 +87,48 @@ export const ProductsSection = () => {
                       SAP Business One is an integrated Enterprise Resource Planning (ERP) solution crafted for small to mid-sized enterprises. This robust platform provides a holistic view of business operations, enabling informed decision-making across various functions.
                     </>
                   )}
+                  {selectedTab === "Human Resources\nManagement" && (
+                    <>
+                      Revolutionize HR operations with our comprehensive Human Resources Management System (HRMS) and Employee Self-service Portal. This solution empowers organizations to efficiently manage human capital from recruitment to performance management.
+                    </>
+                  )}
+                  {selectedTab === "Intercompany\nManagement" && (
+                    <>
+                      Simplify intercompany transactions with our Intercompany Solution, designed to facilitate seamless communication and collaboration between different entities within your organization.
+                    </>
+                  )}
+                  {selectedTab === "Warehouse\nManagement" && (
+                    <>
+                      Optimize warehouse operations with our Warehouse Management Solution. This product enhances inventory visibility, streamlines order fulfillment, and improves overall warehouse efficiency.
+                    </>
+                  )}
+                  {selectedTab === "Fleet\nManagement" && (
+                    <>
+                      Optimize your fleet operations with our Fleet Management Solution. This product enhances vehicle tracking, maintenance scheduling, and overall fleet efficiency.
+                    </>
+                  )}
+                  {selectedTab === "Asset\nManagement" && (
+                    <>
+                      Effectively manage your assets throughout their lifecycle with our Asset Management Solution. This product provides comprehensive tools for asset tracking, maintenance planning, and work orders management.
+                    </>
+                  )}
+                  {selectedTab === "Property\nManagement" && (
+                    <>
+                      Optimize the management of your real estate portfolio with our Property Management Solution. This product streamlines property operations, lease management, and tenant interactions along with managing property sales contracts, buyers&apos; payments and their progress.
+                    </>
+                  )}
+                  {selectedTab === "Facility\nManagement" && (
+                    <>
+                      Transform the way you manage facilities with our Facility Management Solution. This product offers tools for maintenance planning, space utilization, and overall facility optimization.
+                    </>
+                  )}
+
                 </p>
               </div>
-              <div className="flex flex-col self-center w-full mt-3 lg:mt-0 lg:w-1/3 lg:pl-12">
+              <div className="flex flex-col self-end w-full my-5 lg:mt-0 lg:w-1/3 lg:pl-8">
                 <button
-                  className="flex mx-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold"
-                  style={{ color: "rgba(0, 83, 117, 1)" }}
-                >
+                  onClick={() => router.push('/products')}
+                  className="flex mr-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold text-[#005375]">
                   Learn More
                   <Image
                     src="./arrow_right_button.svg"

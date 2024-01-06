@@ -6,32 +6,32 @@ export const ServicesSection = () => {
     {
       key: "Solution_Implementation",
       title: "Solution Implementation",
-      image: "/sample_services_1.svg",
+      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 4.svg",
     },
     {
       key: "Customized_Development",
       title: "Customized Development & Industry-specific solutions",
-      image: "/sample_services_2.svg",
+      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 4 (1).svg",
     },
     {
       key: "Support_SLA",
       title: "Support / SLA",
-      image: "/sample_services_3.svg",
+      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 2.svg",
     },
     {
       key: "Integration_of_multiple_systems",
       title: "Integration of multiple systems",
-      image: "/sample_services_3.svg",
+      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 5.svg",
     },
     {
       key: "Data_Migration",
       title: "Data Migration and management",
-      image: "/sample_services_1.svg",
+      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 6.svg",
     },
     {
       key: "Training",
       title: "Training and users enablement",
-      image: "/sample_services_2.svg",
+      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 7.svg",
     },
   ];
   return (
@@ -56,17 +56,14 @@ export const ServicesSection = () => {
             >
               <div className="p-6 rounded-lg">
                 <Image
-                  className="rounded w-[128px] h-[128px] m-auto object-cover object-center mb-6"
+                  className="rounded-full w-[128px] h-[128px] m-auto object-cover object-center mb-6"
                   src={item.image}
                   width={128}
                   height={128}
                   alt="content"
                 />
                 <h2
-                  className="text-lg text-center font-medium title-font mb-4"
-                  style={{
-                    color: "#003E57",
-                  }}
+                  className="text-lg text-center font-medium mb-4 text-[#003E57]"
                 >
                   {item.title}
                 </h2>

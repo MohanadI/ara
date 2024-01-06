@@ -23,7 +23,7 @@ export default function PageHeader({
         paddingBottom: bottomPadding,
       }}
     >
-      <div className="container mx-auto py-20 pt-40 text-center">
+      <div className="container mx-auto py-10 pt-40 text-center">
         <p className="w-full leading-relaxed text-gray-100 text-xs font-light">
           {helpText}
         </p>

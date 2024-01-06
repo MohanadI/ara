@@ -7,7 +7,7 @@ export default function SAPBusinessOne() {
   const cardTheme = {
     root: {
       base: "flex rounded-lg border-l-[3px] border-l-[#005375] border-solid shadow-[0px_0px_4px_0px_#0031461A] bg-white",
-      children: "flex h-full flex-col justify-center gap-4 p-3",
+      children: "flex flex-col min-h-[170px] justify-start gap-4 p-3",
       horizontal: {
         off: "flex-col",
         on: "flex-col md:max-w-xl md:flex-row",

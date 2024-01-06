@@ -15,16 +15,14 @@ export default function Contact() {
         title="Contact Us"
         description={
           <p className="p-2 text-center mt-6 description-paragraph text-white">
-            Whether you&apos;re looking for information about our services,
-            interested in a consultation, or have general inquiries, we&apos;re
-            here to help. Feel free to reach out to us using any of the channels
-            below:
+            Whether you&apos;re looking for information about our services, interested in a consultation, or have general inquiries, we&apos;re here to help. Feel free to reach out to us using any of the channels below:
           </p>
         }
         background={"linear-gradient(110.11deg, #005375 10.08%, #0082B8 100%)"}
+        bottomPadding="5px"
       />
       <section className="text-gray-600 body-font">
-        <div className="container px-10 lg:px-2 xl:px-24 2xl:px-60 py-10 pt-20 mx-auto">
+        <div className="container mx-auto pt-16">
           <div className="grid grid-cols-3 gap-4">
             <div className="left_cards">
               <a className="flex flex-col p-3 mt-0 items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
@@ -103,13 +101,13 @@ export default function Contact() {
         </div>
       </section>
       <section className="text-gray-600 body-font">
-        <div className="container px-10 lg:px-2 xl:px-24 2xl:px-60 py-10 pt-20 mx-auto">
+        <div className="container mx-auto py-16">
           <SectionTitle
             subTitle="Local Expertise, Global Reach: Dubai to MENA and Beyond"
             Title="Our Presence"
           />
-          <div className="grid grid-cols-4 gap-6">
-            <div className="col-span-3">
+          <div className="grid grid-cols-7 gap-6">
+            <div className="col-span-5">
               <Image
                 className=" w-full"
                 alt="map"
@@ -118,28 +116,27 @@ export default function Contact() {
                 height={426}
               />
             </div>
-            <div className="col-span-1">
-              <h4 className="text-base text-[#003E57] font-medium leading-[19px] tracking-normal text-left">
-                Based in Dubai, ARA CONSULTING
-              </h4>
-              <p className="mt-6 description-paragraph text-[#003E57]">
-                Is strategically positioned to cater to the unique needs of
-                businesses in the MENA region.
-              </p>
-              <p className="mt-6 description-paragraph text-[#003E57]">
-                Our local expertise is complemented by a global outlook,
-                ensuring that our clients receive solutions that are both
-                culturally attuned and internationally competitive.
-              </p>
-              <div className="mt-16 pt-2 h-36">
+            <div className="col-span-2 flex flex-col justify-between">
+              <div>
+                <h4 className="text-base text-[#003E57] font-medium leading-[19px] tracking-normal text-left">
+                  Based in Dubai, ARA CONSULTING Is strategically positioned to cater to the unique needs of
+                  businesses in the MENA region.
+                </h4>
+                <p className="mt-6 description-paragraph text-[#003E57]">
+                  Our local expertise is complemented by a global outlook,
+                  ensuring that our clients receive solutions that are both
+                  culturally attuned and internationally competitive.
+                </p>
+              </div>
+              <div className="h-36">
                 <Carousel
                   key="contact-us-slider"
                   theme={{
                     root: {
                       leftControl:
-                        "absolute -bottom-1 left-0 flex h-20 items-center justify-center focus:outline-none",
+                        "absolute left-0 bottom-0 items-end flex h-20 justify-center focus:outline-none",
                       rightControl:
-                        "absolute -bottom-1 left-14 flex h-20 items-center justify-center focus:outline-none",
+                        "absolute left-14 bottom-0 items-end flex h-20 justify-center focus:outline-none",
                     },
                     indicators: {
                       active: {

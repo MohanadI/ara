@@ -74,7 +74,7 @@ const Tabs = ({
         marginBottom: 0,
         boxShadow: "0px 0px 2px 0px rgba(0, 0, 0, 0.25)",
         zIndex: 2,
-        backdropFilter: "blur(10px)",
+        backdropFilter: "blur(4px)",
         overflowX: "auto", // Enable horizontal scrolling on small screens
       }}
     >
