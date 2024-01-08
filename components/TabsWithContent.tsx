@@ -5,19 +5,19 @@ import { Tabs } from "flowbite-react";
 export default function TabsWithContent({ tabs }: { tabs: any }) {
   return (
     <Tabs
-      className="flex flex-nowrap "
+      className="flex flex-nowrap"
       aria-label="Tabs with underline"
       style="underline"
       theme={{
         base: "flex flex-col gap-2",
         tablist: {
-          base: "flex text-center",
+          base: "flex text-center overflow-y-auto",
           styles: {
             underline:
-              "flex-wrap -mb-px -mt-[50px] border-b border-gray-200 dark:border-gray-700",
+              "-mb-px -mt-[50px] border-b border-gray-200 dark:border-gray-700",
           },
           tabitem: {
-            base: "flex items-center whitespace-break-spaces w-[190px] justify-center p-1 rounded-t-lg text-sm",
+            base: "flex shrink-0 sm:shrink items-center whitespace-break-spaces w-[130px] sm:w-[190px] justify-center p-1 rounded-t-lg text-sm",
             styles: {
               underline: {
                 base: "rounded-t-lg",
@@ -34,9 +34,7 @@ export default function TabsWithContent({ tabs }: { tabs: any }) {
     >
       {tabs.map((tab: any, index: any) => (
         <Tabs.Item key={tab.key} title={tab.title}>
-          <div className="py-3">
-            {tab.content}
-          </div>
+          <div className="py-3">{tab.content}</div>
         </Tabs.Item>
       ))}
     </Tabs>

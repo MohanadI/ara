@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Dialog } from "@headlessui/react";
 import {
   Bars3Icon,
   XMarkIcon,
@@ -46,25 +45,21 @@ export default function NavBar() {
     };
   }, []);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname]);
+
   return (
     <>
       <nav
-        className={`z-20 ${isSticky
-            ? "fixed top-0 w-full"
-            : ""
-          }`}
-        style={
-          isSticky
-            ? { background: "#002D3F" }
-            : { background: "none"}
-        }
+        className={`z-20 ${isSticky ? "fixed top-0 w-full" : ""}`}
+        style={isSticky ? { background: "#002D3F" } : { background: "none" }}
         aria-label="Global"
       >
         <div
-          className={`container flex flex-wrap items-center justify-between mx-auto py-4 ${isSticky
-            ? ""
-            : "rounded-full px-5"
-            }`}
+          className={`container flex flex-wrap items-center justify-between mx-auto py-4 ${
+            isSticky ? "" : "sm:rounded-full px-5"
+          }`}
           style={
             isSticky
               ? { background: "#002D3F" }
@@ -86,7 +81,7 @@ export default function NavBar() {
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-md p-2.5 text-white"
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               <span className="sr-only">Open main menu</span>
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
@@ -98,19 +93,18 @@ export default function NavBar() {
                 key={item.name}
                 href={item.href}
                 prefetch={false}
-                className={`text-lg leading-6 hover:text-white ${pathname === item.href
+                className={`text-lg leading-6 hover:text-white ${
+                  pathname === item.href
                     ? "font-semibold text-white"
                     : "font-thin text-[#D7DEE1] text-opacity-80"
-                  }`}
+                }`}
               >
                 {item.name}
               </Link>
             ))}
           </div>
           <div className="hidden md:hidden lg:flex lg:flex-1 ml-10">
-            <button
-              className="flex items-center p-2 rounded-full text-base font-medium leading-4 tracking-normal text-left h-[46px] gap-2 text-[#005375] pr-[15px] bg-[#FFFFFF99]"
-            >
+            <button className="flex items-center p-2 rounded-full text-base font-medium leading-4 tracking-normal text-left h-[46px] gap-2 text-[#005375] pr-[15px] bg-[#FFFFFF99]">
               <Image
                 src="./call-calling.svg"
                 width={36}
@@ -128,53 +122,35 @@ export default function NavBar() {
             />
           </div>
         </div>
-      </nav>
-      <Dialog
-        as="div"
-        className="lg:hidden"
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-      >
-        <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">ARA</span>
-              <Image
-                src="/Logo.svg"
-                priority={true}
-                width={100}
-                height={100}
-                className="h-8 w-auto"
-                alt="Logo"
-              />
-            </a>
-            <button
-              type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-              onClick={() => setMobileMenuOpen(false)}
+        {mobileMenuOpen && (
+          <div
+            className="justify-between items-center w-full lg:flex lg:w-auto lg:order-1"
+            id="mobile-menu-2"
+          >
+            <ul
+              className="flex flex-col mx-auto font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+              style={isSticky ? { width: "100%" } : { width: "90%" }}
             >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navigation.map((item) => (
+              {navigation.map((item, index) => (
+                <li key={index}>
                   <Link
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    prefetch={false}
+                    className={`block py-2 pr-4 pl-3 text-white bg-[#005375] ${
+                      pathname === item.href
+                        ? "font-semibold text-white"
+                        : "font-thin text-[#D7DEE1] text-opacity-80"
+                    }`}
                   >
                     {item.name}
                   </Link>
-                ))}
-              </div>
-            </div>
+                </li>
+              ))}
+            </ul>
           </div>
-        </Dialog.Panel>
-      </Dialog>
+        )}
+      </nav>
     </>
   );
 }

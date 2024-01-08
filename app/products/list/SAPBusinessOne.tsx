@@ -6,14 +6,14 @@ import Image from "next/image";
 export default function SAPBusinessOne() {
   const cardTheme = {
     root: {
-      base: "flex rounded-lg border-l-[3px] border-l-[#005375] border-solid shadow-[0px_0px_4px_0px_#0031461A] bg-white",
+      base: "flex rounded-lg sm:max-w-sm border-l-[3px] border-l-[#005375] border-solid shadow-[0px_0px_4px_0px_#0031461A] bg-white",
       children: "flex flex-col min-h-[170px] justify-start gap-4 p-3",
       horizontal: {
         off: "flex-col",
         on: "flex-col md:max-w-xl md:flex-row",
       },
       href: "hover:bg-gray-100 dark:hover:bg-gray-700",
-    }
+    },
   };
   return (
     <div className="text-left">
@@ -25,7 +25,7 @@ export default function SAPBusinessOne() {
           <h1 className="text-[#003E57] font-semibold text-xl mt-2">
             SAP Business One
           </h1>
-          <p className="text-sm font-light text-[#003E57] mt-6 max-w-md">
+          <p className="text-base font-light text-[#003E57] mt-6 max-w-md">
             SAP Business One is an integrated Enterprise Resource Planning (ERP)
             solution crafted for small to mid-sized enterprises. This robust
             platform provides a holistic view of business operations, enabling
@@ -45,8 +45,8 @@ export default function SAPBusinessOne() {
       <h1 className="text-[#003E57] text-xl mt-2">
         Main Modules and Functionalities:
       </h1>
-      <div className="grid grid-cols-3 gap-6 mt-4">
-        <Card theme={cardTheme} href="#" className="max-w-sm">
+      <div className="grid grid-cols-1 sm:grid sm:grid-cols-3 gap-6 mt-4">
+        <Card theme={cardTheme} href="#">
           <h5 className="text-lg font-normal text-[#003E57]">
             Financial Management
           </h5>
@@ -58,7 +58,7 @@ export default function SAPBusinessOne() {
             maintain accurate and transparent financial records.
           </p>
         </Card>
-        <Card theme={cardTheme} href="#" className="max-w-sm">
+        <Card theme={cardTheme} href="#">
           <h5 className="text-lg font-normal text-[#003E57]">
             Sales and Customer Relationship Management (CRM)
           </h5>
@@ -70,7 +70,7 @@ export default function SAPBusinessOne() {
             visibility into customer interactions.
           </p>
         </Card>
-        <Card theme={cardTheme} href="#" className="max-w-sm">
+        <Card theme={cardTheme} href="#">
           <h5 className="text-lg font-normal text-[#003E57]">
             Purchasing and Supplier Relationship Management
           </h5>
@@ -81,7 +81,7 @@ export default function SAPBusinessOne() {
             entire procurement cycle.
           </p>
         </Card>
-        <Card theme={cardTheme} href="#" className="max-w-sm">
+        <Card theme={cardTheme} href="#">
           <h5 className="text-lg font-normal text-[#003E57]">
             Inventory Management
           </h5>
@@ -93,7 +93,7 @@ export default function SAPBusinessOne() {
             supply chain.
           </p>
         </Card>
-        <Card theme={cardTheme} href="#" className="max-w-sm">
+        <Card theme={cardTheme} href="#">
           <h5 className="text-lg font-normal text-[#003E57]">
             Production Planning
           </h5>
@@ -104,7 +104,7 @@ export default function SAPBusinessOne() {
             helping businesses optimize manufacturing operations.
           </p>
         </Card>
-        <Card theme={cardTheme} href="#" className="max-w-sm">
+        <Card theme={cardTheme} href="#">
           <h5 className="text-lg font-normal text-[#003E57]">
             Material Requirements Planning (MRP)
           </h5>
@@ -115,7 +115,7 @@ export default function SAPBusinessOne() {
             the current status of transactions in the system.
           </p>
         </Card>
-        <Card theme={cardTheme} href="#" className="max-w-sm">
+        <Card theme={cardTheme} href="#">
           <h5 className="text-lg font-normal text-[#003E57]">
             Project Management
           </h5>
@@ -126,7 +126,7 @@ export default function SAPBusinessOne() {
             for businesses involved in project-based industries.
           </p>
         </Card>
-        <Card theme={cardTheme} href="#" className="max-w-sm">
+        <Card theme={cardTheme} href="#">
           <h5 className="text-lg font-normal text-[#003E57]">
             Service Management
           </h5>
@@ -137,7 +137,7 @@ export default function SAPBusinessOne() {
             operations.
           </p>
         </Card>
-        <Card theme={cardTheme} href="#" className="max-w-sm">
+        <Card theme={cardTheme} href="#">
           <h5 className="text-lg font-normal text-[#003E57]">
             System Administration and Customization
           </h5>

@@ -1,597 +1,287 @@
+import { useState } from "react";
+
+interface Country {
+  ccode: string;
+  value: string;
+  name: string;
+  mcode: string;
+}
+
 export default function PhoneNumberWithDropDown() {
+  function getFlagEmoji(countryCode: string) {
+    const codePoints = countryCode
+      .toUpperCase()
+      .split("")
+      .map((char) => 127397 + char.charCodeAt(0));
+    return String.fromCodePoint(...codePoints);
+  }
+
+  let countries = [
+    { ccode: "US", value: "1", name: "USA", mcode: "+1" },
+    { ccode: "GB", value: "44", name: "UK", mcode: "+44" },
+    { ccode: "DZ", value: "213", name: "Algeria", mcode: "+213" },
+    { ccode: "AD", value: "376", name: "Andorra", mcode: "+376" },
+    { ccode: "AO", value: "244", name: "Angola", mcode: "+244" },
+    { ccode: "AI", value: "1264", name: "Anguilla", mcode: "+1264" },
+    { ccode: "AG", value: "1268", name: "Antigua & Barbuda", mcode: "+1268" },
+    { ccode: "AR", value: "54", name: "Argentina", mcode: "+54" },
+    { ccode: "AM", value: "374", name: "Armenia", mcode: "+374" },
+    { ccode: "AW", value: "297", name: "Aruba", mcode: "+297" },
+    { ccode: "AU", value: "61", name: "Australia", mcode: "+61" },
+    { ccode: "AT", value: "43", name: "Austria", mcode: "+43" },
+    { ccode: "AZ", value: "994", name: "Azerbaijan", mcode: "+994" },
+    { ccode: "BS", value: "1242", name: "Bahamas", mcode: "+1242" },
+    { ccode: "BH", value: "973", name: "Bahrain", mcode: "+973" },
+    { ccode: "BD", value: "880", name: "Bangladesh", mcode: "+880" },
+    { ccode: "BB", value: "1246", name: "Barbados", mcode: "+1246" },
+    { ccode: "BY", value: "375", name: "Belarus", mcode: "+375" },
+    { ccode: "BE", value: "32", name: "Belgium", mcode: "+32" },
+    { ccode: "BZ", value: "501", name: "Belize", mcode: "+501" },
+    { ccode: "BJ", value: "229", name: "Benin", mcode: "+229" },
+    { ccode: "BM", value: "1441", name: "Bermuda", mcode: "+1441" },
+    { ccode: "BT", value: "975", name: "Bhutan", mcode: "+975" },
+    { ccode: "BO", value: "591", name: "Bolivia", mcode: "+591" },
+    { ccode: "BA", value: "387", name: "Bosnia Herzegovina", mcode: "+387" },
+    { ccode: "BW", value: "267", name: "Botswana", mcode: "+267" },
+    { ccode: "BR", value: "55", name: "Brazil", mcode: "+55" },
+    { ccode: "BN", value: "673", name: "Brunei", mcode: "+673" },
+    { ccode: "BG", value: "359", name: "Bulgaria", mcode: "+359" },
+    { ccode: "BF", value: "226", name: "Burkina Faso", mcode: "+226" },
+    { ccode: "BI", value: "257", name: "Burundi", mcode: "+257" },
+    { ccode: "KH", value: "855", name: "Cambodia", mcode: "+855" },
+    { ccode: "CM", value: "237", name: "Cameroon", mcode: "+237" },
+    { ccode: "CA", value: "1", name: "Canada", mcode: "+1" },
+    { ccode: "CV", value: "238", name: "Cape Verde Islands", mcode: "+238" },
+    { ccode: "KY", value: "1345", name: "Cayman Islands", mcode: "+1345" },
+    {
+      ccode: "CF",
+      value: "236",
+      name: "Central African Republic",
+      mcode: "+236",
+    },
+    { ccode: "CL", value: "56", name: "Chile", mcode: "+56" },
+    { ccode: "CN", value: "86", name: "China", mcode: "+86" },
+    { ccode: "CO", value: "57", name: "Colombia", mcode: "+57" },
+    { ccode: "KM", value: "269", name: "Comoros", mcode: "+269" },
+    { ccode: "CG", value: "242", name: "Congo", mcode: "+242" },
+    { ccode: "CK", value: "682", name: "Cook Islands", mcode: "+682" },
+    { ccode: "CR", value: "506", name: "Costa Rica", mcode: "+506" },
+    { ccode: "HR", value: "385", name: "Croatia", mcode: "+385" },
+    { ccode: "CU", value: "53", name: "Cuba", mcode: "+53" },
+    { ccode: "CY", value: "90", name: "Cyprus - North", mcode: "+90" },
+    { ccode: "CYS", value: "357", name: "Cyprus - South", mcode: "+357" },
+    { ccode: "CZ", value: "420", name: "Czech Republic", mcode: "+420" },
+    { ccode: "DK", value: "45", name: "Denmark", mcode: "+45" },
+    { ccode: "DJ", value: "253", name: "Djibouti", mcode: "+253" },
+    { ccode: "DM", value: "1809", name: "Dominica", mcode: "+1809" },
+    { ccode: "DO", value: "1809", name: "Dominican Republic", mcode: "+1809" },
+    { ccode: "EC", value: "593", name: "Ecuador", mcode: "+593" },
+    { ccode: "EG", value: "20", name: "Egypt", mcode: "+20" },
+    { ccode: "SV", value: "503", name: "El Salvador", mcode: "+503" },
+    { ccode: "GQ", value: "240", name: "Equatorial Guinea", mcode: "+240" },
+    { ccode: "ER", value: "291", name: "Eritrea", mcode: "+291" },
+    { ccode: "EE", value: "372", name: "Estonia", mcode: "+372" },
+    { ccode: "ET", value: "251", name: "Ethiopia", mcode: "+251" },
+    { ccode: "FK", value: "500", name: "Falkland Islands", mcode: "+500" },
+    { ccode: "FO", value: "298", name: "Faroe Islands", mcode: "+298" },
+    { ccode: "FJ", value: "679", name: "Fiji", mcode: "+679" },
+    { ccode: "FI", value: "358", name: "Finland", mcode: "+358" },
+    { ccode: "FR", value: "33", name: "France", mcode: "+33" },
+    { ccode: "GF", value: "594", name: "French Guiana", mcode: "+594" },
+    { ccode: "PF", value: "689", name: "French Polynesia", mcode: "+689" },
+    { ccode: "GA", value: "241", name: "Gabon", mcode: "+241" },
+    { ccode: "GM", value: "220", name: "Gambia", mcode: "+220" },
+    { ccode: "GE", value: "7880", name: "Georgia", mcode: "+7880" },
+    { ccode: "DE", value: "49", name: "Germany", mcode: "+49" },
+    { ccode: "GH", value: "233", name: "Ghana", mcode: "+233" },
+    { ccode: "GI", value: "350", name: "Gibraltar", mcode: "+350" },
+    { ccode: "GR", value: "30", name: "Greece", mcode: "+30" },
+    { ccode: "GL", value: "299", name: "Greenland", mcode: "+299" },
+    { ccode: "GD", value: "1473", name: "Grenada", mcode: "+1473" },
+    { ccode: "GP", value: "590", name: "Guadeloupe", mcode: "+590" },
+    { ccode: "GU", value: "671", name: "Guam", mcode: "+671" },
+    { ccode: "GT", value: "502", name: "Guatemala", mcode: "+502" },
+    { ccode: "GN", value: "224", name: "Guinea", mcode: "+224" },
+    { ccode: "GW", value: "245", name: "Guinea - Bissau", mcode: "+245" },
+    { ccode: "GY", value: "592", name: "Guyana", mcode: "+592" },
+    { ccode: "HT", value: "509", name: "Haiti", mcode: "+509" },
+    { ccode: "HN", value: "504", name: "Honduras", mcode: "+504" },
+    { ccode: "HK", value: "852", name: "Hong Kong", mcode: "+852" },
+    { ccode: "HU", value: "36", name: "Hungary", mcode: "+36" },
+    { ccode: "IS", value: "354", name: "Iceland", mcode: "+354" },
+    { ccode: "IN", value: "91", name: "India", mcode: "+91" },
+    { ccode: "ID", value: "62", name: "Indonesia", mcode: "+62" },
+    { ccode: "IQ", value: "964", name: "Iraq", mcode: "+964" },
+    { ccode: "IR", value: "98", name: "Iran", mcode: "+98" },
+    { ccode: "IE", value: "353", name: "Ireland", mcode: "+353" },
+    { ccode: "IL", value: "972", name: "Israel", mcode: "+972" },
+    { ccode: "IT", value: "39", name: "Italy", mcode: "+39" },
+    { ccode: "JM", value: "1876", name: "Jamaica", mcode: "+1876" },
+    { ccode: "JP", value: "81", name: "Japan", mcode: "+81" },
+    { ccode: "JO", value: "962", name: "Jordan", mcode: "+962" },
+    { ccode: "KZ", value: "7", name: "Kazakhstan", mcode: "+7" },
+    { ccode: "KE", value: "254", name: "Kenya", mcode: "+254" },
+    { ccode: "KI", value: "686", name: "Kiribati", mcode: "+686" },
+    { ccode: "KP", value: "850", name: "Korea - North", mcode: "+850" },
+    { ccode: "KR", value: "82", name: "Korea - South", mcode: "+82" },
+    { ccode: "KW", value: "965", name: "Kuwait", mcode: "+965" },
+    { ccode: "KG", value: "996", name: "Kyrgyzstan", mcode: "+996" },
+    { ccode: "LA", value: "856", name: "Laos", mcode: "+856" },
+    { ccode: "LV", value: "371", name: "Latvia", mcode: "+371" },
+    { ccode: "LB", value: "961", name: "Lebanon", mcode: "+961" },
+    { ccode: "LS", value: "266", name: "Lesotho", mcode: "+266" },
+    { ccode: "LR", value: "231", name: "Liberia", mcode: "+231" },
+    { ccode: "LY", value: "218", name: "Libya", mcode: "+218" },
+    { ccode: "LI", value: "417", name: "Liechtenstein", mcode: "+417" },
+    { ccode: "LT", value: "370", name: "Lithuania", mcode: "+370" },
+    { ccode: "LU", value: "352", name: "Luxembourg", mcode: "+352" },
+    { ccode: "MO", value: "853", name: "Macao", mcode: "+853" },
+    { ccode: "MK", value: "389", name: "Macedonia", mcode: "+389" },
+    { ccode: "MG", value: "261", name: "Madagascar", mcode: "+261" },
+    { ccode: "MW", value: "265", name: "Malawi", mcode: "+265" },
+    { ccode: "MY", value: "60", name: "Malaysia", mcode: "+60" },
+    { ccode: "MV", value: "960", name: "Maldives", mcode: "+960" },
+    { ccode: "ML", value: "223", name: "Mali", mcode: "+223" },
+    { ccode: "MT", value: "356", name: "Malta", mcode: "+356" },
+    { ccode: "MH", value: "692", name: "Marshall Islands", mcode: "+692" },
+    { ccode: "MQ", value: "596", name: "Martinique", mcode: "+596" },
+    { ccode: "MR", value: "222", name: "Mauritania", mcode: "+222" },
+    { ccode: "YT", value: "269", name: "Mayotte", mcode: "+269" },
+    { ccode: "MX", value: "52", name: "Mexico", mcode: "+52" },
+    { ccode: "FM", value: "691", name: "Micronesia", mcode: "+691" },
+    { ccode: "MD", value: "373", name: "Moldova", mcode: "+373" },
+    { ccode: "MC", value: "377", name: "Monaco", mcode: "+377" },
+    { ccode: "MNG", value: "976", name: "Mongolia", mcode: "+976" },
+    { ccode: "MS", value: "1664", name: "Montserrat", mcode: "+1664" },
+    { ccode: "MA", value: "212", name: "Morocco", mcode: "+212" },
+    { ccode: "MZ", value: "258", name: "Mozambique", mcode: "+258" },
+    { ccode: "MN", value: "95", name: "Myanmar", mcode: "+95" },
+    { ccode: "NA", value: "264", name: "Namibia", mcode: "+264" },
+    { ccode: "NR", value: "674", name: "Nauru", mcode: "+674" },
+    { ccode: "NP", value: "977", name: "Nepal", mcode: "+977" },
+    { ccode: "NL", value: "31", name: "Netherlands", mcode: "+31" },
+    { ccode: "NC", value: "687", name: "New Caledonia", mcode: "+687" },
+    { ccode: "NZ", value: "64", name: "New Zealand", mcode: "+64" },
+    { ccode: "NI", value: "505", name: "Nicaragua", mcode: "+505" },
+    { ccode: "NE", value: "227", name: "Niger", mcode: "+227" },
+    { ccode: "NG", value: "234", name: "Nigeria", mcode: "+234" },
+    { ccode: "NU", value: "683", name: "Niue", mcode: "+683" },
+    { ccode: "NF", value: "672", name: "Norfolk Islands", mcode: "+672" },
+    { ccode: "NO", value: "47", name: "Norway", mcode: "+47" },
+    { ccode: "OM", value: "968", name: "Oman", mcode: "+968" },
+    { ccode: "PK", value: "92", name: "Pakistan", mcode: "+92" },
+    { ccode: "PS", value: "970", name: "Palestine", mcode: "+970" },
+    { ccode: "PW", value: "680", name: "Palau", mcode: "+680" },
+    { ccode: "PA", value: "507", name: "Panama", mcode: "+507" },
+    { ccode: "PG", value: "675", name: "Papua New Guinea", mcode: "+675" },
+    { ccode: "PY", value: "595", name: "Paraguay", mcode: "+595" },
+    { ccode: "PE", value: "51", name: "Peru", mcode: "+51" },
+    { ccode: "PH", value: "63", name: "Philippines", mcode: "+63" },
+    { ccode: "PL", value: "48", name: "Poland", mcode: "+48" },
+    { ccode: "PT", value: "351", name: "Portugal", mcode: "+351" },
+    { ccode: "PR", value: "1787", name: "Puerto Rico", mcode: "+1787" },
+    { ccode: "QA", value: "974", name: "Qatar", mcode: "+974" },
+    { ccode: "RE", value: "262", name: "Reunion", mcode: "+262" },
+    { ccode: "RO", value: "40", name: "Romania", mcode: "+40" },
+    { ccode: "RU", value: "7", name: "Russia", mcode: "+7" },
+    { ccode: "RW", value: "250", name: "Rwanda", mcode: "+250" },
+    { ccode: "SM", value: "378", name: "San Marino", mcode: "+378" },
+    { ccode: "ST", value: "239", name: "Sao Tome & Principe", mcode: "+239" },
+    { ccode: "SA", value: "966", name: "Saudi Arabia", mcode: "+966" },
+    { ccode: "SN", value: "221", name: "Senegal", mcode: "+221" },
+    { ccode: "CS", value: "381", name: "Serbia", mcode: "+381" },
+    { ccode: "SC", value: "248", name: "Seychelles", mcode: "+248" },
+    { ccode: "SL", value: "232", name: "Sierra Leone", mcode: "+232" },
+    { ccode: "SG", value: "65", name: "Singapore", mcode: "+65" },
+    { ccode: "SK", value: "421", name: "Slovak Republic", mcode: "+421" },
+    { ccode: "SI", value: "386", name: "Slovenia", mcode: "+386" },
+    { ccode: "SB", value: "677", name: "Solomon Islands", mcode: "+677" },
+    { ccode: "SO", value: "252", name: "Somalia", mcode: "+252" },
+    { ccode: "ZA", value: "27", name: "South Africa", mcode: "+27" },
+    { ccode: "ES", value: "34", name: "Spain", mcode: "+34" },
+    { ccode: "LK", value: "94", name: "Sri Lanka", mcode: "+94" },
+    { ccode: "SH", value: "290", name: "St. Helena", mcode: "+290" },
+    { ccode: "KN", value: "1869", name: "St. Kitts", mcode: "+1869" },
+    { ccode: "SR", value: "597", name: "Suriname", mcode: "+597" },
+    { ccode: "SD", value: "249", name: "Sudan", mcode: "+249" },
+    { ccode: "SZ", value: "268", name: "Swaziland", mcode: "+268" },
+    { ccode: "SE", value: "46", name: "Sweden", mcode: "+46" },
+    { ccode: "CH", value: "41", name: "Switzerland", mcode: "+41" },
+    { ccode: "SY", value: "963", name: "Syria", mcode: "+963" },
+    { ccode: "TW", value: "886", name: "Taiwan", mcode: "+886" },
+    { ccode: "TJ", value: "992", name: "Tajikistan", mcode: "+992" },
+    { ccode: "TH", value: "66", name: "Thailand", mcode: "+66" },
+    { ccode: "TG", value: "228", name: "Togo", mcode: "+228" },
+    { ccode: "TO", value: "676", name: "Tonga", mcode: "+676" },
+    { ccode: "TT", value: "1868", name: "Trinidad & Tobago", mcode: "+1868" },
+    { ccode: "TN", value: "216", name: "Tunisia", mcode: "+216" },
+    { ccode: "TR", value: "90", name: "Turkey", mcode: "+90" },
+    { ccode: "TM", value: "993", name: "Turkmenistan", mcode: "+993" },
+    {
+      ccode: "TC",
+      value: "1649",
+      name: "Turks & Caicos Islands",
+      mcode: "+1649",
+    },
+    { ccode: "TV", value: "688", name: "Tuvalu", mcode: "+688" },
+    { ccode: "UG", value: "256", name: "Uganda", mcode: "+256" },
+    { ccode: "UA", value: "380", name: "Ukraine", mcode: "+380" },
+    { ccode: "AE", value: "971", name: "United Arab Emirates", mcode: "+971" },
+    { ccode: "UY", value: "598", name: "Uruguay", mcode: "+598" },
+    { ccode: "UZ", value: "998", name: "Uzbekistan", mcode: "+998" },
+    { ccode: "VU", value: "678", name: "Vanuatu", mcode: "+678" },
+    { ccode: "VA", value: "379", name: "Vatican City", mcode: "+379" },
+    { ccode: "VE", value: "58", name: "Venezuela", mcode: "+58" },
+    { ccode: "VN", value: "84", name: "Vietnam", mcode: "+84" },
+    { ccode: "VG", value: "1", name: "Virgin Islands - British", mcode: "+1" },
+    { ccode: "VI", value: "1", name: "Virgin Islands - US", mcode: "+1" },
+    { ccode: "WF", value: "681", name: "Wallis & Futuna", mcode: "+681" },
+    { ccode: "YE", value: "969", name: "Yemen", mcode: "North)(+969" },
+    { ccode: "YES", value: "967", name: "Yemen", mcode: "South)(+967" },
+    { ccode: "ZM", value: "260", name: "Zambia", mcode: "+260" },
+    { ccode: "ZW", value: "263", name: "Zimbabwe", mcode: "+263" },
+  ];
+
+  const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]);
+  const [phoneNumber, setPhoneNumber] = useState<string>("+1");
+
+  const handleCountryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCode = event.target.value;
+    const selectedCountry = countries.find(
+      (country) => country.ccode === selectedCode
+    );
+    if (selectedCountry) {
+      setSelectedCountry(selectedCountry);
+      setPhoneNumber(selectedCountry.mcode);
+    }
+  };
+
+  const handlePhoneNumberChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setPhoneNumber(event.target.value);
+  };
+
   return (
     <div className="flex items-center">
-      <button
-        id="dropdown-phone-button"
-        data-dropdown-toggle="dropdown-phone"
-        className="flex-shrink-0 z-10 inline-flex items-center py-2.5 px-4 text-sm font-medium text-center text-gray-900 bg-gray-100 border border-gray-300 rounded-s-lg hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600"
-        type="button"
+      <select
+        className="bg-white w-2/4 border border-solid border-[#00395026] text-[#003E57] text-sm rounded-l focus:border-[#003E57] block p-2.5"
+        onChange={handleCountryChange}
+        value={selectedCountry.ccode}
       >
-        <svg
-          fill="none"
-          aria-hidden="true"
-          className="h-4 w-4 me-2"
-          viewBox="0 0 20 15"
-        >
-          <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-          <mask
-            id="a"
-            width="20"
-            height="15"
-            x="0"
-            y="0"
-            maskUnits="userSpaceOnUse"
-          >
-            <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-          </mask>
-          <g mask="url(#a)">
-            <path
-              fill="#D02F44"
-              fillRule="evenodd"
-              d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
-              clipRule="evenodd"
-            />
-            <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
-            <g filter="url(#filter0_d_343_121520)">
-              <path
-                fill="url(#paint0_linear_343_121520)"
-                fillRule="evenodd"
-                d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
-                clipRule="evenodd"
-              />
-            </g>
-          </g>
-          <defs>
-            <linearGradient
-              id="paint0_linear_343_121520"
-              x1=".933"
-              x2=".933"
-              y1="1.433"
-              y2="6.1"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#fff" />
-              <stop offset="1" stopColor="#F0F0F0" />
-            </linearGradient>
-            <filter
-              id="filter0_d_343_121520"
-              width="6.533"
-              height="5.667"
-              x=".933"
-              y="1.433"
-              colorInterpolationFilters="sRGB"
-              filterUnits="userSpaceOnUse"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                result="hardAlpha"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              />
-              <feOffset dy="1" />
-              <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-              <feBlend
-                in2="BackgroundImageFix"
-                result="effect1_dropShadow_343_121520"
-              />
-              <feBlend
-                in="SourceGraphic"
-                in2="effect1_dropShadow_343_121520"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
-        +1{" "}
-        <svg
-          className="w-2.5 h-2.5 ms-2.5"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="m1 1 4 4 4-4"
-          />
-        </svg>
-      </button>
-      <div
-        id="dropdown-phone"
-        className="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52 dark:bg-gray-700"
-      >
-        <ul
-          className="py-2 text-sm text-gray-700 dark:text-gray-200"
-          aria-labelledby="dropdown-phone-button"
-        >
-          <li>
-            <button
-              type="button"
-              className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-              role="menuitem"
-            >
-              <div className="inline-flex items-center">
-                <svg
-                  fill="none"
-                  aria-hidden="true"
-                  className="h-4 w-4 me-2"
-                  viewBox="0 0 20 15"
-                >
-                  <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  <mask
-                    id="a"
-                    width="20"
-                    height="15"
-                    x="0"
-                    y="0"
-                    maskUnits="userSpaceOnUse"
-                  >
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  </mask>
-                  <g mask="url(#a)">
-                    <path
-                      fill="#D02F44"
-                      fillRule="evenodd"
-                      d="M19.6.5H0v.933h19.6V.5zm0 1.867H0V3.3h19.6v-.933zM0 4.233h19.6v.934H0v-.934zM19.6 6.1H0v.933h19.6V6.1zM0 7.967h19.6V8.9H0v-.933zm19.6 1.866H0v.934h19.6v-.934zM0 11.7h19.6v.933H0V11.7zm19.6 1.867H0v.933h19.6v-.933z"
-                      clipRule="evenodd"
-                    />
-                    <path fill="#46467F" d="M0 .5h8.4v6.533H0z" />
-                    <g filter="url(#filter0_d_343_121520)">
-                      <path
-                        fill="url(#paint0_linear_343_121520)"
-                        fillRule="evenodd"
-                        d="M1.867 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.866 0a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM7.467 1.9a.467.467 0 11-.934 0 .467.467 0 01.934 0zM2.333 3.3a.467.467 0 100-.933.467.467 0 000 .933zm2.334-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm1.4.467a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.934 0 .467.467 0 01.934 0zm-2.334.466a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.466a.467.467 0 11-.933 0 .467.467 0 01.933 0zM1.4 4.233a.467.467 0 100-.933.467.467 0 000 .933zm1.4.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zm1.4.467a.467.467 0 100-.934.467.467 0 000 .934zM6.533 4.7a.467.467 0 11-.933 0 .467.467 0 01.933 0zM7 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.933 0 .467.467 0 01.933 0zM3.267 6.1a.467.467 0 100-.933.467.467 0 000 .933zm-1.4-.467a.467.467 0 11-.934 0 .467.467 0 01.934 0z"
-                        clipRule="evenodd"
-                      />
-                    </g>
-                  </g>
-                  <defs>
-                    <linearGradient
-                      id="paint0_linear_343_121520"
-                      x1=".933"
-                      x2=".933"
-                      y1="1.433"
-                      y2="6.1"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#fff" />
-                      <stop offset="1" stopColor="#F0F0F0" />
-                    </linearGradient>
-                    <filter
-                      id="filter0_d_343_121520"
-                      width="6.533"
-                      height="5.667"
-                      x=".933"
-                      y="1.433"
-                      colorInterpolationFilters="sRGB"
-                      filterUnits="userSpaceOnUse"
-                    >
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feColorMatrix
-                        in="SourceAlpha"
-                        result="hardAlpha"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                      />
-                      <feOffset dy="1" />
-                      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                      <feBlend
-                        in2="BackgroundImageFix"
-                        result="effect1_dropShadow_343_121520"
-                      />
-                      <feBlend
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_343_121520"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
-                United States (+1)
-              </div>
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-              role="menuitem"
-            >
-              <div className="inline-flex items-center">
-                <svg className="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15">
-                  <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  <mask
-                    id="a"
-                    width="20"
-                    height="15"
-                    x="0"
-                    y="0"
-                    maskUnits="userSpaceOnUse"
-                  >
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  </mask>
-                  <g mask="url(#a)">
-                    <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
-                    <path
-                      fill="#fff"
-                      fillRule="evenodd"
-                      d="M-.898-.842L7.467 4.8V-.433h4.667V4.8l8.364-5.642L21.542.706l-6.614 4.46H19.6v4.667h-4.672l6.614 4.46-1.044 1.549-8.365-5.642v5.233H7.467V10.2l-8.365 5.642-1.043-1.548 6.613-4.46H0V5.166h4.672L-1.941.706-.898-.842z"
-                      clipRule="evenodd"
-                    />
-                    <path
-                      stroke="#DB1F35"
-                      strokeLinecap="round"
-                      strokeWidth=".667"
-                      d="M13.067 4.933L21.933-.9M14.009 10.088l7.947 5.357M5.604 4.917L-2.686-.67M6.503 10.024l-9.189 6.093"
-                    />
-                    <path
-                      fill="#E6273E"
-                      fillRule="evenodd"
-                      d="M0 8.9h8.4v5.6h2.8V8.9h8.4V6.1h-8.4V.5H8.4v5.6H0v2.8z"
-                      clipRule="evenodd"
-                    />
-                  </g>
-                </svg>
-                United Kingdom (+44)
-              </div>
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-              role="menuitem"
-            >
-              <div className="inline-flex items-center">
-                <svg
-                  className="h-4 w-4 me-2"
-                  fill="none"
-                  viewBox="0 0 20 15"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  <mask
-                    id="a"
-                    width="20"
-                    height="15"
-                    x="0"
-                    y="0"
-                    maskUnits="userSpaceOnUse"
-                  >
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  </mask>
-                  <g mask="url(#a)">
-                    <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
-                    <path
-                      fill="#fff"
-                      stroke="#fff"
-                      strokeWidth=".667"
-                      d="M0 .167h-.901l.684.586 3.15 2.7v.609L-.194 6.295l-.14.1v1.24l.51-.319L3.83 5.033h.73L7.7 7.276a.488.488 0 00.601-.767L5.467 4.08v-.608l2.987-2.134a.667.667 0 00.28-.543V-.1l-.51.318L4.57 2.5h-.73L.66.229.572.167H0z"
-                    />
-                    <path
-                      fill="url(#paint0_linear_374_135177)"
-                      fillRule="evenodd"
-                      d="M0 2.833V4.7h3.267v2.133c0 .369.298.667.666.667h.534a.667.667 0 00.666-.667V4.7H8.2a.667.667 0 00.667-.667V3.5a.667.667 0 00-.667-.667H5.133V.5H3.267v2.333H0z"
-                      clipRule="evenodd"
-                    />
-                    <path
-                      fill="url(#paint1_linear_374_135177)"
-                      fillRule="evenodd"
-                      d="M0 3.3h3.733V.5h.934v2.8H8.4v.933H4.667v2.8h-.934v-2.8H0V3.3z"
-                      clipRule="evenodd"
-                    />
-                    <path
-                      fill="#fff"
-                      fillRule="evenodd"
-                      d="M4.2 11.933l-.823.433.157-.916-.666-.65.92-.133.412-.834.411.834.92.134-.665.649.157.916-.823-.433zm9.8.7l-.66.194.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.194zm0-8.866l-.66.193.194-.66-.194-.66.66.193.66-.193-.193.66.193.66-.66-.193zm2.8 2.8l-.66.193.193-.66-.193-.66.66.193.66-.193-.193.66.193.66-.66-.193zm-5.6.933l-.66.193.193-.66-.193-.66.66.194.66-.194-.193.66.193.66-.66-.193zm4.2 1.167l-.33.096.096-.33-.096-.33.33.097.33-.097-.097.33.097.33-.33-.096z"
-                      clipRule="evenodd"
-                    />
-                  </g>
-                  <defs>
-                    <linearGradient
-                      id="paint0_linear_374_135177"
-                      x1="0"
-                      x2="0"
-                      y1=".5"
-                      y2="7.5"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#fff" />
-                      <stop offset="1" stopColor="#F0F0F0" />
-                    </linearGradient>
-                    <linearGradient
-                      id="paint1_linear_374_135177"
-                      x1="0"
-                      x2="0"
-                      y1=".5"
-                      y2="7.033"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#FF2E3B" />
-                      <stop offset="1" stopColor="#FC0D1B" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-                Australia (+61)
-              </div>
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-              role="menuitem"
-            >
-              <div className="inline-flex items-center">
-                <svg className="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
-                  <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  <mask
-                    id="a"
-                    width="20"
-                    height="15"
-                    x="0"
-                    y="0"
-                    maskUnits="userSpaceOnUse"
-                  >
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  </mask>
-                  <g mask="url(#a)">
-                    <path
-                      fill="#262626"
-                      fillRule="evenodd"
-                      d="M0 5.167h19.6V.5H0v4.667z"
-                      clipRule="evenodd"
-                    />
-                    <g filter="url(#filter0_d_374_135180)">
-                      <path
-                        fill="#F01515"
-                        fillRule="evenodd"
-                        d="M0 9.833h19.6V5.167H0v4.666z"
-                        clipRule="evenodd"
-                      />
-                    </g>
-                    <g filter="url(#filter1_d_374_135180)">
-                      <path
-                        fill="#FFD521"
-                        fillRule="evenodd"
-                        d="M0 14.5h19.6V9.833H0V14.5z"
-                        clipRule="evenodd"
-                      />
-                    </g>
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_d_374_135180"
-                      width="19.6"
-                      height="4.667"
-                      x="0"
-                      y="5.167"
-                      colorInterpolationFilters="sRGB"
-                      filterUnits="userSpaceOnUse"
-                    >
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feColorMatrix
-                        in="SourceAlpha"
-                        result="hardAlpha"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                      />
-                      <feOffset />
-                      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                      <feBlend
-                        in2="BackgroundImageFix"
-                        result="effect1_dropShadow_374_135180"
-                      />
-                      <feBlend
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_374_135180"
-                        result="shape"
-                      />
-                    </filter>
-                    <filter
-                      id="filter1_d_374_135180"
-                      width="19.6"
-                      height="4.667"
-                      x="0"
-                      y="9.833"
-                      colorInterpolationFilters="sRGB"
-                      filterUnits="userSpaceOnUse"
-                    >
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feColorMatrix
-                        in="SourceAlpha"
-                        result="hardAlpha"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                      />
-                      <feOffset />
-                      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                      <feBlend
-                        in2="BackgroundImageFix"
-                        result="effect1_dropShadow_374_135180"
-                      />
-                      <feBlend
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_374_135180"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
-                Germany (+49)
-              </div>
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-              role="menuitem"
-            >
-              <div className="inline-flex items-center">
-                <svg className="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
-                  <rect
-                    width="19.1"
-                    height="13.5"
-                    x=".25"
-                    y=".75"
-                    fill="#fff"
-                    stroke="#F5F5F5"
-                    strokeWidth=".5"
-                    rx="1.75"
-                  />
-                  <mask
-                    id="a"
-                    width="20"
-                    height="15"
-                    x="0"
-                    y="0"
-                    maskUnits="userSpaceOnUse"
-                  >
-                    <rect
-                      width="19.1"
-                      height="13.5"
-                      x=".25"
-                      y=".75"
-                      fill="#fff"
-                      stroke="#fff"
-                      strokeWidth=".5"
-                      rx="1.75"
-                    />
-                  </mask>
-                  <g mask="url(#a)">
-                    <path fill="#F44653" d="M13.067.5H19.6v14h-6.533z" />
-                    <path
-                      fill="#1035BB"
-                      fillRule="evenodd"
-                      d="M0 14.5h6.533V.5H0v14z"
-                      clipRule="evenodd"
-                    />
-                  </g>
-                </svg>
-                France (+33)
-              </div>
-            </button>
-          </li>
-          <li>
-            <button
-              type="button"
-              className="inline-flex w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-              role="menuitem"
-            >
-              <div className="inline-flex items-center">
-                <svg className="w-4 h-4 me-2" fill="none" viewBox="0 0 20 15">
-                  <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  <mask
-                    id="a"
-                    width="20"
-                    height="15"
-                    x="0"
-                    y="0"
-                    maskUnits="userSpaceOnUse"
-                  >
-                    <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-                  </mask>
-                  <g mask="url(#a)">
-                    <path
-                      fill="#262626"
-                      fillRule="evenodd"
-                      d="M0 5.167h19.6V.5H0v4.667z"
-                      clipRule="evenodd"
-                    />
-                    <g filter="url(#filter0_d_374_135180)">
-                      <path
-                        fill="#F01515"
-                        fillRule="evenodd"
-                        d="M0 9.833h19.6V5.167H0v4.666z"
-                        clipRule="evenodd"
-                      />
-                    </g>
-                    <g filter="url(#filter1_d_374_135180)">
-                      <path
-                        fill="#FFD521"
-                        fillRule="evenodd"
-                        d="M0 14.5h19.6V9.833H0V14.5z"
-                        clipRule="evenodd"
-                      />
-                    </g>
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_d_374_135180"
-                      width="19.6"
-                      height="4.667"
-                      x="0"
-                      y="5.167"
-                      colorInterpolationFilters="sRGB"
-                      filterUnits="userSpaceOnUse"
-                    >
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feColorMatrix
-                        in="SourceAlpha"
-                        result="hardAlpha"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                      />
-                      <feOffset />
-                      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                      <feBlend
-                        in2="BackgroundImageFix"
-                        result="effect1_dropShadow_374_135180"
-                      />
-                      <feBlend
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_374_135180"
-                        result="shape"
-                      />
-                    </filter>
-                    <filter
-                      id="filter1_d_374_135180"
-                      width="19.6"
-                      height="4.667"
-                      x="0"
-                      y="9.833"
-                      colorInterpolationFilters="sRGB"
-                      filterUnits="userSpaceOnUse"
-                    >
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feColorMatrix
-                        in="SourceAlpha"
-                        result="hardAlpha"
-                        values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                      />
-                      <feOffset />
-                      <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0" />
-                      <feBlend
-                        in2="BackgroundImageFix"
-                        result="effect1_dropShadow_374_135180"
-                      />
-                      <feBlend
-                        in="SourceGraphic"
-                        in2="effect1_dropShadow_374_135180"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
-                Germany (+49)
-              </div>
-            </button>
-          </li>
-        </ul>
-      </div>
-      <label className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">
-        Phone number:
-      </label>
-      <div className="relative w-full">
-        <input
-          type="text"
-          id="phone-input"
-          className="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-e-lg border-s-0 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-s-gray-700  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:border-blue-500"
-          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-          placeholder="123-456-7890"
-          required
-        />
-      </div>
+        {countries.map((country) => (
+          <option key={country.ccode} value={country.ccode}>
+            {getFlagEmoji(country.ccode)} ({country.mcode})
+          </option>
+        ))}
+      </select>
+      <input
+        type="text"
+        className="bg-white border border-solid border-[#00395026] text-[#003E57] text-sm rounded-r focus:border-[#003E57] block w-full p-2.5"
+        placeholder="Enter phone number"
+        value={phoneNumber}
+        onChange={handlePhoneNumberChange}
+      />
     </div>
   );
 }

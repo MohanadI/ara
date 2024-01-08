@@ -1,6 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export const ActionBanner = () => {
+  const router = useRouter();
+
   return (
     <section className="px-4 pb-20 pt-20">
       <div className="container mx-auto">
@@ -21,6 +26,7 @@ export const ActionBanner = () => {
           </div>
           <div className="flex flex-col w-full mt-3 lg:mt-0 lg:w-1/3 lg:pl-12">
             <button
+              onClick={() => router.push("/products")}
               className="flex mx-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold"
               style={{ color: "rgba(0, 83, 117, 1)" }}
             >

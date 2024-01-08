@@ -1,37 +1,49 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 import { SectionTitle } from "../SectionTitle";
 
 export const ServicesSection = () => {
+  const router = useRouter();
+
   const services = [
     {
       key: "Solution_Implementation",
       title: "Solution Implementation",
-      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 4.svg",
+      image:
+        "/enterprise-resource-management-erp-software-system-business-resources-plan 4.svg",
     },
     {
       key: "Customized_Development",
       title: "Customized Development & Industry-specific solutions",
-      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 4 (1).svg",
+      image:
+        "/enterprise-resource-management-erp-software-system-business-resources-plan 4 (1).svg",
     },
     {
       key: "Support_SLA",
       title: "Support / SLA",
-      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 2.svg",
+      image:
+        "/enterprise-resource-management-erp-software-system-business-resources-plan 2.svg",
     },
     {
       key: "Integration_of_multiple_systems",
       title: "Integration of multiple systems",
-      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 5.svg",
+      image:
+        "/enterprise-resource-management-erp-software-system-business-resources-plan 5.svg",
     },
     {
       key: "Data_Migration",
       title: "Data Migration and management",
-      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 6.svg",
+      image:
+        "/enterprise-resource-management-erp-software-system-business-resources-plan 6.svg",
     },
     {
       key: "Training",
       title: "Training and users enablement",
-      image: "/enterprise-resource-management-erp-software-system-business-resources-plan 7.svg",
+      image:
+        "/enterprise-resource-management-erp-software-system-business-resources-plan 7.svg",
     },
   ];
   return (
@@ -45,9 +57,10 @@ export const ServicesSection = () => {
           {services.map((item) => (
             <div
               key={item.key}
+              onClick={() => router.push("/services")}
               className="shadow-[0px_2px_5px_0px_rgba(0,31,44,0.06)]
             border-b-[0.5px] hover:shadow-[2px_4px_16px_rgba(0,0,0,0.16)]
-            border-b-[rgba(0,83,117,1)] border-solid rounded-[5px]"
+            border-b-[rgba(0,83,117,1)] border-solid rounded-[5px] cursor-pointer"
               style={{
                 backgroundColor: "#ffffff",
                 transform: "scale3d(1.01, 1.01, 1.01)",
@@ -62,9 +75,7 @@ export const ServicesSection = () => {
                   height={128}
                   alt="content"
                 />
-                <h2
-                  className="text-lg text-center font-medium mb-4 text-[#003E57]"
-                >
+                <h2 className="text-lg text-center font-medium mb-4 text-[#003E57]">
                   {item.title}
                 </h2>
               </div>
@@ -84,12 +95,11 @@ export const ServicesSection = () => {
         >
           Aside from our wide range of SAP solutions, we also offer a host of
           services to support your SAP journey. From consulting and advisory
-          services to implementation, migration, integration, and ongoing support
-          and maintenance, we are committed to delivering exceptional customer
-          service and ensuring your success.
+          services to implementation, migration, integration, and ongoing
+          support and maintenance, we are committed to delivering exceptional
+          customer service and ensuring your success.
         </p>
       </div>
-
     </section>
   );
 };

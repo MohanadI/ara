@@ -15,7 +15,10 @@ export default function Contact() {
         title="Contact Us"
         description={
           <p className="p-2 text-center mt-6 description-paragraph text-white">
-            Whether you&apos;re looking for information about our services, interested in a consultation, or have general inquiries, we&apos;re here to help. Feel free to reach out to us using any of the channels below:
+            Whether you&apos;re looking for information about our services,
+            interested in a consultation, or have general inquiries, we&apos;re
+            here to help. Feel free to reach out to us using any of the channels
+            below:
           </p>
         }
         background={"linear-gradient(110.11deg, #005375 10.08%, #0082B8 100%)"}
@@ -23,9 +26,9 @@ export default function Contact() {
       />
       <section className="text-gray-600 body-font">
         <div className="container mx-auto pt-16">
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="left_cards">
-              <a className="flex flex-col p-3 mt-0 items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
+              <a className="flex flex-col p-3 mt-0 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
                 <Image
                   src="./vaadin_phone-landline.svg"
                   alt="Land Line"
@@ -42,7 +45,7 @@ export default function Contact() {
                   </p>
                 </div>
               </a>
-              <a className="flex flex-col p-3 mt-4 items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
+              <a className="flex flex-col p-3 mt-4 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
                 <Image
                   src="./material-symbols_phone-iphone.svg"
                   alt="Land Line"
@@ -59,7 +62,7 @@ export default function Contact() {
                   </p>
                 </div>
               </a>
-              <a className="flex flex-col p-3 mt-4 items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
+              <a className="flex flex-col p-3 mt-4 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
                 <Image
                   src="./whatsapp_contact.svg"
                   alt="Land Line"
@@ -76,7 +79,7 @@ export default function Contact() {
                   </p>
                 </div>
               </a>
-              <a className="flex flex-col p-3 mt-4 items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
+              <a className="flex flex-col p-3 mt-4 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
                 <Image
                   src="./sms.svg"
                   alt="Land Line"
@@ -94,7 +97,7 @@ export default function Contact() {
                 </div>
               </a>
             </div>
-            <div className="col-span-2">
+            <div className="sm:col-span-2">
               <ContactUsForm />
             </div>
           </div>
@@ -106,8 +109,8 @@ export default function Contact() {
             subTitle="Local Expertise, Global Reach: Dubai to MENA and Beyond"
             Title="Our Presence"
           />
-          <div className="grid grid-cols-7 gap-6">
-            <div className="col-span-5">
+          <div className="grid grid-cols-1 sm:grid-cols-7 gap-6">
+            <div className="sm:col-span-5">
               <Image
                 className=" w-full"
                 alt="map"
@@ -116,11 +119,11 @@ export default function Contact() {
                 height={426}
               />
             </div>
-            <div className="col-span-2 flex flex-col justify-between">
+            <div className="sm:col-span-2 flex flex-col justify-between">
               <div>
                 <h4 className="text-base text-[#003E57] font-medium leading-[19px] tracking-normal text-left">
-                  Based in Dubai, ARA CONSULTING Is strategically positioned to cater to the unique needs of
-                  businesses in the MENA region.
+                  Based in Dubai, ARA CONSULTING is strategically positioned to
+                  cater to the unique needs of businesses in the MENA region.
                 </h4>
                 <p className="mt-6 description-paragraph text-[#003E57]">
                   Our local expertise is complemented by a global outlook,
@@ -197,6 +200,78 @@ export default function Contact() {
                     />
                     <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
                       Jordan
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/saudi.svg"
+                      alt="Saudi Arabia"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      Saudi Arabia
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/australia.svg"
+                      alt="Australia"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      Australia
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/oman.svg"
+                      alt="Oman"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      Oman
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/nz.svg"
+                      alt="New Zealand"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      New Zealand
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/qa.svg"
+                      alt="Qatar"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      Qatar
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/eg.svg"
+                      alt="Egypt"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      Egypt
                     </h1>
                   </div>
                 </Carousel>

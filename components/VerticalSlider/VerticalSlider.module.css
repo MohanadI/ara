@@ -1,6 +1,7 @@
 .container {
   display: flex;
   padding: 0 40px;
+  min-height: 400px;
 }
 
 .contentContainer {

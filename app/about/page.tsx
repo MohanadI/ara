@@ -34,10 +34,10 @@ export default function About() {
         }
       />
       <section className="text-gray-600 body-font">
-        <div className="container py-10 pt-20 mx-auto">
-          <div className="grid grid-cols-2 gap-4">
+        <div className="container py-5 sm:py-10 sm:pt-20 mx-auto">
+          <div className="sm:grid sm:grid-cols-2 sm:gap-4">
             <div className="bg-white rounded-xl pb-8">
-              <div className="w-full mb-9 mt-9">
+              <div className="w-full py-5 mt-5 sm:mb-9 sm:mt-9">
                 <h1
                   className="sm:text-3xl text-2xl font-medium title-font mb-2"
                   style={{
@@ -73,7 +73,7 @@ export default function About() {
               </p>
             </div>
             <div
-              className="rounded-xl"
+              className="hidden sm:block rounded-xl"
               style={{
                 background:
                   "linear-gradient(111.31deg, rgba(1, 83, 116, 0.3) 3.88%, rgba(0, 83, 117, 0.2) 100%), url('./our_mission.svg')",
@@ -82,7 +82,7 @@ export default function About() {
             ></div>
           </div>
 
-          <div className="grid grid-cols-2 gap-1 mt-20">
+          <div className="sm:grid sm:grid-cols-2 sm:gap-1 sm:mt-20">
             <DefaultImageSlider
               slides={[
                 {
@@ -108,7 +108,7 @@ export default function About() {
               ]}
             />
             <div className="bg-white pb-8 rounded-r-xl">
-              <div className="w-full mb-9 mt-9">
+              <div className="w-full py-5 mt-5 sm:mb-9 sm:mt-9">
                 <h1
                   className="sm:text-3xl text-2xl font-medium title-font mb-2"
                   style={{
@@ -179,8 +179,8 @@ export default function About() {
           <div className="h-1 w-10 rounded m-auto bg-white"></div>
         </div>
         <div className="container py-10 pt-5 mx-auto">
-          <div className="grid grid-cols-3 gap-6">
-            <p className="p-2 description-paragraph text-white text-base leading-relaxed">
+          <div className="sm:grid sm:grid-cols-3 sm:gap-6">
+            <p className="p-5 sm:p-2 text-center sm:text-left description-paragraph text-white text-base leading-relaxed">
               We provide a diverse range of SAP solutions, unlocking the full
               potential of technology for clients through optimized processes
               and enhanced customer experiences.
@@ -224,7 +224,11 @@ export default function About() {
       <section className="text-center text-4xl py-32">
         <div className="container mx-auto">
           <h3 className="font-light" style={{ color: "#005375" }}>
-            Join ARA Consulting on a journey of innovation, growth, and digital excellence. Let us be your SAP partner in turning aspirations into achievements, challenges into opportunities, and dreams into reality. Analyze your potential, Realize your ambitions, and Automate your path to success with ARA CONSULTING
+            Join ARA Consulting on a journey of innovation, growth, and digital
+            excellence. Let us be your SAP partner in turning aspirations into
+            achievements, challenges into opportunities, and dreams into
+            reality. Analyze your potential, Realize your ambitions, and
+            Automate your path to success with ARA CONSULTING
           </h3>
         </div>
       </section>

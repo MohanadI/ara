@@ -59,10 +59,10 @@ export default function Products() {
     <>
       <PageHeader
         helpText="Wide variety of Products"
-        title="Products"
+        title="Our Products"
         description={
           <p className="p-2 text-center mt-6 description-paragraph text-white">
-            Explore innovation with our SAP-powered solutions tailored for modern businesses. As your SAP Service Partner, ARA CONSULTING delivers transformable products for enhanced efficiency and sustainable growth.
+            Explore innovation with our SAP-powered solutions tailored for modern businesses. As your service partner, ARA CONSULTING delivers transformable products for enhanced efficiency and sustainable growth.
           </p>
         }
         background={

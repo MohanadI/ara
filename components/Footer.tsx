@@ -141,7 +141,7 @@ export const Footer = () => {
       </div>
       <div className="flex flex-col text-center pt-5 pb-5 border-t border-white border-opacity-30 sm:flex-row">
         <p className="text-sm text-white text-opacity-80 m-auto">
-          © {currentYear} ARA CONSULTING, All Right Reserved
+          © {currentYear} ARA CONSULTING, All Rights Reserved
         </p>
       </div>
     </section>
