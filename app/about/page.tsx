@@ -82,7 +82,7 @@ export default function About() {
             ></div>
           </div>
 
-          <div className="sm:grid sm:grid-cols-2 sm:gap-1 sm:mt-20">
+          <div className="sm:grid sm:grid-cols-2 sm:gap-0 sm:mt-20">
             <DefaultImageSlider
               slides={[
                 {
@@ -223,12 +223,13 @@ export default function About() {
       </section>
       <section className="text-center text-4xl py-32">
         <div className="container mx-auto">
-          <h3 className="font-light" style={{ color: "#005375" }}>
-            Join ARA Consulting on a journey of innovation, growth, and digital
-            excellence. Let us be your SAP partner in turning aspirations into
-            achievements, challenges into opportunities, and dreams into
-            reality. Analyze your potential, Realize your ambitions, and
-            Automate your path to success with ARA CONSULTING
+          <h3>
+            Join ARA CONSULTING on a journey of innovation, growth, and digital
+            excellence.
+          </h3>
+          <h3>
+            Let us be your SAP partner in turning aspirations into achievements,
+            challenges into opportunities, and dreams into reality.
           </h3>
         </div>
       </section>

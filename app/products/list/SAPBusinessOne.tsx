@@ -17,7 +17,7 @@ export default function SAPBusinessOne() {
   };
   return (
     <div className="text-left">
-      <div className="grid grid-cols-2 gap-4">
+      <div className="sm:grid sm:grid-cols-2 sm:gap-4">
         <div>
           <h2 className="text-sm font-light text-[#316377]">
             Product overview
@@ -277,8 +277,8 @@ export default function SAPBusinessOne() {
         <h1 className="text-[#003E57] font-normal text-xl">
           Key Benefits of using SAP Business One:
         </h1>
-        <div className="grid grid-cols-3 gap-6 mt-7">
-          <Card className="max-w-sm shadow-none">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-7">
+          <Card className="w-full sm:max-w-sm shadow-none">
             <div className="flex flex-col items-center">
               <Image
                 alt="Bonnie image"
@@ -296,7 +296,7 @@ export default function SAPBusinessOne() {
               </p>
             </div>
           </Card>
-          <Card className="max-w-sm shadow-none">
+          <Card className="w-full sm:max-w-sm shadow-none">
             <div className="flex flex-col items-center">
               <Image
                 alt="Bonnie image"
@@ -314,7 +314,7 @@ export default function SAPBusinessOne() {
               </p>
             </div>
           </Card>
-          <Card className="max-w-sm shadow-none">
+          <Card className="w-full sm:max-w-sm shadow-none">
             <div className="flex flex-col items-center">
               <Image
                 alt="Bonnie image"

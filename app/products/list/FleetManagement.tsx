@@ -64,8 +64,8 @@ export default function FleetManagement() {
             Key Benefits of using Human Resources Management System and Employee
             Self-service Portal:
           </h1>
-          <div className="grid grid-cols-3 gap-6 mt-7">
-            <Card className="max-w-sm shadow-none">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-7">
+            <Card className="w-full sm:max-w-sm shadow-none">
               <div className="flex flex-col items-center">
                 <Image
                   alt="Bonnie image"
@@ -83,7 +83,7 @@ export default function FleetManagement() {
                 </p>
               </div>
             </Card>
-            <Card className="max-w-sm shadow-none">
+            <Card className="w-full sm:max-w-sm shadow-none">
               <div className="flex flex-col items-center">
                 <Image
                   alt="Bonnie image"
@@ -100,7 +100,7 @@ export default function FleetManagement() {
                 </p>
               </div>
             </Card>
-            <Card className="max-w-sm shadow-none">
+            <Card className="w-full sm:max-w-sm shadow-none">
               <div className="flex flex-col items-center">
                 <Image
                   alt="Bonnie image"

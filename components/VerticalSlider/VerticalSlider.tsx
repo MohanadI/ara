@@ -15,7 +15,7 @@ const VerticalSlider = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className="flex pr-0 md:pr-56">
       <div className={styles.slider}>
         {[1, 2, 3, 4, 5, 6].map((tab) => (
           <div key={tab} className={styles.tab}>
@@ -122,9 +122,10 @@ const VerticalSlider = () => {
                 textAlign: "left",
               }}
             >
-              Take your business to new heights with SAP Business One
+              Access important business data from any location at any time
             </h2>
             <List
+              unstyled
               theme={{
                 root: {
                   base: "space-y-2 pt-1 text-[#d7dee1] text-[14px] md:text-xl font-light list-inside dark:text-gray-400",
@@ -162,9 +163,10 @@ const VerticalSlider = () => {
                 textAlign: "left",
               }}
             >
-              Take your business to new heights with SAP Business One
+              Competitive Advantage
             </h2>
             <List
+              unstyled
               theme={{
                 root: {
                   base: "space-y-2 pt-1 text-[#d7dee1] text-[14px] md:text-xl font-light list-inside dark:text-gray-400",
@@ -199,9 +201,10 @@ const VerticalSlider = () => {
                 textAlign: "left",
               }}
             >
-              Take your business to new heights with SAP Business One
+              Easy to Set Up, Use and Optimize
             </h2>
             <List
+              unstyled
               theme={{
                 root: {
                   base: "space-y-2 pt-1 text-[#d7dee1] text-[14px] md:text-xl font-light list-inside dark:text-gray-400",
@@ -236,9 +239,10 @@ const VerticalSlider = () => {
                 textAlign: "left",
               }}
             >
-              Easy to Set Up, Use and Optimize
+              Easy Access to Data
             </h2>
             <List
+              unstyled
               theme={{
                 root: {
                   base: "space-y-2 pt-1 text-[#d7dee1] text-[14px] md:text-xl font-light list-inside dark:text-gray-400",
@@ -275,6 +279,7 @@ const VerticalSlider = () => {
               Fast Time to Value
             </h2>
             <List
+              unstyled
               theme={{
                 root: {
                   base: "space-y-2 pt-1 text-[#d7dee1] text-[14px] md:text-xl font-light list-inside dark:text-gray-400",

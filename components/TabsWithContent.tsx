@@ -14,7 +14,7 @@ export default function TabsWithContent({ tabs }: { tabs: any }) {
           base: "flex text-center overflow-y-auto",
           styles: {
             underline:
-              "-mb-px -mt-[50px] border-b border-gray-200 dark:border-gray-700",
+              "-mb-px -mt-[50px]",
           },
           tabitem: {
             base: "flex shrink-0 sm:shrink items-center whitespace-break-spaces w-[130px] sm:w-[190px] justify-center p-1 rounded-t-lg text-sm",

@@ -49,6 +49,14 @@ export default function NavBar() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  const handleCallButtonClick = () => {
+    // Construct the tel URL with the specified phone number
+    const telUrl = `tel:00971 04 452 9093`;
+
+    // Open the call app
+    window.location.href = telUrl;
+  };
+
   return (
     <>
       <nav
@@ -57,7 +65,7 @@ export default function NavBar() {
         aria-label="Global"
       >
         <div
-          className={`container flex flex-wrap items-center justify-between mx-auto py-4 ${
+          className={`container flex items-center mx-auto py-4 ${
             isSticky ? "" : "sm:rounded-full px-5"
           }`}
           style={
@@ -66,7 +74,7 @@ export default function NavBar() {
               : { background: "#FFFFFF1A", backdropFilter: "blur(10px)" }
           }
         >
-          <div className="flex grow lg:flex-1">
+          <div className="flex">
             <Link href="/" className="p-1.5">
               <Image
                 src="/Logo.svg"
@@ -77,7 +85,22 @@ export default function NavBar() {
               />
             </Link>
           </div>
-          <div className="flex lg:hidden justify-end">
+          <div className="flex flex-auto md:hidden">
+            <button
+              className="flex m-auto items-center p-2 text-base font-medium leading-4 tracking-normal text-left h-[46px] gap-2 text-gray-200 pr-[15px] border border-gray-500 rounded-md"
+              onClick={handleCallButtonClick}
+            >
+              <Image
+                src="./call-calling.svg"
+                width={36}
+                height={36}
+                className="w-[36px] h-[36px]"
+                alt="call-calling"
+              />
+              <span>Call Us</span>
+            </button>
+          </div>
+          <div className="flex lg:hidden">
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-md p-2.5 text-white"
@@ -87,7 +110,7 @@ export default function NavBar() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden lg:flex lg:gap-x-11">
+          <div className="hidden ml-36 lg:flex lg:gap-x-11">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -103,7 +126,7 @@ export default function NavBar() {
               </Link>
             ))}
           </div>
-          <div className="hidden md:hidden lg:flex lg:flex-1 ml-10">
+          {/* <div className="hidden md:hidden lg:flex lg:flex-1 ml-10">
             <button className="flex items-center p-2 rounded-full text-base font-medium leading-4 tracking-normal text-left h-[46px] gap-2 text-[#005375] pr-[15px] bg-[#FFFFFF99]">
               <Image
                 src="./call-calling.svg"
@@ -114,13 +137,13 @@ export default function NavBar() {
               />
               <span>Call Us</span>
             </button>
-          </div>
-          <div className="hidden lg:flex lg:justify-end">
+          </div> */}
+          {/* <div className="hidden lg:flex lg:justify-end">
             <MagnifyingGlassIcon
               className="text-white h-6 w-6"
               aria-hidden="true"
             />
-          </div>
+          </div> */}
         </div>
         {mobileMenuOpen && (
           <div

@@ -8,7 +8,6 @@ export const Footer = () => {
     <section className="">
       <div className="container mx-auto">
         <div className="py-10 grid lg:grid-cols-3 gap-4">
-
           <div className="lg:text-left">
             <p className="tracking-wide text-gray-100 text-lg">Company</p>
             <ul className="mt-4 space-y-2 pt-0">
@@ -64,24 +63,40 @@ export const Footer = () => {
             />
             <div className="flex justify-center my-1 mt-5 gap-3">
               <Image src="/mdi_twitter.svg" width={30} height={30} alt="X" />
-              <Image
-                src="/mdi_linkedin.svg"
-                width={30}
-                height={30}
-                alt="LinkedIn"
-              />
-              <Image
-                src="/jam_facebook.svg"
-                width={30}
-                height={30}
-                alt="Facebook"
-              />
-              <Image
-                src="/ri_instagram-fill.svg"
-                width={30}
-                height={30}
-                alt="Instagram"
-              />
+              <a
+                href="https://www.linkedin.com/company/ara-consulting-llc/"
+                target="_blank"
+              >
+                <Image
+                  src="/mdi_linkedin.svg"
+                  width={30}
+                  height={30}
+                  alt="LinkedIn"
+                />
+              </a>
+
+              <a
+                href="https://www.facebook.com/profile.php?id=100089621760215"
+                target="_blank"
+              >
+                <Image
+                  src="/jam_facebook.svg"
+                  width={30}
+                  height={30}
+                  alt="Facebook"
+                />
+              </a>
+              <a
+                href="https://www.instagram.com/ara_consulting_llc/"
+                target="_blank"
+              >
+                <Image
+                  src="/ri_instagram-fill.svg"
+                  width={30}
+                  height={30}
+                  alt="Instagram"
+                />
+              </a>
             </div>
           </div>
           <div className="text-right m-auto lg:-m-0">

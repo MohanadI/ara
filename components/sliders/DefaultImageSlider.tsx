@@ -6,11 +6,15 @@ export const DefaultImageSlider = ({ slides }: { slides: any }) => {
     <Carousel
       slideInterval={5000}
       theme={{
-        "root": {
-          "base": "relative h-full w-full",
-          "leftControl": "hidden",
-          "rightControl": "hidden"
-        }
+        root: {
+          base: "relative h-full w-full",
+          leftControl: "hidden",
+          rightControl: "hidden",
+        },
+        scrollContainer: {
+          base: "flex h-full snap-mandatory overflow-y-hidden overflow-x-scroll scroll-smooth rounded-xl rounded-tr-none rounded-br-none",
+          snap: "snap-x",
+        },
       }}
       style={{
         borderRadius: 0,
