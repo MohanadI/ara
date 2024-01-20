@@ -62,7 +62,7 @@ export const ProductsSection = () => {
             </h1>
             <div className="h-1 w-8 rounded m-auto bg-white"></div>
             <div className=" flex-none sm:flex pb-5">
-              <div className="flex items-center bg-white my-5 rounded-md w-full lg:w-1/2 sm:h-32 relative px-4 py-5">
+              <div className="flex flex-col items-center bg-white my-5 rounded-md w-full lg:w-1/2 relative px-4 py-5">
                 <Image
                   src="/VectorR.svg"
                   width={18}
@@ -72,13 +72,13 @@ export const ProductsSection = () => {
                 />
 
                 <p
-                  className="w-full leading-relaxed"
+                  className="w-full leading-relaxed sm:h-32"
                   style={{
                     color: "#005375",
                     fontSize: "18px",
                     fontWeight: 100,
                     lineHeight: "22px",
-                    letterSpacing: "0em",
+                    letterSpacing: "0.5px",
                     textAlign: "center",
                   }}
                 >
@@ -149,13 +149,23 @@ export const ProductsSection = () => {
                     </>
                   )}
                 </p>
+                <a className="flex pt-4" href="/products">
+                  Learn More
+                  <Image
+                    src="./arrow_right_button.svg"
+                    alt="arrow_right_button.svg"
+                    width={24}
+                    height={24}
+                    className="ml-2"
+                  />
+                </a>
               </div>
               <div className="flex flex-col self-end w-full my-5 lg:mt-0 lg:w-1/3 lg:pl-8">
                 <button
-                  onClick={() => router.push("/products")}
+                  onClick={() => router.push("/contact")}
                   className="flex mx-auto sm:mx-0 sm:mr-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold text-[#005375]"
                 >
-                  Learn More
+                  Free Trail
                   <Image
                     src="./arrow_right_button.svg"
                     alt="arrow_right_button.svg"

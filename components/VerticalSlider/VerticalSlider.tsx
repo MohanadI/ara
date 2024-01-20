@@ -91,7 +91,7 @@ const VerticalSlider = () => {
             </p>
             <button
               onClick={() => router.push("/products")}
-              className="flex rounded-full bg-white border-0 py-3 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold"
+              className="hidden sm:flex rounded-full bg-white border-0 py-3 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold"
               style={{ color: "rgba(0, 83, 117, 1)" }}
             >
               Get Started{" "}

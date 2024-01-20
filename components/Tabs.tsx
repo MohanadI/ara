@@ -33,6 +33,17 @@ function useWindowSize() {
   return windowSize;
 }
 
+function getCenteredItems(array:any, index:any, count:any) {
+  const halfLength = Math.floor(count / 2);
+  const startIndex = Math.max(0, index - halfLength);
+  const endIndex = Math.min(array.length - 1, startIndex + count - 1);
+
+  // Adjust the startIndex if needed to ensure count items are included
+  const adjustedStartIndex = endIndex - count + 1;
+
+  return array.slice(adjustedStartIndex, endIndex + 1);
+}
+
 const Tabs = ({
   tabs,
   selectedTab,
@@ -44,24 +55,29 @@ const Tabs = ({
 }) => {
   const [firstVisibleTab, setFirstVisibleTab] = useState(0);
   const size = useWindowSize();
+
   const getTabsToShow = () => {
-    if (size.width >= 1024) {
-      return tabs.slice(firstVisibleTab, firstVisibleTab + 5);
-    } else if (size.width >= 600) {
-      return tabs.slice(firstVisibleTab, firstVisibleTab + 2);
-    } else {
-      return tabs.slice(firstVisibleTab, firstVisibleTab + 1);
-    }
+    const countToShow = size.width >= 1024 ? 5 : size.width >= 600 ? 2 : 1;
+
+    return getCenteredItems(tabs, firstVisibleTab, countToShow);
   };
 
   const handleArrowClick = (direction: any) => {
-    const step = size.width >= 1024 ? 4 : size.width >= 600 ? 2 : 1;
+    const step = 1;
 
     if (direction === "left") {
-      setFirstVisibleTab((prev) => Math.max(prev - step, 0));
+      setFirstVisibleTab((prev) => prev - step);
     } else if (direction === "right") {
-      setFirstVisibleTab((prev) => Math.min(prev + step, tabs.length - step));
+      setFirstVisibleTab((prev) => prev + step);
     }
+
+    // Update selectedTab based on the arrow click
+    const newSelectedTabIndex =
+      direction === "left"
+        ? Math.max(tabs.indexOf(selectedTab) - 1, 0)
+        : Math.min(tabs.indexOf(selectedTab) + 1, tabs.length - 1);
+
+    onTabClick(tabs[newSelectedTabIndex]);
   };
 
   return (
@@ -114,7 +130,7 @@ const Tabs = ({
       <button
         className="ml-auto"
         onClick={() => handleArrowClick("right")}
-        disabled={firstVisibleTab === tabs.length - getTabsToShow().length}
+        disabled={firstVisibleTab === tabs.length - 1}
       >
         <Image
           src="/arrow-right.svg"

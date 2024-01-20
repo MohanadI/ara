@@ -126,24 +126,6 @@ export default function NavBar() {
               </Link>
             ))}
           </div>
-          {/* <div className="hidden md:hidden lg:flex lg:flex-1 ml-10">
-            <button className="flex items-center p-2 rounded-full text-base font-medium leading-4 tracking-normal text-left h-[46px] gap-2 text-[#005375] pr-[15px] bg-[#FFFFFF99]">
-              <Image
-                src="./call-calling.svg"
-                width={36}
-                height={36}
-                className="w-[36px] h-[36px]"
-                alt="call-calling"
-              />
-              <span>Call Us</span>
-            </button>
-          </div> */}
-          {/* <div className="hidden lg:flex lg:justify-end">
-            <MagnifyingGlassIcon
-              className="text-white h-6 w-6"
-              aria-hidden="true"
-            />
-          </div> */}
         </div>
         {mobileMenuOpen && (
           <div
@@ -151,7 +133,7 @@ export default function NavBar() {
             id="mobile-menu-2"
           >
             <ul
-              className="flex flex-col mx-auto font-medium lg:flex-row lg:space-x-8 lg:mt-0"
+              className="flex flex-col mx-auto font-medium lg:flex-row lg:space-x-8 lg:mt-0 border-[3px] border-[#4c6470]"
               style={isSticky ? { width: "100%" } : { width: "90%" }}
             >
               {navigation.map((item, index) => (
