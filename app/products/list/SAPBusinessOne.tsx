@@ -15,6 +15,12 @@ export default function SAPBusinessOne() {
       href: "hover:bg-gray-100 dark:hover:bg-gray-700",
     },
   };
+
+  const cardWithListTheme = {
+    root: {
+      children: "flex flex-col md:min-h-[350px] justify-start gap-4 p-3",
+    },
+  };
   return (
     <div className="text-left">
       <div className="sm:grid sm:grid-cols-2 sm:gap-4">
@@ -161,116 +167,156 @@ export default function SAPBusinessOne() {
           vary based on the SAP partner or implementation team, but the core
           phases generally include:
         </p>
-        <div className="mt-5">
-          <h4 className="text-[#003E57] font-light text-base">
-            Project Preparation:
-          </h4>
-          <List className="mt-3 text-base text-[#003E57] font-light">
-            <List.Item>Define project goals, scope, and objectives.</List.Item>
-            <List.Item>
-              Identify key stakeholders and form a project team.
-            </List.Item>
-            <List.Item>
-              Develop a project plan, including timelines and milestones.
-            </List.Item>
-            <List.Item>Set up project infrastructure and tools.</List.Item>
-          </List>
-        </div>
-        {/* List 2 */}
-        <div className="mt-5">
-          <h4 className="text-[#003E57] font-light text-base">
-            Business Blueprint:
-          </h4>
-          <List className="mt-3 text-base text-[#003E57] font-light">
-            <List.Item>
-              Conduct a detailed analysis of the client&apos;s business
-              processes.
-            </List.Item>
-            <List.Item>
-              Document business requirements and expectations.
-            </List.Item>
-            <List.Item>
-              Develop a &apos;blueprint&apos; that outlines how SAP Business One
-              will meet these requirements.
-            </List.Item>
-            <List.Item>
-              Share the blueprint with key stakeholders for approval.
-            </List.Item>
-          </List>
-        </div>
-        {/* List 3 */}
-        <div className="mt-5">
-          <h4 className="text-[#003E57] font-light text-base">Realization:</h4>
-          <List className="mt-3 text-base text-[#003E57] font-light">
-            <List.Item>
-              Configure SAP Business One based on the approved blueprint.
-            </List.Item>
-            <List.Item>
-              Develop and customize any necessary functionalities.
-            </List.Item>
-            <List.Item>
-              Perform data migration tasks, importing relevant data into the
-              system.
-            </List.Item>
-            <List.Item>
-              Create user documentation and conduct training sessions.
-            </List.Item>
-          </List>
-        </div>
-        {/* List 4 */}
-        <div className="mt-5">
-          <h4 className="text-[#003E57] font-light text-base">
-            Final Preparation:
-          </h4>
-          <List className="mt-3 text-base text-[#003E57] font-light">
-            <List.Item>
-              Perform system and user acceptance testing (UAT).
-            </List.Item>
-            <List.Item>
-              Fine-tune configurations based on testing feedback.
-            </List.Item>
-            <List.Item>
-              Conduct end-user training to ensure familiarity with the system.
-            </List.Item>
-            <List.Item>Prepare for the cutover to the live system.</List.Item>
-          </List>
-        </div>
-        {/* List 5 */}
-        <div className="mt-5">
-          <h4 className="text-[#003E57] font-light text-base">
-            Go-Live and Support:
-          </h4>
-          <List className="mt-3 text-base text-[#003E57] font-light">
-            <List.Item>
-              Execute the cutover to transition from the old system to SAP
-              Business One.
-            </List.Item>
-            <List.Item>
-              Monitor system performance and address any issues promptly.
-            </List.Item>
-            <List.Item>
-              Provide post-implementation support to resolve any challenges.
-            </List.Item>
-            <List.Item>
-              Evaluate the success of the implementation against predefined
-              criteria.
-            </List.Item>
-          </List>
-        </div>
-        {/* List 6 */}
-        <div className="mt-5">
-          <h4 className="text-[#003E57] font-light text-base">
-            Continuous Improvement:
-          </h4>
-          <List className="mt-3 text-base text-[#003E57] font-light">
-            <List.Item>Gather feedback from users and stakeholders.</List.Item>
-            <List.Item>
-              Identify areas for improvement and optimization.
-            </List.Item>
-            <List.Item>
-              Implement continuous improvement initiatives based on feedback.
-            </List.Item>
-          </List>
+        <div className="grid md:grid-cols-5 gap-4 mt-5">
+          {/* ---------- 1*/}
+          <div className="grid-item">
+            <h4
+              style={{
+                padding: "15px",
+                color: "#fff",
+                background:
+                  "url('./Vector.svg')  no-repeat center center / cover",
+              }}
+            >
+              Project Preparation
+            </h4>
+            <Card theme={cardWithListTheme} className="mt-5">
+              <List className="text-base text-[#003E57] font-light">
+                <List.Item>
+                  Define project goals, scope, and objectives.
+                </List.Item>
+                <List.Item>
+                  Identify key stakeholders and form a project team.
+                </List.Item>
+                <List.Item>
+                  Develop a project plan, including timelines and milestones.
+                </List.Item>
+                <List.Item>Set up project infrastructure and tools.</List.Item>
+              </List>
+            </Card>
+          </div>
+          {/* ---------- 2*/}
+          <div className="grid-item">
+            <h4
+              style={{
+                padding: "15px",
+                color: "#fff",
+                background:
+                  "url('./Vector.svg')  no-repeat center center / cover",
+              }}
+            >
+              Business Blueprint
+            </h4>
+            <Card theme={cardWithListTheme} className="mt-5">
+              <List className="text-base text-[#003E57] font-light">
+                <List.Item>
+                  Conduct a detailed analysis of the client&apos;s business
+                  processes.
+                </List.Item>
+                <List.Item>
+                  Document business requirements and expectations.
+                </List.Item>
+                <List.Item>
+                  Develop a &apos;blueprint&apos; that outlines how SAP Business
+                  One will meet these requirements.
+                </List.Item>
+                <List.Item>
+                  Share the blueprint with key stakeholders for approval.
+                </List.Item>
+              </List>
+            </Card>
+          </div>
+          {/* ---------- 3*/}
+          <div className="grid-item">
+            <h4
+              style={{
+                padding: "15px",
+                color: "#fff",
+                background:
+                  "url('./Vector.svg')  no-repeat center center / cover",
+              }}
+            >
+              Realization
+            </h4>
+            <Card theme={cardWithListTheme} className="mt-5">
+              <List className="text-base text-[#003E57] font-light">
+                <List.Item>
+                  Configure SAP Business One based on the approved blueprint.
+                </List.Item>
+                <List.Item>
+                  Develop and customize any necessary functionalities.
+                </List.Item>
+                <List.Item>
+                  Perform data migration tasks, importing relevant data into the
+                  system.
+                </List.Item>
+                <List.Item>
+                  Create user documentation and conduct training sessions.
+                </List.Item>
+              </List>
+            </Card>
+          </div>
+          {/* ---------- 4*/}
+          <div className="grid-item">
+            <h4
+              style={{
+                padding: "15px",
+                color: "#fff",
+                background:
+                  "url('./Vector.svg')  no-repeat center center / cover",
+              }}
+            >
+              Final Preparation
+            </h4>
+            <Card theme={cardWithListTheme} className="mt-5">
+              <List className="text-base text-[#003E57] font-light">
+                <List.Item>
+                  Perform system and user acceptance testing (UAT).
+                </List.Item>
+                <List.Item>
+                  Fine-tune configurations based on testing feedback.
+                </List.Item>
+                <List.Item>
+                  Conduct end-user training to ensure familiarity with the
+                  system.
+                </List.Item>
+                <List.Item>
+                  Prepare for the cutover to the live system.
+                </List.Item>
+              </List>
+            </Card>
+          </div>
+          {/* ---------- 5*/}
+          <div className="grid-item">
+            <h4
+              style={{
+                padding: "15px",
+                color: "#fff",
+                background:
+                  "url('./Vector.svg')  no-repeat center center / cover",
+              }}
+            >
+              Go-Live and Support
+            </h4>
+            <Card theme={cardWithListTheme} className="mt-5">
+              <List className="text-base text-[#003E57] font-light">
+                <List.Item>
+                  Execute the cutover to transition from the old system to SAP
+                  Business One.
+                </List.Item>
+                <List.Item>
+                  Monitor system performance and address any issues promptly.
+                </List.Item>
+                <List.Item>
+                  Provide post-implementation support to resolve any challenges.
+                </List.Item>
+                <List.Item>
+                  Evaluate the success of the implementation against predefined
+                  criteria.
+                </List.Item>
+              </List>
+            </Card>
+          </div>
         </div>
       </div>
       <div className="mt-9">

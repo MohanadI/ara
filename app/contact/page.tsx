@@ -28,7 +28,7 @@ export default function Contact() {
         <div className="container mx-auto pt-16">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="left_cards">
-              <a className="flex flex-col p-3 mt-0 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
+              <a className="flex flex-col p-5 mt-0 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
                 <Image
                   src="./vaadin_phone-landline.svg"
                   alt="Land Line"
@@ -45,7 +45,7 @@ export default function Contact() {
                   </p>
                 </div>
               </a>
-              <a className="flex flex-col p-3 mt-4 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
+              <a className="flex flex-col p-5 mt-4 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
                 <Image
                   src="./material-symbols_phone-iphone.svg"
                   alt="Land Line"
@@ -62,7 +62,7 @@ export default function Contact() {
                   </p>
                 </div>
               </a>
-              <a className="flex flex-col p-3 mt-4 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
+              <a className="flex flex-col p-5 mt-4 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
                 <Image
                   src="./whatsapp_contact.svg"
                   alt="Land Line"
@@ -79,7 +79,7 @@ export default function Contact() {
                   </p>
                 </div>
               </a>
-              <a className="flex flex-col p-3 mt-4 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
+              <a className="flex flex-col p-5 mt-4 sm:items-center bg-white rounded-md shadow-[0px_0px_10px_0px_#00000008] md:flex-row md:max-w-xl">
                 <Image
                   src="./sms.svg"
                   alt="Land Line"

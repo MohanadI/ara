@@ -85,22 +85,7 @@ export default function NavBar() {
               />
             </Link>
           </div>
-          <div className="flex flex-auto md:hidden">
-            <button
-              className="flex m-auto items-center p-2 text-base font-medium leading-4 tracking-normal text-left h-[46px] gap-2 text-gray-200 pr-[15px] border border-gray-500 rounded-md"
-              onClick={handleCallButtonClick}
-            >
-              <Image
-                src="./call-calling.svg"
-                width={36}
-                height={36}
-                className="w-[36px] h-[36px]"
-                alt="call-calling"
-              />
-              <span>Call Us</span>
-            </button>
-          </div>
-          <div className="flex lg:hidden">
+          <div className="flex lg:hidden ml-auto">
             <button
               type="button"
               className="inline-flex items-center justify-center rounded-md p-2.5 text-white"
@@ -152,6 +137,25 @@ export default function NavBar() {
                   </Link>
                 </li>
               ))}
+              <li key="call-us">
+                <Link
+                  href={""}
+                  key="call-us-link"
+                  onClick={handleCallButtonClick}
+                  prefetch={false}
+                  className="flex py-2 pr-4 pl-3 text-white bg-[#005375] font-thin text-opacity-80"
+                >
+                  <Image
+                    src="./call-calling.svg"
+                    width={36}
+                    height={36}
+                    className="w-[36px] h-[36px]"
+                    alt="call-calling"
+                  />
+
+                  <span className="p-1">Call Us</span>
+                </Link>
+              </li>
             </ul>
           </div>
         )}

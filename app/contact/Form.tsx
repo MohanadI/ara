@@ -1,4 +1,5 @@
 import PhoneNumberWithDropDown from "@/components/PhoneNumberWithDropDown";
+import Select from "react-select";
 
 export default function ContactUsForm() {
   const countryOptions = [
@@ -292,6 +293,66 @@ export default function ContactUsForm() {
     { value: "Zambia", label: "Zambia" },
     { value: "Zimbabwe", label: "Zimbabwe" },
   ];
+
+  const optionsForSubject = [
+    {
+      value: "Careers",
+      label: "Careers",
+    },
+    {
+      value: "Customer Engagement",
+      label: "Customer Engagement",
+    },
+    {
+      value: "Developer",
+      label: "Developer",
+    },
+    {
+      value: "General inquiry",
+      label: "General inquiry",
+    },
+    {
+      value: "Industry Sales Inquiry",
+      label: "Industry Sales Inquiry",
+    },
+    {
+      value: "Investor Relations",
+      label: "Investor Relations",
+    },
+    {
+      value: "News and Press",
+      label: "News and Press",
+    },
+    {
+      value: "Partner",
+      label: "Partner",
+    },
+    {
+      value: "Product Sales Inquiry",
+      label: "Product Sales Inquiry",
+    },
+    {
+      value: "Services",
+      label: "Services",
+    },
+    {
+      value: "Support",
+      label: "Support",
+    },
+    {
+      value: "Technical issues",
+      label: "Technical issues",
+    },
+    {
+      value: "Technology Trends",
+      label: "Technology Trends",
+    },
+    {
+      value: "Training and Enablement",
+      label: "Training and Enablement",
+    },
+  ];
+
   return (
     <form
       style={{
@@ -314,98 +375,109 @@ export default function ContactUsForm() {
       >
         Contact Form
       </h3>
-      <div className="mb-5">
-        <select
-          id="about"
-          defaultValue=""
+      <div className="mb-5 mt-9">
+        <Select
+          placeholder="I’m writing about"
+          options={optionsForSubject}
+          isClearable={true}
+          styles={{
+            control: (baseStyles, state) => ({
+              ...baseStyles,
+              borderColor: "#00395026",
+              padding: "6px",
+              borderRadius: "8px",
+            }),
+          }}
           required
-          className="bg-white border border-solid border-[#00395026] text-[#003E57] text-sm rounded-lg focus:ring-blue-500 focus:border-[#003E57] block w-full p-2.5"
-        >
-          <option>I’m writing about</option>
-          <option value="Careers">Careers</option>
-          <option value="Customer Engagement">Customer Engagement</option>
-          <option value="Developer">Developer</option>
-          <option value="General inquiry">General inquiry</option>
-          <option value="Industry Sales Inquiry">Industry Sales Inquiry</option>
-          <option value="Investor Relations">Investor Relations</option>
-          <option value="News and Press">News and Press</option>
-          <option value="Partner">Partner</option>
-          <option value="Product Sales Inquiry">Product Sales Inquiry</option>
-          <option value="Services">Services</option>
-          <option value="Support">Support</option>
-          <option value="Technical issues">Technical issues</option>
-          <option value="Technology Trends">Technology Trends</option>
-          <option value="Training and Enablement">
-            Training and Enablement
-          </option>
-        </select>
+        />
       </div>
-      <div className="mb-5">
+      <div className="relative mb-5">
         <textarea
           id="message"
           rows={4}
-          className="block p-2.5 w-full text-sm text-[#003E57] bg-white rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-[#003E57]"
-          placeholder="Your message"
+          className="border text-base px-4 rounded-lg border-solid border-[#00395026] p-3 block w-full placeholder-[#003E5766]"
+          placeholder="Your Message"
           required
         ></textarea>
+        <label className="absolute -top-3 bg-white left-1 ml-2 px-1 text-sm text-[#003E57]">
+          Your Message
+        </label>
       </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="mb-5">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="relative mb-5">
           <input
             type="text"
             id="First_Name"
-            className="bg-white border border-solid border-[#00395026] text-[#003E57] text-sm rounded-lg focus:border-[#003E57] block w-full p-2.5"
-            placeholder="First Name"
+            className="border text-base px-4 rounded-lg border-solid border-[#00395026] p-3 block w-full placeholder-[#003E5766]"
+            placeholder="Your First Name"
             required
           />
+          <label className="absolute -top-3 bg-white left-1 ml-2 px-1 text-sm text-[#003E57]">
+            First Name
+          </label>
         </div>
-        <div className="mb-5">
+        <div className="relative mb-5">
           <input
             type="text"
             id="Last_Name"
-            placeholder="Last Name"
-            className="bg-white border border-solid border-[#00395026] text-[#003E57] text-sm rounded-lg focus:border-[#003E57] block w-full p-2.5"
+            placeholder="Your Last Name"
+            className="border text-base px-4 rounded-lg border-solid border-[#00395026] p-3 block w-full placeholder-[#003E5766]"
             required
           />
+          <label className="absolute -top-3 bg-white left-1 ml-2 px-1 text-sm text-[#003E57]">
+            Last Name
+          </label>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="mb-5">
-          <select
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="relative mb-5">
+          <Select
             id="countries"
-            defaultValue=""
-            className="bg-white border border-solid border-[#00395026] text-[#003E57] text-sm rounded-lg focus:border-[#003E57] block w-full p-2.5"
-          >
-            <option>Country</option>
-            {countryOptions.map((country) => (
-              <option key={country.value} value={country.value}>
-                {country.label}
-              </option>
-            ))}
-          </select>
+            placeholder="Your Country"
+            options={countryOptions}
+            isClearable={true}
+            styles={{
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                borderColor: "#00395026",
+                padding: "6px",
+                borderRadius: "8px",
+              }),
+            }}
+            required
+          />
+          <label className="absolute -top-3 bg-white left-1 ml-2 px-1 text-sm text-[#003E57]">
+            Country
+          </label>
         </div>
         <div className="mb-5">
           <PhoneNumberWithDropDown />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="mb-5">
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div className="relative mb-5">
           <input
             type="email"
-            id="email"
-            className="bg-white border border-solid border-[#00395026] text-[#003E57] text-sm rounded-lg focus:border-[#003E57] block w-full p-2.5"
-            placeholder="Business e-mail address"
+            id="email_address"
+            className="border text-base px-4 rounded-lg border-solid border-[#00395026] p-3 block w-full placeholder-[#003E5766]"
+            placeholder="Your Business e-mail address"
             required
           />
+          <label className="absolute -top-3 bg-white left-1 ml-2 px-1 text-sm text-[#003E57]">
+            Business e-mail address
+          </label>
         </div>
-        <div className="mb-5">
+        <div className="relative mb-5">
           <input
             type="text"
-            id="Company"
-            className="bg-white border border-solid border-[#00395026] text-[#003E57] text-sm rounded-lg focus:border-[#003E57] block w-full p-2.5"
-            placeholder="Company"
+            id="company"
+            className="border text-base px-4 rounded-lg border-solid border-[#00395026] p-3 block w-full placeholder-[#003E5766]"
+            placeholder="Your Company"
             required
           />
+          <label className="absolute -top-3 bg-white left-1 ml-2 px-1 text-sm text-[#003E57]">
+            Company
+          </label>
         </div>
       </div>
       <button

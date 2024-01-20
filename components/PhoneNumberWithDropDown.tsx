@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Select from "react-select";
 
 interface Country {
   ccode: string;
@@ -243,7 +244,7 @@ export default function PhoneNumberWithDropDown() {
   ];
 
   const [selectedCountry, setSelectedCountry] = useState<Country>(countries[0]);
-  const [phoneNumber, setPhoneNumber] = useState<string>("+1");
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
 
   const handleCountryChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedCode = event.target.value;
@@ -252,7 +253,6 @@ export default function PhoneNumberWithDropDown() {
     );
     if (selectedCountry) {
       setSelectedCountry(selectedCountry);
-      setPhoneNumber(selectedCountry.mcode);
     }
   };
 
@@ -263,9 +263,9 @@ export default function PhoneNumberWithDropDown() {
   };
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center relative">
       <select
-        className="bg-white w-2/4 border border-solid border-[#00395026] text-[#003E57] text-sm rounded-l focus:border-[#003E57] block p-2.5"
+        className="text-sm px-2 border-solid border-[#00395026] p-[14px] block w-2/4 placeholder-[#003E5766] rounded-l-lg rounded-r-none"
         onChange={handleCountryChange}
         value={selectedCountry.ccode}
       >
@@ -277,11 +277,14 @@ export default function PhoneNumberWithDropDown() {
       </select>
       <input
         type="text"
-        className="bg-white border border-solid border-[#00395026] text-[#003E57] text-sm rounded-r focus:border-[#003E57] block w-full p-2.5"
+        className="text-base px-4 rounded-lg border-solid border-[#00395026] p-3 block w-full placeholder-[#003E5766] rounded-r-lg rounded-l-none"
         placeholder="Enter phone number"
         value={phoneNumber}
         onChange={handlePhoneNumberChange}
       />
+      <label className="absolute -top-3 bg-white left-1 ml-2 px-1 text-sm text-[#003E57]">
+        Phone Number
+      </label>
     </div>
   );
 }
