@@ -7,7 +7,7 @@ const WhatsAppButton = () => {
 
   const handleWhatsAppButtonClick = () => {
     // Replace '1234567890' with the phone number you want to open in WhatsApp
-    const phoneNumber = "+971 54 322 4240";
+    const phoneNumber = "+971543224240";
 
     // Construct the WhatsApp URL
     const whatsappUrl = `https://wa.me/${phoneNumber}`;

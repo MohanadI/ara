@@ -1,8 +1,20 @@
+"use client";
 import Image from "next/image";
 
 export const Footer = () => {
   const date = new Date();
   const currentYear = date.getFullYear();
+
+  const handleWhatsAppButtonClick = () => {
+    // Replace '1234567890' with the phone number you want to open in WhatsApp
+    const phoneNumber = "+971543224240";
+
+    // Construct the WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}`;
+
+    // Open the WhatsApp URL in the same tab
+    window.location.href = whatsappUrl;
+  };
 
   return (
     <section className="">
@@ -107,7 +119,7 @@ export const Footer = () => {
             <ul className="mt-2 space-y-2 pt-0 p-5 float-right">
               <li>
                 <a
-                  href="/"
+                  href="tel:+971044529093"
                   className="flex text-gray-300 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:text-gray-50"
                 >
                   <Image
@@ -122,8 +134,8 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/"
-                  className="flex text-gray-300 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:text-gray-50"
+                  onClick={handleWhatsAppButtonClick}
+                  className="flex cursor-pointer text-gray-300 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:text-gray-50"
                 >
                   <Image
                     src="/whatsapp.svg"
@@ -137,7 +149,7 @@ export const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/"
+                  href="tel:+971552952060"
                   className="flex text-gray-300 text-sm transition-colors duration-300 hover:text-deep-purple-accent-200 hover:text-gray-50"
                 >
                   <Image
