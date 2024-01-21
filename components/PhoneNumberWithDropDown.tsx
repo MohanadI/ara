@@ -264,17 +264,26 @@ export default function PhoneNumberWithDropDown() {
 
   return (
     <div className="flex items-center relative">
-      <select
-        className="text-sm px-2 border-solid border-[#00395026] p-[14px] block w-2/4 placeholder-[#003E5766] rounded-l-lg rounded-r-none"
-        onChange={handleCountryChange}
-        value={selectedCountry.ccode}
-      >
-        {countries.map((country) => (
-          <option key={country.ccode} value={country.ccode}>
-            {getFlagEmoji(country.ccode)} ({country.mcode})
-          </option>
-        ))}
-      </select>
+      <Select
+        placeholder="Select Country"
+        options={countries}
+        defaultValue={countries[0]}
+        isClearable={false}
+        getOptionLabel={(option) =>
+          `${getFlagEmoji(option.ccode)} ${option.mcode}`
+        }
+        className="text-sm border-solid border-[#00395026] p-0 w-2/4"
+        styles={{
+          control: (baseStyles, state) => ({
+            ...baseStyles,
+            borderColor: "#00395026",
+            padding: "6px",
+            borderRadius: "8px",
+            borderTopRightRadius: "0px",
+            borderBottomRightRadius: "0px",
+          }),
+        }}
+      />
       <input
         type="text"
         className="text-base px-4 rounded-lg border-solid border-[#00395026] p-3 block w-full placeholder-[#003E5766] rounded-r-lg rounded-l-none"

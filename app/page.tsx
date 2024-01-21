@@ -6,14 +6,20 @@ import { ServicesSection } from "@/components/sections/services";
 
 import styles from "./home.module.css"; // Import your styles
 import Image from "next/image";
+import useWindowSize from "@/helpers/useWindowSize";
 
 export default function Home() {
   const router = useRouter();
+  const size = useWindowSize();
+  const isMobile = size.width < 768;
 
   return (
     <>
       <section className={styles.heroSection}>
-        <div className="container m-auto pt-32 md:py-40 md:pt-52">
+        <div
+          style={isMobile ? { height: size.height } : { height: "auto" }}
+          className="container m-auto pt-32 md:py-40 md:pt-52"
+        >
           <VerticalSlider />
         </div>
       </section>

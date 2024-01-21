@@ -15,7 +15,7 @@ const VerticalSlider = () => {
   };
 
   return (
-    <div className="flex pr-0 md:pr-56">
+    <div className="flex pr-0 lg:pr-56">
       <div className={styles.slider}>
         {[1, 2, 3, 4, 5, 6].map((tab) => (
           <div key={tab} className={styles.tab}>
@@ -91,7 +91,7 @@ const VerticalSlider = () => {
             </p>
             <button
               onClick={() => router.push("/products")}
-              className="hidden sm:flex rounded-full bg-white border-0 py-3 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold"
+              className="flex rounded-full bg-white border-0 py-3 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold"
               style={{ color: "rgba(0, 83, 117, 1)" }}
             >
               Get Started{" "}

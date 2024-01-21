@@ -161,6 +161,7 @@ export const ProductsSection = () => {
                 </a>
               </div>
               <div className="flex flex-col self-end w-full my-5 lg:mt-0 lg:w-1/3 lg:pl-8">
+                {selectedTab === "SAP Business One" && (
                 <button
                   onClick={() => router.push("/contact")}
                   className="flex mx-auto sm:mx-0 sm:mr-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold text-[#005375]"
@@ -174,6 +175,7 @@ export const ProductsSection = () => {
                     className="ml-2"
                   />
                 </button>
+                )}
               </div>
             </div>
           </div>
