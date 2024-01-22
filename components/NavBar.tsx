@@ -103,7 +103,7 @@ export default function NavBar() {
                 prefetch={false}
                 className={`text-lg leading-6 hover:text-white ${
                   pathname === item.href
-                    ? "font-semibold text-white"
+                    ? " text-white"
                     : "font-thin text-[#D7DEE1] text-opacity-80"
                 }`}
               >
@@ -129,7 +129,7 @@ export default function NavBar() {
                     prefetch={false}
                     className={`block py-2 pr-4 pl-3 text-white bg-[#005375] ${
                       pathname === item.href
-                        ? "font-semibold text-white"
+                        ? "text-white"
                         : "font-thin text-[#D7DEE1] text-opacity-80"
                     }`}
                   >

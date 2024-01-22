@@ -19,7 +19,7 @@ export const Footer = () => {
   return (
     <section className="">
       <div className="container mx-auto">
-        <div className="py-10 grid lg:grid-cols-3 gap-4">
+        <div className="py-8 grid lg:grid-cols-3 gap-4">
           <div className="hidden sm:block lg:text-left">
             <p className="tracking-wide text-gray-100 text-lg">Company</p>
             <ul className="mt-4 space-y-2 pt-0">

@@ -21,7 +21,7 @@ export default function Layout({ children }: Props) {
     <html lang="en">
       <body className="flex flex-col min-h-screen">
         <>
-          <header className="w-full absolute top-5 z-20">
+          <header className="w-full absolute md:top-5 z-20">
             <NavBar />
           </header>
           <main className="grow gap-2">
@@ -31,7 +31,7 @@ export default function Layout({ children }: Props) {
               <ScrollToTopButton />
             </div>
           </main>
-          <footer className="py-3 text-center text-xs bg-[#005375]">
+          <footer className="py-0 text-center text-xs bg-[#005375]">
             <Footer />
           </footer>
         </>

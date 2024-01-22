@@ -216,7 +216,7 @@ export default function Services() {
           </div>
 
           {/* Training and User Enablement */}
-          <div className="mb-6">
+          <div className="mb-10">
             <div className="w-full text-center mb-4 mt-20">
               <h1 className="sm:text-2xl text-2xl text-[#003E57] font-medium ml-3">
                 Training and User Enablement

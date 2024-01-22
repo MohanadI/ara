@@ -82,7 +82,7 @@ export default function About() {
             ></div>
           </div>
 
-          <div className="sm:grid sm:grid-cols-2 sm:gap-0 sm:mt-20">
+          <div className="sm:grid sm:grid-cols-2 sm:gap-0 sm:mt-20 sm:mb-10">
             <DefaultImageSlider
               slides={[
                 {
