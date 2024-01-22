@@ -11,7 +11,7 @@ export default function About() {
           <div>
             <p className="p-2 text-center mt-6 description-paragraph text-white">
               Founded on a vision of revolutionizing the business landscape, ARA
-              Consulting emerged as a dynamic force in the SAP solutions arena.
+              CONSULTING emerged as a dynamic force in the SAP solutions arena.
               Our journey began with a passionate team of experts determined to
               bridge the gap between businesses and cutting-edge technology.
               Since our inception, we have been committed to creating value for

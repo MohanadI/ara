@@ -166,7 +166,7 @@ export const ProductsSection = () => {
                   onClick={() => router.push("/contact")}
                   className="flex mx-auto sm:mx-0 sm:mr-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold text-[#005375]"
                 >
-                  Free Trail
+                  Free Trial
                   <Image
                     src="./arrow_right_button.svg"
                     alt="arrow_right_button.svg"

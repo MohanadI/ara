@@ -175,7 +175,55 @@ export default function Contact() {
                       height={30}
                     />
                     <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
-                      Dubai
+                      UAE
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/saudi.svg"
+                      alt="Saudi Arabia"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      KSA
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/qa.svg"
+                      alt="Qatar"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      Qatar
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/oman.svg"
+                      alt="Oman"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      Oman
+                    </h1>
+                  </div>
+                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
+                    <Image
+                      src="./flags/eg.svg"
+                      alt="Egypt"
+                      className="w-[30px] h-[30px]"
+                      width={30}
+                      height={30}
+                    />
+                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
+                      Egypt
                     </h1>
                   </div>
                   <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
@@ -204,18 +252,6 @@ export default function Contact() {
                   </div>
                   <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
                     <Image
-                      src="./flags/saudi.svg"
-                      alt="Saudi Arabia"
-                      className="w-[30px] h-[30px]"
-                      width={30}
-                      height={30}
-                    />
-                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
-                      Saudi Arabia
-                    </h1>
-                  </div>
-                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
-                    <Image
                       src="./flags/australia.svg"
                       alt="Australia"
                       className="w-[30px] h-[30px]"
@@ -228,18 +264,6 @@ export default function Contact() {
                   </div>
                   <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
                     <Image
-                      src="./flags/oman.svg"
-                      alt="Oman"
-                      className="w-[30px] h-[30px]"
-                      width={30}
-                      height={30}
-                    />
-                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
-                      Oman
-                    </h1>
-                  </div>
-                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
-                    <Image
                       src="./flags/nz.svg"
                       alt="New Zealand"
                       className="w-[30px] h-[30px]"
@@ -248,30 +272,6 @@ export default function Contact() {
                     />
                     <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
                       New Zealand
-                    </h1>
-                  </div>
-                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
-                    <Image
-                      src="./flags/qa.svg"
-                      alt="Qatar"
-                      className="w-[30px] h-[30px]"
-                      width={30}
-                      height={30}
-                    />
-                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
-                      Qatar
-                    </h1>
-                  </div>
-                  <div className="flex flex-col h-full items-left justify-left bg-[#f2f6f7]">
-                    <Image
-                      src="./flags/eg.svg"
-                      alt="Egypt"
-                      className="w-[30px] h-[30px]"
-                      width={30}
-                      height={30}
-                    />
-                    <h1 className="text-[32px] text-[#003E57] font-medium leading-[38px] tracking-normal text-left">
-                      Egypt
                     </h1>
                   </div>
                 </Carousel>

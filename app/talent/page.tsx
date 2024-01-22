@@ -25,7 +25,7 @@ export default function Talent() {
 
       <section className="pt-20">
         <div className="container mx-auto px-3">
-          <SectionTitle subTitle="Get to know us" Title="Who We Are" />
+          <SectionTitle subTitle="Get to know us" Title="ARA CONSULTING" />
           <p
             className="p-2 text-center mt-6"
             style={{
@@ -38,7 +38,7 @@ export default function Talent() {
             }}
           >
             Founded on a vision of revolutionizing the business landscape, ARA
-            Consulting emerged as a dynamic force in the SAP solutions arena.
+            CONSULTING emerged as a dynamic force in the SAP solutions arena.
             Our journey began with a passionate team of experts determined to
             bridge the gap between businesses and cutting-edge technology. Since
             our inception, we have been committed to creating value for our
