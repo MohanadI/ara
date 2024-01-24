@@ -28,10 +28,17 @@ export default function PhoneNumberWithDropDown(props: any) {
     }
   }, [props.SelectedCountryValue]);
 
+  useEffect(() => {
+    if (props.value === "") {
+      setPhoneNumber(props.value);
+    }
+  }, [props.value]);
+
 
   const handlePhoneNumberChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
+    props.onChange(selectedCountry.mcode + event.target.value);
     setPhoneNumber(event.target.value);
   };
 
