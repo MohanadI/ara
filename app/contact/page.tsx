@@ -111,10 +111,10 @@ export default function Contact() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-7 gap-6">
             <div className="sm:col-span-5">
-              <Image
-                className=" w-full"
+              <img
+                className="w-full"
                 alt="map"
-                src={"./map.svg"}
+                src={"./Map.jpg"}
                 width={740}
                 height={426}
               />
