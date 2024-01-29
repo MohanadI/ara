@@ -1,12 +1,12 @@
 import { writeFileSync } from 'node:fs';
 import qs from 'qs';
 
-const url = 'http://localhost:1337/api/reviews'
+const url = 'http://localhost:1337/api/services'
     + '?' + qs.stringify({
-        fields: ['slug', 'title', 'subtitle', 'publishedAt'],
+        fields: ['title', 'description', 'publishedAt'],
         populate: { image: { fields: ['url'] } },
-        sort: ['publishedAt:desc'],
-        pagination: { pageSize: 6 },
+        sort: ['publishedAt:asc'],
+        pagination: { pageSize: 10 },
     }, { encodeValuesOnly: true });
 console.log('url:', url);
 const response = await fetch(url);

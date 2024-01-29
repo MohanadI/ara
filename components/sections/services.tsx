@@ -5,10 +5,11 @@ import { useRouter } from "next/navigation";
 
 import { SectionTitle } from "../SectionTitle";
 
-export const ServicesSection = () => {
+export const ServicesSection = async () => {
   const router = useRouter();
+  const { services } = await getReviews(PAGE_SIZE, page);
 
-  const services = [
+  const servicesData = [
     {
       key: "Solution_Implementation",
       title: "Solution Implementation",
@@ -54,7 +55,7 @@ export const ServicesSection = () => {
           Title="Our Services"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-          {services.map((item) => (
+          {servicesData.map((item) => (
             <div
               key={item.key}
               onClick={() => router.push("/services")}
