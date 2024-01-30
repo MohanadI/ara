@@ -1,7 +1,5 @@
 "use client";
 
-import { FileInput, Label } from "flowbite-react";
-
 export default function TalentForm() {
   return (
     <form

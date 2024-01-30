@@ -1,9 +1,10 @@
 // 'use client';
-
+import { marked } from "marked";
 import PageHeader from "@/components/PageHeader";
+import { getServices } from "@/lib/services";
 
-
-export default function Services() {
+export default async function Services() {
+  const { services } = await getServices(10);
 
   return (
     <>
@@ -25,6 +26,50 @@ export default function Services() {
       />
       <section className="text-gray-600 body-font">
         <div className="container py-10 pt-20 mx-auto">
+          {services.map((item, index) => (
+            <div key={item.title} className="mb-20">
+              <div className="w-full text-center mb-4">
+                <h1 className="sm:text-2xl text-2xl text-[#003E57] font-medium">
+                  {item.title}
+                </h1>
+              </div>
+              {index % 2 === 0 ? (
+                <div className="sm:grid sm:grid-cols-2">
+                  <div className="bg-[#f2f6f7] rounded-xl rounded-tr-none rounded-br-none border border-[#0053751A] p-4 text-left text-[#316377]">
+                    <p
+                      className="description-paragraph"
+                      style={{ whiteSpace: "pre-line" }}
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                  <div
+                    className="rounded-xl rounded-tl-none rounded-bl-none"
+                    style={{
+                      background: `linear-gradient(111.31deg, rgba(1, 83, 116, 0.3) 3.88%, rgba(0, 83, 117, 0.2) 100%), url('${item.image}') no-repeat center center / cover`,
+                    }}
+                  ></div>
+                </div>
+              ) : (
+                <div className="sm:grid sm:grid-cols-2">
+                  <div
+                    className="rounded-xl rounded-tr-none rounded-br-none"
+                    style={{
+                      background: `linear-gradient(111.31deg, rgba(1, 83, 116, 0.3) 3.88%, rgba(0, 83, 117, 0.2) 100%), url('${item.image}') no-repeat center center / cover`,
+                    }}
+                  ></div>
+                  <div className="bg-[#f2f6f7] rounded-xl rounded-tl-none rounded-bl-none border border-[#0053751A] p-4 text-left text-[#316377]">
+                    <p
+                      className="description-paragraph"
+                      style={{ whiteSpace: "pre-line" }}
+                    >
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
           {/* ERP */}
           <div>
             <div className="w-full text-center mb-4 mt-4">

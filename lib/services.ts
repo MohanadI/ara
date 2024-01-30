@@ -3,7 +3,7 @@ import "server-only";
 import { marked } from "marked";
 import qs from "qs";
 
-export const CACHE_TAG_REVIEWS = "reviews";
+export const CACHE_TAG_SERVICES = "services";
 
 const CMS_URL = process.env.CMS_URL;
 
@@ -12,29 +12,27 @@ interface CmsItem {
   attributes: any;
 }
 
-export interface Review {
-  slug: string;
+export interface Service {
   title: string;
-  subtitle: string;
-  date: string;
+  description: string;
   image: string;
 }
 
-export interface FullReview extends Review {
-  body: string;
+export interface FullService extends Service {
+  body: any;
 }
 
-export interface PaginatedReviews {
+export interface PaginatedServices {
   pageCount: number;
-  reviews: Review[];
+  services: Service[];
 }
 
-export type SearchableReview = Pick<Review, "slug" | "title">;
+export type SearchableService = Pick<Service, "title">;
 
-export async function getReview(slug: string): Promise<FullReview | null> {
-  const { data } = await fetchReviews({
-    filters: { slug: { $eq: slug } },
-    fields: ["slug", "title", "subtitle", "publishedAt", "body"],
+export async function getService(title: string): Promise<FullService | null> {
+  const { data } = await fetchServices({
+    filters: { title: { $eq: title } },
+    fields: ["title", "description", "publishedAt", "body"],
     populate: { image: { fields: ["url"] } },
     pagination: { pageSize: 1, withCount: false },
   });
@@ -43,59 +41,48 @@ export async function getReview(slug: string): Promise<FullReview | null> {
   }
   const item = data[0];
   return {
-    ...toReview(item),
+    ...toService(item),
     body: marked(item.attributes.body),
   };
 }
 
-export async function getReviews(
+export async function getServices(
   pageSize: number,
   page?: number
-): Promise<PaginatedReviews> {
-  const { data, meta } = await fetchReviews({
-    fields: ["slug", "title", "subtitle", "publishedAt"],
+): Promise<PaginatedServices> {
+  const { data, meta } = await fetchServices({
+    fields: ["title", "description", "publishedAt"],
     populate: { image: { fields: ["url"] } },
-    sort: ["publishedAt:desc"],
+    sort: ["publishedAt:asc"],
     pagination: { pageSize, page },
   });
   return {
     pageCount: meta.pagination.pageCount,
-    reviews: data.map(toReview),
+    services: data.map(toService),
   };
 }
 
-export async function searchReviews(
+export async function searchServices(
   query: string
-): Promise<SearchableReview[]> {
-  const { data } = await fetchReviews({
-    filters: { title: { $containsi: query } },
-    fields: ["slug", "title"],
+): Promise<SearchableService[]> {
+  const { data } = await fetchServices({
+    filters: { title: { $contains: query } },
+    fields: ["title"],
     sort: ["title"],
     pagination: { pageSize: 5 },
   });
-  return data.map(({ attributes }) => ({
-    slug: attributes.slug,
+  return data.map(({ attributes }: { attributes: Service }) => ({
     title: attributes.title,
   }));
 }
 
-export async function getSlugs(): Promise<string[]> {
-  const { data } = await fetchReviews({
-    fields: ["slug"],
-    sort: ["publishedAt:desc"],
-    pagination: { pageSize: 100 },
-  });
-  return data.map((item: CmsItem) => item.attributes.slug);
-}
-
-async function fetchReviews(parameters: any) {
+async function fetchServices(parameters: any) {
   const url =
-    `${CMS_URL}/api/reviews?` +
+    `${CMS_URL}/api/services?` +
     qs.stringify(parameters, { encodeValuesOnly: true });
-  // console.log('[fetchReviews]:', url);
   const response = await fetch(url, {
     next: {
-      tags: [CACHE_TAG_REVIEWS],
+      tags: [CACHE_TAG_SERVICES],
     },
   });
   if (!response.ok) {
@@ -104,13 +91,11 @@ async function fetchReviews(parameters: any) {
   return await response.json();
 }
 
-function toReview(item: CmsItem): Review {
+function toService(item: CmsItem): Service {
   const { attributes } = item;
   return {
-    slug: attributes.slug,
     title: attributes.title,
-    subtitle: attributes.subtitle,
-    date: attributes.publishedAt.slice(0, "yyyy-mm-dd".length),
+    description: attributes.description,
     image: new URL(attributes.image.data.attributes.url, CMS_URL).href,
   };
 }

@@ -1,0 +1,68 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "title": "SAP Business One",
+        "description": "SAP Business One is an integrated Enterprise Resource Planning (ERP)\n            solution crafted for small to mid-sized enterprises. This robust\n            platform provides a holistic view of business operations, enabling\n            informed decision-making across various functions.",
+        "publishedAt": "2024-01-30T12:37:39.225Z",
+        "image": {
+          "data": {
+            "id": 3,
+            "attributes": {
+              "url": "/uploads/Screen_Shot_2023_12_16_at_3_16_1_cc9879978c.svg"
+            }
+          }
+        },
+        "modules": {
+          "data": [
+            {
+              "id": 1,
+              "attributes": {
+                "title": "Financial Management",
+                "description": "The Financial Management module in SAP Business One provides comprehensive tools for managing financial processes. It includes features for general ledger, accounts payable, accounts receivable, fixed assets, and financial reporting, enabling businesses to maintain accurate and transparent financial records."
+              }
+            },
+            {
+              "id": 2,
+              "attributes": {
+                "title": "Sales and Customer Relationship Management (CRM)",
+                "description": "This module helps businesses streamline their sales processes, from\n            lead to order fulfillment. It includes functionalities for managing\n            customer contacts, sales opportunities, sales orders, and customer\n            invoices. Integration with other modules ensures real-time\n            visibility into customer interactions."
+              }
+            }
+          ]
+        },
+        "methodologies": {
+          "data": [
+            {
+              "id": 1,
+              "attributes": {
+                "title": "Project Preparation",
+                "description": "Define project goals, scope, and objectives.\nIdentify key stakeholders and form a project team.Develop a project plan, including timelines and milestones.\nSet up project infrastructure and tools."
+              }
+            }
+          ]
+        },
+        "benefits": {
+          "data": [
+            {
+              "id": 1,
+              "attributes": {
+                "title": "Scalability",
+                "description": "Grow your business confidently with a flexible and scalable ERP solution."
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 10,
+      "pageCount": 1,
+      "total": 1
+    }
+  }
+}

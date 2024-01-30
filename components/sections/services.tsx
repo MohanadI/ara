@@ -1,14 +1,10 @@
-"use client";
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { getServices } from "@/lib/services";
 
 import { SectionTitle } from "../SectionTitle";
 
-export const ServicesSection = async () => {
-  const router = useRouter();
-  const { services } = await getReviews(PAGE_SIZE, page);
-
+export default async function ServicesSection() {
+  const { services } = await getServices(10);
   const servicesData = [
     {
       key: "Solution_Implementation",
@@ -47,6 +43,7 @@ export const ServicesSection = async () => {
         "/enterprise-resource-management-erp-software-system-business-resources-plan 7.svg",
     },
   ];
+
   return (
     <section className="px-4 pb-20 pt-20">
       <div className="container mx-auto">
@@ -55,10 +52,10 @@ export const ServicesSection = async () => {
           Title="Our Services"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
-          {servicesData.map((item) => (
-            <div
-              key={item.key}
-              onClick={() => router.push("/services")}
+          {services.map((item) => (
+            <a
+              key={item.title}
+              href="/services"
               className="shadow-[0px_2px_5px_0px_rgba(0,31,44,0.06)]
             border-b-[0.5px] hover:shadow-[2px_4px_16px_rgba(0,0,0,0.16)]
             border-b-[rgba(0,83,117,1)] border-solid rounded-[5px] cursor-pointer"
@@ -80,7 +77,7 @@ export const ServicesSection = async () => {
                   {item.title}
                 </h2>
               </div>
-            </div>
+            </a>
           ))}
         </div>
         <p
