@@ -1,6 +1,7 @@
 import "server-only";
 
-import { marked } from "marked";
+import { type BlocksContent } from "@strapi/blocks-react-renderer";
+
 import qs from "qs";
 
 export const CACHE_TAG_PRODUCTS = "products";
@@ -12,14 +13,29 @@ interface CmsItem {
   attributes: any;
 }
 
+interface ProductModule {
+  title: string;
+  description: string;
+}
+
+interface ProductMethodology {
+  title: string;
+  description: BlocksContent;
+}
+
+interface ProductBenefit {
+  title: string;
+  description: string;
+  icon: string;
+}
+
 export interface Product {
   title: string;
   description: string;
   image: string;
-}
-
-export interface FullProduct extends Product {
-  body: any;
+  modules: ProductModule[];
+  methodologies: ProductMethodology[];
+  benefits: ProductBenefit[];
 }
 
 export interface PaginatedProducts {
@@ -29,21 +45,28 @@ export interface PaginatedProducts {
 
 export type SearchableProduct = Pick<Product, "title">;
 
-export async function getProduct(title: string): Promise<FullProduct | null> {
+export async function getProduct(title: string): Promise<Product | null> {
   const { data } = await fetchProducts({
     filters: { title: { $eq: title } },
-    fields: ["title", "description", "publishedAt", "body"],
-    populate: { image: { fields: ["url"] } },
+    fields: ["title", "description", "publishedAt"],
+    populate: {
+      image: { fields: ["url"] },
+      modules: { fields: ["title", "description"] },
+      methodologies: { fields: ["title", "description"] },
+      benefits: {
+        fields: ["title", "description"],
+        populate: {
+          icon: { fields: ["url"] },
+        },
+      },
+    },
     pagination: { pageSize: 1, withCount: false },
   });
   if (data.length === 0) {
     return null;
   }
   const item = data[0];
-  return {
-    ...toProduct(item),
-    body: marked(item.attributes.body),
-  };
+  return toProduct(item);
 }
 
 export async function getProducts(
@@ -52,7 +75,17 @@ export async function getProducts(
 ): Promise<PaginatedProducts> {
   const { data, meta } = await fetchProducts({
     fields: ["title", "description", "publishedAt"],
-    populate: { image: { fields: ["url"] } },
+    populate: {
+      image: { fields: ["url"] },
+      modules: { fields: ["title", "description"] },
+      methodologies: { fields: ["title", "description"] },
+      benefits: {
+        fields: ["title", "description"],
+        populate: {
+          icon: { fields: ["url"] },
+        },
+      },
+    },
     sort: ["publishedAt:asc"],
     pagination: { pageSize, page },
   });
@@ -62,7 +95,9 @@ export async function getProducts(
   };
 }
 
-export async function searchProducts(query: string): Promise<SearchableProduct[]> {
+export async function searchProducts(
+  query: string
+): Promise<SearchableProduct[]> {
   const { data } = await fetchProducts({
     filters: { title: { $contains: query } },
     fields: ["title"],
@@ -95,5 +130,33 @@ function toProduct(item: CmsItem): Product {
     title: attributes.title,
     description: attributes.description,
     image: new URL(attributes.image.data.attributes.url, CMS_URL).href,
+    modules: attributes.modules.data.map(toProductModule),
+    methodologies: attributes.methodologies.data.map(toProductMethodology),
+    benefits: attributes.benefits.data.map(toProductBenefit),
+  };
+}
+
+function toProductModule(item: CmsItem): ProductModule {
+  const { attributes } = item;
+  return {
+    title: attributes.title,
+    description: attributes.description,
+  };
+}
+
+function toProductMethodology(item: CmsItem): ProductMethodology {
+  const { attributes } = item;
+  return {
+    title: attributes.title,
+    description: attributes.description,
+  };
+}
+
+function toProductBenefit(item: CmsItem): ProductBenefit {
+  const { attributes } = item;
+  return {
+    title: attributes.title,
+    description: attributes.description,
+    icon: new URL(attributes.icon.data.attributes.url, CMS_URL).href,
   };
 }

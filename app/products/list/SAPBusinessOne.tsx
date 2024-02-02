@@ -1,9 +1,11 @@
-"use client";
-
-import { Card, List } from "flowbite-react";
+import ListBlock from "@/components/Blocks/ListBlock";
+import { getProduct } from "@/lib/products";
+import { Card } from "flowbite-react";
 import Image from "next/image";
 
-export default function SAPBusinessOne() {
+export default async function SAPBusinessOne() {
+  const productInfo = await getProduct("SAP Business One");
+
   const cardTheme = {
     root: {
       base: "flex rounded-lg sm:max-w-sm border-l-[3px] border-l-[#005375] border-solid shadow-[0px_0px_4px_0px_#0031461A] bg-white",
@@ -21,139 +23,48 @@ export default function SAPBusinessOne() {
       children: "flex flex-col md:min-h-[350px] justify-start gap-4 p-3",
     },
   };
+
+  const gridClass = productInfo?.image
+    ? "sm:grid sm:grid-cols-2 sm:gap-4"
+    : "";
   return (
     <div className="text-left">
-      <div className="sm:grid sm:grid-cols-2 sm:gap-4">
+      <div className={gridClass}>
         <div>
           <h2 className="text-sm font-light text-[#316377]">
             Product overview
           </h2>
           <h1 className="text-[#003E57] font-semibold text-xl mt-2">
-            SAP Business One
+            {productInfo?.title}
           </h1>
           <p className="text-base font-light text-[#003E57] mt-6 max-w-md">
-            SAP Business One is an integrated Enterprise Resource Planning (ERP)
-            solution crafted for small to mid-sized enterprises. This robust
-            platform provides a holistic view of business operations, enabling
-            informed decision-making across various functions.
+            {productInfo?.description}
           </p>
         </div>
-        <div>
+        { productInfo?.image && <div>
           <Image
             className="w-full"
             alt="map"
-            src={"./Screen Shot 2023-12-16 at 3.16 1.svg"}
+            src={productInfo?.image}
             width={508}
             height={216}
           />
-        </div>
+        </div> }
       </div>
       <h1 className="text-[#003E57] text-xl mt-2">
         Main Modules and Functionalities:
       </h1>
       <div className="grid grid-cols-1 sm:grid sm:grid-cols-3 gap-6 mt-4">
-        <Card theme={cardTheme} href="#">
-          <h5 className="text-lg font-normal text-[#003E57]">
-            Financial Management
-          </h5>
-          <p className="text-base font-light text-[#003E57]">
-            The Financial Management module in SAP Business One provides
-            comprehensive tools for managing financial processes. It includes
-            features for general ledger, accounts payable, accounts receivable,
-            fixed assets, and financial reporting, enabling businesses to
-            maintain accurate and transparent financial records.
-          </p>
-        </Card>
-        <Card theme={cardTheme} href="#">
-          <h5 className="text-lg font-normal text-[#003E57]">
-            Sales and Customer Relationship Management (CRM)
-          </h5>
-          <p className="text-base font-light text-[#003E57]">
-            This module helps businesses streamline their sales processes, from
-            lead to order fulfillment. It includes functionalities for managing
-            customer contacts, sales opportunities, sales orders, and customer
-            invoices. Integration with other modules ensures real-time
-            visibility into customer interactions.
-          </p>
-        </Card>
-        <Card theme={cardTheme} href="#">
-          <h5 className="text-lg font-normal text-[#003E57]">
-            Purchasing and Supplier Relationship Management
-          </h5>
-          <p className="text-base font-light text-[#003E57]">
-            The Purchasing module facilitates efficient procurement processes.
-            It covers purchase orders, supplier invoices, goods receipt, and
-            returns. Integrated with inventory management, it helps optimize the
-            entire procurement cycle.
-          </p>
-        </Card>
-        <Card theme={cardTheme} href="#">
-          <h5 className="text-lg font-normal text-[#003E57]">
-            Inventory Management
-          </h5>
-          <p className="text-base font-light text-[#003E57]">
-            Managing inventory efficiently is crucial for businesses. SAP
-            Business One&apos;s Inventory Management module provides tools for
-            tracking stock levels, managing item master data, and optimizing
-            reorder points. It ensures accurate inventory control across the
-            supply chain.
-          </p>
-        </Card>
-        <Card theme={cardTheme} href="#">
-          <h5 className="text-lg font-normal text-[#003E57]">
-            Production Planning
-          </h5>
-          <p className="text-base font-light text-[#003E57]">
-            For manufacturing businesses, the Production Planning module assists
-            in planning and managing production processes. It includes features
-            for bill of materials (BOM), work orders, and production scheduling,
-            helping businesses optimize manufacturing operations.
-          </p>
-        </Card>
-        <Card theme={cardTheme} href="#">
-          <h5 className="text-lg font-normal text-[#003E57]">
-            Material Requirements Planning (MRP)
-          </h5>
-          <p className="text-base font-light text-[#003E57]">
-            This module enables users to define a planning scenario in five easy
-            steps and predict demand based on forecasts and creates
-            recommendation for purchase orders and production orders based on
-            the current status of transactions in the system.
-          </p>
-        </Card>
-        <Card theme={cardTheme} href="#">
-          <h5 className="text-lg font-normal text-[#003E57]">
-            Project Management
-          </h5>
-          <p className="text-base font-light text-[#003E57]">
-            The Project Management module helps businesses manage projects
-            efficiently. It covers project planning, resource allocation, time
-            tracking, and expense management. This module is particularly useful
-            for businesses involved in project-based industries.
-          </p>
-        </Card>
-        <Card theme={cardTheme} href="#">
-          <h5 className="text-lg font-normal text-[#003E57]">
-            Service Management
-          </h5>
-          <p className="text-base font-light text-[#003E57]">
-            For companies offering services, the Service Management module
-            supports service-related processes. It includes features for
-            managing service contracts, service calls, and field service
-            operations.
-          </p>
-        </Card>
-        <Card theme={cardTheme} href="#">
-          <h5 className="text-lg font-normal text-[#003E57]">
-            System Administration and Customization
-          </h5>
-          <p className="text-base font-light text-[#003E57]">
-            This module provides tools for system administrators to configure
-            and customize SAP Business One based on the unique needs of the
-            business. It includes user and access management, customization of
-            forms and fields, and integration with other applications.
-          </p>
-        </Card>
+        {productInfo?.modules.map((module) => (
+          <Card theme={cardTheme} key={module.title}>
+            <h5 className="text-lg font-normal text-[#003E57]">
+              {module.title}
+            </h5>
+            <p className="text-base font-light text-[#003E57]">
+              {module.description}
+            </p>
+          </Card>
+        ))}
       </div>
       <div className="mt-9">
         <h1 className="text-[#003E57] font-normal text-xl">
@@ -168,155 +79,23 @@ export default function SAPBusinessOne() {
           phases generally include:
         </p>
         <div className="grid md:grid-cols-5 gap-4 mt-5">
-          {/* ---------- 1*/}
-          <div className="grid-item">
-            <h4
-              style={{
-                padding: "15px",
-                color: "#fff",
-                background:
-                  "url('./Vector.svg')  no-repeat center center / cover",
-              }}
-            >
-              Project Preparation
-            </h4>
-            <Card theme={cardWithListTheme} className="mt-5">
-              <List className="text-base text-[#003E57] font-light">
-                <List.Item>
-                  Define project goals, scope, and objectives.
-                </List.Item>
-                <List.Item>
-                  Identify key stakeholders and form a project team.
-                </List.Item>
-                <List.Item>
-                  Develop a project plan, including timelines and milestones.
-                </List.Item>
-                <List.Item>Set up project infrastructure and tools.</List.Item>
-              </List>
-            </Card>
-          </div>
-          {/* ---------- 2*/}
-          <div className="grid-item">
-            <h4
-              style={{
-                padding: "15px",
-                color: "#fff",
-                background:
-                  "url('./Vector.svg')  no-repeat center center / cover",
-              }}
-            >
-              Business Blueprint
-            </h4>
-            <Card theme={cardWithListTheme} className="mt-5">
-              <List className="text-base text-[#003E57] font-light">
-                <List.Item>
-                  Conduct a detailed analysis of the client&apos;s business
-                  processes.
-                </List.Item>
-                <List.Item>
-                  Document business requirements and expectations.
-                </List.Item>
-                <List.Item>
-                  Develop a &apos;blueprint&apos; that outlines how SAP Business
-                  One will meet these requirements.
-                </List.Item>
-                <List.Item>
-                  Share the blueprint with key stakeholders for approval.
-                </List.Item>
-              </List>
-            </Card>
-          </div>
-          {/* ---------- 3*/}
-          <div className="grid-item">
-            <h4
-              style={{
-                padding: "15px",
-                color: "#fff",
-                background:
-                  "url('./Vector.svg')  no-repeat center center / cover",
-              }}
-            >
-              Realization
-            </h4>
-            <Card theme={cardWithListTheme} className="mt-5">
-              <List className="text-base text-[#003E57] font-light">
-                <List.Item>
-                  Configure SAP Business One based on the approved blueprint.
-                </List.Item>
-                <List.Item>
-                  Develop and customize any necessary functionalities.
-                </List.Item>
-                <List.Item>
-                  Perform data migration tasks, importing relevant data into the
-                  system.
-                </List.Item>
-                <List.Item>
-                  Create user documentation and conduct training sessions.
-                </List.Item>
-              </List>
-            </Card>
-          </div>
-          {/* ---------- 4*/}
-          <div className="grid-item">
-            <h4
-              style={{
-                padding: "15px",
-                color: "#fff",
-                background:
-                  "url('./Vector.svg')  no-repeat center center / cover",
-              }}
-            >
-              Final Preparation
-            </h4>
-            <Card theme={cardWithListTheme} className="mt-5">
-              <List className="text-base text-[#003E57] font-light">
-                <List.Item>
-                  Perform system and user acceptance testing (UAT).
-                </List.Item>
-                <List.Item>
-                  Fine-tune configurations based on testing feedback.
-                </List.Item>
-                <List.Item>
-                  Conduct end-user training to ensure familiarity with the
-                  system.
-                </List.Item>
-                <List.Item>
-                  Prepare for the cutover to the live system.
-                </List.Item>
-              </List>
-            </Card>
-          </div>
-          {/* ---------- 5*/}
-          <div className="grid-item">
-            <h4
-              style={{
-                padding: "15px",
-                color: "#fff",
-                background:
-                  "url('./Vector.svg')  no-repeat center center / cover",
-              }}
-            >
-              Go-Live and Support
-            </h4>
-            <Card theme={cardWithListTheme} className="mt-5">
-              <List className="text-base text-[#003E57] font-light">
-                <List.Item>
-                  Execute the cutover to transition from the old system to SAP
-                  Business One.
-                </List.Item>
-                <List.Item>
-                  Monitor system performance and address any issues promptly.
-                </List.Item>
-                <List.Item>
-                  Provide post-implementation support to resolve any challenges.
-                </List.Item>
-                <List.Item>
-                  Evaluate the success of the implementation against predefined
-                  criteria.
-                </List.Item>
-              </List>
-            </Card>
-          </div>
+          {productInfo?.methodologies.map((methodology) => (
+            <div className="grid-item" key={methodology.title}>
+              <h4
+                style={{
+                  padding: "15px",
+                  color: "#fff",
+                  background:
+                    "url('./Vector.svg')  no-repeat center center / cover",
+                }}
+              >
+                {methodology.title}
+              </h4>
+              <Card theme={cardWithListTheme} className="mt-5">
+                <ListBlock data={methodology.description} />
+              </Card>
+            </div>
+          ))}
         </div>
       </div>
       <div className="mt-9">
@@ -324,60 +103,28 @@ export default function SAPBusinessOne() {
           Key Benefits of using SAP Business One:
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-7">
-          <Card className="w-full sm:max-w-sm shadow-none">
-            <div className="flex flex-col items-center">
-              <Image
-                alt="Bonnie image"
-                height="56"
-                src="/Frame 486.svg"
-                width="56"
-                className="mb-6"
-              />
-              <h5 className="mb-2 text-lg font-medium text-[#003E57]">
-                Scalability
-              </h5>
-              <p className="text-base text-center font-light text-[#003E57]">
-                Grow your business confidently with a flexible and scalable ERP
-                solution.
-              </p>
-            </div>
-          </Card>
-          <Card className="w-full sm:max-w-sm shadow-none">
-            <div className="flex flex-col items-center">
-              <Image
-                alt="Bonnie image"
-                height="56"
-                src="/Integrated Workflow.svg"
-                width="56"
-                className="mb-6"
-              />
-              <h5 className="mb-2 text-lg font-medium text-[#003E57]">
-                Integrated Workflow
-              </h5>
-              <p className="text-base text-center font-light text-[#003E57]">
-                Unify business processes for improved collaboration and
-                operational efficiency.
-              </p>
-            </div>
-          </Card>
-          <Card className="w-full sm:max-w-sm shadow-none">
-            <div className="flex flex-col items-center">
-              <Image
-                alt="Bonnie image"
-                height="56"
-                src="/Data-Driven Decision-Making.svg"
-                width="56"
-                className="mb-6"
-              />
-              <h5 className="mb-2 text-lg font-medium text-[#003E57]">
-                Data-Driven Decision-Making
-              </h5>
-              <p className="text-base text-center font-light text-[#003E57]">
-                Harness the power of real-time analytics to make informed
-                decisions.
-              </p>
-            </div>
-          </Card>
+          {productInfo?.benefits.map((benefit, index) => (
+            <Card
+              key={benefit.title}
+              className="w-full sm:max-w-sm shadow-none"
+            >
+              <div className="flex flex-col items-center">
+                <Image
+                  alt="Bonnie image"
+                  height="56"
+                  src={benefit.icon}
+                  width="56"
+                  className="mb-6"
+                />
+                <h5 className="mb-2 text-lg font-medium text-[#003E57]">
+                  {benefit.title}
+                </h5>
+                <p className="text-base text-center font-light text-[#003E57]">
+                  {benefit.description}
+                </p>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </div>

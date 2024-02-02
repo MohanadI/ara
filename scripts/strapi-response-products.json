@@ -38,7 +38,50 @@
               "id": 1,
               "attributes": {
                 "title": "Project Preparation",
-                "description": "Define project goals, scope, and objectives.\nIdentify key stakeholders and form a project team.Develop a project plan, including timelines and milestones.\nSet up project infrastructure and tools."
+                "description": [
+                  {
+                    "type": "list",
+                    "format": "unordered",
+                    "children": [
+                      {
+                        "type": "list-item",
+                        "children": [
+                          {
+                            "text": "Define project goals, scope, and objectives.",
+                            "type": "text"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "list-item",
+                        "children": [
+                          {
+                            "text": "Identify key stakeholders and form a project team.",
+                            "type": "text"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "list-item",
+                        "children": [
+                          {
+                            "text": "Develop a project plan, including timelines and milestones.",
+                            "type": "text"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "list-item",
+                        "children": [
+                          {
+                            "text": "Set up project infrastructure and tools.",
+                            "type": "text"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             }
           ]
@@ -50,6 +93,20 @@
               "attributes": {
                 "title": "Scalability",
                 "description": "Grow your business confidently with a flexible and scalable ERP solution."
+              }
+            },
+            {
+              "id": 2,
+              "attributes": {
+                "title": "Integrated Workflow",
+                "description": "Unify business processes for improved collaboration and operational efficiency."
+              }
+            },
+            {
+              "id": 3,
+              "attributes": {
+                "title": "Data-Driven Decision-Making",
+                "description": "Harness the power of real-time analytics to make informed decisions."
               }
             }
           ]

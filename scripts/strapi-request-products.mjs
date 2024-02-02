@@ -3,6 +3,7 @@ import qs from 'qs';
 
 const url = 'http://localhost:1337/api/products'
     + '?' + qs.stringify({
+        filters: { title: { $eq: "SAP Business One" } },
         fields: ['title', 'description', 'publishedAt'],
         populate: { image: { fields: ['url'] }, modules: { fields: ['title', 'description'] }, methodologies: { fields: ['title', 'description'] }, benefits: { fields: ['title', 'description'] } },
         sort: ['publishedAt:asc'],
