@@ -8,6 +8,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export const metadata: Metadata = {
   title: "ARA CONSULTING",
+  verification:{ google: "9CGHkL2ZvjdpmK6Nm0IdPhyQJh8KBeBOt5o27WbXUqU" },
   description:
     "At the core of ARA CONSULTING's mission is a commitment to empower small, medium and large enterprises with the transformative capabilities of SAP solutions.",
 };
@@ -19,6 +20,21 @@ interface Props {
 export default function Layout({ children }: Props) {
   return (
     <html lang="en">
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-2THY8T97BC"
+        ></script>
+        <script>
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-xxxxxxxxxx');
+        `}
+        </script>
+      </head>
       <body className="flex flex-col min-h-screen">
         <>
           <header className="w-full absolute md:top-5 z-20">
