@@ -5,7 +5,7 @@ import PhoneNumberWithDropDown from "@/components/PhoneNumberWithDropDown";
 import { countries } from "@/helpers/constants";
 import Select from "react-select";
 import { Spinner, Button, Toast } from "flowbite-react";
-import { HiCheck, HiExclamation, HiX } from "react-icons/hi";
+import { HiCheck, HiX } from "react-icons/hi";
 
 
 export default function ContactUsForm() {

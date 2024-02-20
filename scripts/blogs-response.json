@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "slug": "test-blog",
+        "title": "Test Blog",
+        "sub_title": "test",
+        "body": "<h1>This is a test Blog</h1><p>This is content</p>",
+        "publishedAt": "2024-02-20T20:17:25.629Z",
+        "image": {
+          "data": {
+            "id": 2,
+            "attributes": {
+              "url": "/uploads/enterprise_resource_management_erp_software_system_business_resources_plan_4_1_46573d0165.svg",
+              "alternativeText": null
+            }
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 10,
+      "pageCount": 1,
+      "total": 1
+    }
+  }
+}
