@@ -35,7 +35,7 @@ export default async function Blog({ params: { slug } }: BlogPageProps) {
         <div className="container py-5 sm:py-10 sm:pt-20 mx-auto">
           <article
             dangerouslySetInnerHTML={{ __html: data.body }}
-            className="max-w-screen-md"
+            className="max-w-screen-lg"
           />
         </div>
       </section>

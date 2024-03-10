@@ -104,8 +104,8 @@ export async function searchProducts(
     sort: ["title"],
     pagination: { pageSize: 5 },
   });
-  return data.map(({ attributes }: { attributes: Product }) => ({
-    title: attributes.title,
+  return data?.map(({ attributes }: { attributes: Product }) => ({
+    title: attributes?.title,
   }));
 }
 
@@ -129,7 +129,7 @@ function toProduct(item: CmsItem): Product {
   return {
     title: attributes.title,
     description: attributes.description,
-    image: new URL(attributes.image.data.attributes.url, CMS_URL).href,
+    image: new URL(attributes.image.data?.attributes.url, CMS_URL).href,
     modules: attributes.modules.data.map(toProductModule),
     methodologies: attributes.methodologies.data.map(toProductMethodology),
     benefits: attributes.benefits.data.map(toProductBenefit),
@@ -157,6 +157,6 @@ function toProductBenefit(item: CmsItem): ProductBenefit {
   return {
     title: attributes.title,
     description: attributes.description,
-    icon: new URL(attributes.icon.data.attributes.url, CMS_URL).href,
+    icon: new URL(attributes.icon.data?.attributes.url, CMS_URL).href,
   };
 }

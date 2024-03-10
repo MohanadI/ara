@@ -71,8 +71,8 @@ export async function searchServices(
     sort: ["title"],
     pagination: { pageSize: 5 },
   });
-  return data.map(({ attributes }: { attributes: Service }) => ({
-    title: attributes.title,
+  return data?.map(({ attributes }: { attributes: Service }) => ({
+    title: attributes?.title,
   }));
 }
 
@@ -96,6 +96,7 @@ function toService(item: CmsItem): Service {
   return {
     title: attributes.title,
     description: attributes.description,
-    image: new URL(attributes.image.data.attributes.url, CMS_URL).href,
+    image:
+      new URL(attributes.image.data?.attributes.url, CMS_URL).href,
   };
 }

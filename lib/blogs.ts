@@ -74,8 +74,8 @@ export async function searchBlogs(
     sort: ["title"],
     pagination: { pageSize: 5 },
   });
-  return data.map(({ attributes }: { attributes: Blog }) => ({
-    title: attributes.title,
+  return data?.map(({ attributes }: { attributes: Blog }) => ({
+    title: attributes?.title,
   }));
 }
 
