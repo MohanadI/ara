@@ -129,7 +129,7 @@ function toProduct(item: CmsItem): Product {
   return {
     title: attributes.title,
     description: attributes.description,
-    image: new URL(attributes.image.data?.attributes.url, CMS_URL).href,
+    image: attributes.image.data ? new URL(attributes.image.data?.attributes.url, CMS_URL).href : "",
     modules: attributes.modules.data.map(toProductModule),
     methodologies: attributes.methodologies.data.map(toProductMethodology),
     benefits: attributes.benefits.data.map(toProductBenefit),

@@ -3,9 +3,7 @@ import { Card } from "flowbite-react";
 import Image from "next/image";
 
 export default async function HumanResourcesManagement() {
-  const productInfo = await getProduct(
-    "Human Resources Management System and Employee Self-service Portal"
-  );
+  const productInfo = await getProduct("Human Resources Management");
 
   const cardTheme = {
     root: {
