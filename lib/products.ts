@@ -157,6 +157,6 @@ function toProductBenefit(item: CmsItem): ProductBenefit {
   return {
     title: attributes.title,
     description: attributes.description,
-    icon: new URL(attributes.icon.data?.attributes.url, CMS_URL).href,
+    icon: attributes.icon.data ? new URL(attributes.icon.data?.attributes.url, CMS_URL).href : "",
   };
 }

@@ -18,6 +18,8 @@ export interface Blog {
   sub_title: string;
   image: string;
   body: string;
+  keywords: string;
+  meta_description: string;
   publishedAt: string;
 }
 
@@ -35,7 +37,15 @@ export type SearchableBlog = Pick<Blog, "title">;
 export async function getBlog(slug: string): Promise<FullBlog | null> {
   const { data } = await fetchBlogs({
     filters: { slug: { $eq: slug } },
-    fields: ["slug", "title", "sub_title", "body", "publishedAt"],
+    fields: [
+      "slug",
+      "title",
+      "sub_title",
+      "body",
+      "keywords",
+      "meta_description",
+      "publishedAt",
+    ],
     populate: { image: { fields: ["url", "alternativeText"] } },
     pagination: { pageSize: 1, withCount: false },
   });
@@ -54,7 +64,15 @@ export async function getBlogs(
   page?: number
 ): Promise<PaginatedBlogs> {
   const { data, meta } = await fetchBlogs({
-    fields: ["slug", "title", "sub_title", "body", "publishedAt"],
+    fields: [
+      "slug",
+      "title",
+      "sub_title",
+      "keywords",
+      "meta_description",
+      "body",
+      "publishedAt",
+    ],
     populate: { image: { fields: ["url", "alternativeText"] } },
     sort: ["publishedAt:asc"],
     pagination: { pageSize, page },
@@ -65,9 +83,7 @@ export async function getBlogs(
   };
 }
 
-export async function searchBlogs(
-  query: string
-): Promise<SearchableBlog[]> {
+export async function searchBlogs(query: string): Promise<SearchableBlog[]> {
   const { data } = await fetchBlogs({
     filters: { title: { $contains: query } },
     fields: ["title"],
@@ -102,6 +118,8 @@ function toBlog(item: CmsItem): Blog {
     sub_title: attributes.sub_title,
     image: new URL(attributes.image.data.attributes.url, CMS_URL).href,
     body: attributes.body,
-    publishedAt: attributes.publishedAt.slice(0, 'yyyy-mm-dd'.length),
+    keywords: attributes.keywords,
+    meta_description: attributes.meta_description,
+    publishedAt: attributes.publishedAt.slice(0, "yyyy-mm-dd".length),
   };
 }

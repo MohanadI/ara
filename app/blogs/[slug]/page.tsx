@@ -20,6 +20,8 @@ export async function generateMetadata({
   }
   return {
     title: blog.title,
+    keywords: blog.keywords,
+    description: blog.meta_description
   };
 }
 
@@ -36,6 +38,7 @@ export default async function Blog({ params: { slug } }: BlogPageProps) {
           <article
             dangerouslySetInnerHTML={{ __html: data.body }}
             className="max-w-screen-lg"
+            style={{ fontFamily: 'SF Pro Display !important' }}
           />
         </div>
       </section>

@@ -82,7 +82,7 @@ async function fetchServices(parameters: any) {
     qs.stringify(parameters, { encodeValuesOnly: true });
   const response = await fetch(url, {
     next: {
-      tags: [CACHE_TAG_SERVICES],
+      tags: [],
     },
   });
   if (!response.ok) {
@@ -96,7 +96,8 @@ function toService(item: CmsItem): Service {
   return {
     title: attributes.title,
     description: attributes.description,
-    image:
-      new URL(attributes.image.data?.attributes.url, CMS_URL).href,
+    image: attributes.image.data
+      ? new URL(attributes.image.data?.attributes.url, CMS_URL).href
+      : "",
   };
 }

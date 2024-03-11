@@ -3,7 +3,7 @@ import { Card } from "flowbite-react";
 import Image from "next/image";
 
 export default async function AssetManagement() {
-  const productInfo = await getProduct("Asset Management");
+  const productInfo = await getProduct("Property Management Solution");
 
   const cardTheme = {
     root: {
