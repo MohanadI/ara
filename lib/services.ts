@@ -96,8 +96,6 @@ function toService(item: CmsItem): Service {
   return {
     title: attributes.title,
     description: attributes.description,
-    image: attributes.image.data
-      ? new URL(attributes.image.data?.attributes.url, CMS_URL).href
-      : "",
+    image: attributes.image.data ? CMS_URL + attributes.image.data?.attributes.url : "",
   };
 }

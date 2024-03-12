@@ -129,7 +129,9 @@ function toProduct(item: CmsItem): Product {
   return {
     title: attributes.title,
     description: attributes.description,
-    image: attributes.image.data ? new URL(attributes.image.data?.attributes.url, CMS_URL).href : "",
+    image: attributes.image.data
+      ? CMS_URL + attributes.image.data?.attributes.url
+      : "",
     modules: attributes.modules.data.map(toProductModule),
     methodologies: attributes.methodologies.data.map(toProductMethodology),
     benefits: attributes.benefits.data.map(toProductBenefit),
@@ -157,6 +159,8 @@ function toProductBenefit(item: CmsItem): ProductBenefit {
   return {
     title: attributes.title,
     description: attributes.description,
-    icon: attributes.icon.data ? new URL(attributes.icon.data?.attributes.url, CMS_URL).href : "",
+    icon: attributes.icon.data
+      ? CMS_URL + attributes.icon.data?.attributes.url
+      : ""
   };
 }

@@ -24,7 +24,7 @@ export default async function Content({ title }) {
     },
   };
 
-  const gridClass = productInfo?.image ? "sm:grid sm:grid-cols-2 sm:gap-4" : "";
+  const gridClass = productInfo?.image !== '' ? "sm:grid sm:grid-cols-2 sm:gap-4" : "";
   return (
     <div className="text-left">
       <div className={gridClass}>
@@ -35,11 +35,11 @@ export default async function Content({ title }) {
           <h1 className="text-[#003E57] font-semibold text-xl mt-2">
             {productInfo?.title}
           </h1>
-          <p className="text-base font-light text-[#003E57] mt-6 max-w-md">
+          <p className="text-base font-light text-[#003E57] mt-6">
             {productInfo?.description}
           </p>
         </div>
-        {productInfo?.image && (
+        {productInfo?.image !== "" && (
           <div>
             <Image
               className="w-full"
