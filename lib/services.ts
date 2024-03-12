@@ -53,7 +53,7 @@ export async function getServices(
   const { data, meta } = await fetchServices({
     fields: ["title", "description", "publishedAt"],
     populate: { image: { fields: ["url"] } },
-    sort: ["publishedAt:asc"],
+    sort: ["id:asc"],
     pagination: { pageSize, page },
   });
   return {
@@ -82,7 +82,7 @@ async function fetchServices(parameters: any) {
     qs.stringify(parameters, { encodeValuesOnly: true });
   const response = await fetch(url, {
     next: {
-      tags: [],
+      revalidate: 3600,
     },
   });
   if (!response.ok) {

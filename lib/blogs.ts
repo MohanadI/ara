@@ -101,7 +101,7 @@ async function fetchBlogs(parameters: any) {
     qs.stringify(parameters, { encodeValuesOnly: true });
   const response = await fetch(url, {
     next: {
-      tags: [CACHE_TAG_BLOGS],
+      revalidate: 3600,
     },
   });
   if (!response.ok) {
