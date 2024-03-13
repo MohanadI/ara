@@ -6,6 +6,7 @@ import { marked } from "marked";
 export const CACHE_TAG_BLOGS = "blogs";
 
 const CMS_URL = process.env.CMS_URL;
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 
 interface CmsItem {
   id: number;

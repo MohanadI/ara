@@ -24,7 +24,8 @@ export default async function Content({ title }) {
     },
   };
 
-  const gridClass = productInfo?.image !== '' ? "sm:grid sm:grid-cols-2 sm:gap-4" : "";
+  const gridClass =
+    productInfo?.image !== "" ? "sm:grid sm:grid-cols-2 sm:gap-4" : "";
   return (
     <div className="text-left">
       <div className={gridClass}>
@@ -42,7 +43,7 @@ export default async function Content({ title }) {
         {productInfo?.image !== "" && (
           <div>
             <Image
-              className="w-full"
+              className="w-full max-w-md float-right"
               alt="map"
               src={productInfo?.image}
               width={508}
@@ -67,17 +68,11 @@ export default async function Content({ title }) {
         ))}
       </div>
       <div className="mt-9">
-        <h1 className="text-[#003E57] font-normal text-xl">
-          SAP Business One Implementation Methodology:
-        </h1>
-        <p className="text-base font-light text-[#003E57] mt-6">
-          SAP Business One follows a structured implementation methodology to
-          ensure the successful deployment of the ERP (Enterprise Resource
-          Planning) solution. The methodology typically consists of several
-          phases, each with its set of tasks and activities. The specifics may
-          vary based on the SAP partner or implementation team, but the core
-          phases generally include:
-        </p>
+        {productInfo?.methodologies.length > 0 && (
+          <h1 className="text-[#003E57] font-normal text-xl">
+            {productInfo?.title} Implementation Methodology:
+          </h1>
+        )}
         <div className="grid md:grid-cols-5 gap-4 mt-5">
           {productInfo?.methodologies.map((methodology) => (
             <div className="grid-item" key={methodology.title}>
@@ -99,9 +94,11 @@ export default async function Content({ title }) {
         </div>
       </div>
       <div className="mt-9">
-        <h1 className="text-[#003E57] font-normal text-xl">
-          Key Benefits of using SAP Business One:
-        </h1>
+        {productInfo?.benefits.length > 0 && (
+          <h1 className="text-[#003E57] font-normal text-xl">
+            Key Benefits of using {productInfo?.title}:
+          </h1>
+        )}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-7">
           {productInfo?.benefits.map((benefit, index) => (
             <Card

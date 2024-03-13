@@ -5,44 +5,6 @@ import { SectionTitle } from "../SectionTitle";
 
 export default async function ServicesSection() {
   const { services } = await getServices(10);
-  const servicesData = [
-    {
-      key: "Solution_Implementation",
-      title: "Solution Implementation",
-      image:
-        "/enterprise-resource-management-erp-software-system-business-resources-plan 4.svg",
-    },
-    {
-      key: "Customized_Development",
-      title: "Customized Development & Industry-specific solutions",
-      image:
-        "/enterprise-resource-management-erp-software-system-business-resources-plan 4 (1).svg",
-    },
-    {
-      key: "Support_SLA",
-      title: "Support / SLA",
-      image:
-        "/enterprise-resource-management-erp-software-system-business-resources-plan 2.svg",
-    },
-    {
-      key: "Integration_of_multiple_systems",
-      title: "Integration of multiple systems",
-      image:
-        "/enterprise-resource-management-erp-software-system-business-resources-plan 5.svg",
-    },
-    {
-      key: "Data_Migration",
-      title: "Data Migration and management",
-      image:
-        "/enterprise-resource-management-erp-software-system-business-resources-plan 6.svg",
-    },
-    {
-      key: "Training",
-      title: "Training and users enablement",
-      image:
-        "/enterprise-resource-management-erp-software-system-business-resources-plan 7.svg",
-    },
-  ];
 
   return (
     <section className="px-4 pb-20 pt-20">

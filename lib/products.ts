@@ -7,6 +7,7 @@ import qs from "qs";
 export const CACHE_TAG_PRODUCTS = "products";
 
 const CMS_URL = process.env.CMS_URL;
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = "0";
 
 interface CmsItem {
   id: number;

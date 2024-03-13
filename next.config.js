@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
     images: {
+        domains: ['araconsulting.co'],
         remotePatterns: [
             {
-                protocol: 'http',
+                protocol: 'https',
                 hostname: 'araconsulting.co',
-                port: '1337',
+                port: '443',
                 pathname: '/uploads/**',
             }
         ]
