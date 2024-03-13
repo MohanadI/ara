@@ -81,11 +81,7 @@ async function fetchServices(parameters: any) {
   const url =
     `${CMS_URL}/api/services?` +
     qs.stringify(parameters, { encodeValuesOnly: true });
-  const response = await fetch(url, {
-    next: {
-      revalidate: 3600,
-    },
-  });
+  const response = await fetch(url, { cache: "no-store" });
   if (!response.ok) {
     throw new Error(`CMS returned ${response.status} for ${url}`);
   }

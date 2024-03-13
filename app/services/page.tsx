@@ -3,7 +3,7 @@ import PageHeader from "@/components/PageHeader";
 import { getServices } from "@/lib/services";
 
 export default async function Services() {
-  const { services } = await getServices(10);
+  const { services } = await getServices(10, 0);
 
   return (
     <>

@@ -4,7 +4,7 @@ import { getServices } from "@/lib/services";
 import { SectionTitle } from "../SectionTitle";
 
 export default async function ServicesSection() {
-  const { services } = await getServices(10);
+  const { services } = await getServices(10, 0);
 
   return (
     <section className="px-4 pb-20 pt-20">
