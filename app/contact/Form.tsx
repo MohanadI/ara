@@ -101,7 +101,7 @@ export default function ContactUsForm() {
 
     const data = { "data": formData };
     try {
-      const res = await fetch("http://localhost:1337/api/inboxes", {
+      const res = await fetch("https://araconsulting.co/api/inboxes", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {

@@ -63,7 +63,7 @@ export default function NavBar() {
       >
         <div
           className={`container flex items-center mx-auto py-4 ${
-            isSticky ? "" : "sm:rounded-full px-5"
+            isSticky ? "" : "sm:rounded-full px-4"
           }`}
           style={
             isSticky
@@ -92,7 +92,7 @@ export default function NavBar() {
               <Bars3Icon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
-          <div className="hidden ml-36 lg:flex lg:gap-x-11">
+          <div className="hidden ml-16 items-center lg:flex lg:gap-x-10">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -107,6 +107,28 @@ export default function NavBar() {
                 {item.name}
               </Link>
             ))}
+            <button
+              className="flex items-center p-2 rounded-full"
+              onClick={handleCallButtonClick}
+              style={{
+                background: "#FFFFFF99",
+                fontSize: "16px",
+                fontWeight: 500,
+                lineHeight: "16px",
+                letterSpacing: "0em",
+                textAlign: "left",
+                height: "46px",
+                gap: "8px",
+              }}
+            >
+              <Image
+                src="./call-calling.svg"
+                width={36}
+                height={36}
+                alt="call-calling"
+              />
+              <span>Call Us</span>
+            </button>
           </div>
         </div>
         {mobileMenuOpen && (
@@ -134,7 +156,7 @@ export default function NavBar() {
                   </Link>
                 </li>
               ))}
-              <li key="call-us">
+              {/* <li key="call-us">
                 <Link
                   href={""}
                   key="call-us-link"
@@ -152,7 +174,7 @@ export default function NavBar() {
 
                   <span className="p-1">Call Us</span>
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         )}

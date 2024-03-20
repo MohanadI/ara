@@ -4,16 +4,19 @@ import ServicesSection from "@/components/sections/services";
 
 import styles from "./home.module.css"; // Import your styles
 import GetConsultButton from "@/components/GetConsultButton";
+import { getProducts } from "@/lib/products";
 
 
-export default function Home() {
+export default async function Home() {
+  const productsList = await getProducts(10, 0);
+
   return (
     <>
       <section className={styles.heroSection}>
-          <VerticalSlider />
+        <VerticalSlider />
       </section>
       <ServicesSection />
-      <ProductsSection />
+      <ProductsSection data={productsList} />
       <section className="bg-[#f2f6f7]">
         <div className="container mx-auto">
           <div className="mx-auto max-w-3xl py-32 sm:py-20 lg:py-20 text-center text-[18px] md:text-[40px]">

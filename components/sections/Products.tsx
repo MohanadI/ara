@@ -1,27 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Tabs from "../Tabs";
 import Image from "next/image";
 import { SectionTitle } from "../SectionTitle";
 
-export const ProductsSection = () => {
-  const tabs = [
-    "SAP Business One",
-    "Human Resources\nManagement",
-    "Intercompany\nManagement",
-    "Warehouse\nManagement",
-    "Fleet\nManagement",
-    "Asset\nManagement",
-    "Property\nManagement",
-    "Facility\nManagement",
-  ];
+export const ProductsSection = ({
+  data
+}: {
+  data: any;
+}) => {
+  const [tabs, setTabs] = useState([]);
+
+  useEffect(() => {
+    const mappedTitles = data?.products.map((item) => item.title);
+    setTabs(mappedTitles);
+    setSelectedTabContent(data?.products[0].description);
+  }, [data.products]);
+
   const [selectedTab, setSelectedTab] = useState("SAP Business One");
+  const [selectedTabContent, setSelectedTabContent] =
+    useState("SAP Business One");
   const router = useRouter();
 
   const onTabClick = (tab: any) => {
     setSelectedTab(tab);
+    const findTabDescription = data.products.find(
+      (item: any) => item.title === tab
+    );
+    setSelectedTabContent(findTabDescription.description);
   };
 
   return (
@@ -72,7 +80,7 @@ export const ProductsSection = () => {
                 />
 
                 <p
-                  className="w-full leading-relaxed sm:h-32"
+                  className="w-full leading-relaxed sm:h-40"
                   style={{
                     color: "#005375",
                     fontSize: "18px",
@@ -82,72 +90,7 @@ export const ProductsSection = () => {
                     textAlign: "center",
                   }}
                 >
-                  {selectedTab === "SAP Business One" && (
-                    <>
-                      SAP Business One is an integrated Enterprise Resource
-                      Planning (ERP) solution crafted for small to mid-sized
-                      enterprises. This robust platform provides a holistic view
-                      of business operations, enabling informed decision-making
-                      across various functions.
-                    </>
-                  )}
-                  {selectedTab === "Human Resources\nManagement" && (
-                    <>
-                      Revolutionize HR operations with our comprehensive Human
-                      Resources Management System (HRMS) and Employee
-                      Self-service Portal. This solution empowers organizations
-                      to efficiently manage human capital from recruitment to
-                      performance management.
-                    </>
-                  )}
-                  {selectedTab === "Intercompany\nManagement" && (
-                    <>
-                      Simplify intercompany transactions with our Intercompany
-                      Solution, designed to facilitate seamless communication
-                      and collaboration between different entities within your
-                      organization.
-                    </>
-                  )}
-                  {selectedTab === "Warehouse\nManagement" && (
-                    <>
-                      Optimize warehouse operations with our Warehouse
-                      Management Solution. This product enhances inventory
-                      visibility, streamlines order fulfillment, and improves
-                      overall warehouse efficiency.
-                    </>
-                  )}
-                  {selectedTab === "Fleet\nManagement" && (
-                    <>
-                      Optimize your fleet operations with our Fleet Management
-                      Solution. This product enhances vehicle tracking,
-                      maintenance scheduling, and overall fleet efficiency.
-                    </>
-                  )}
-                  {selectedTab === "Asset\nManagement" && (
-                    <>
-                      Effectively manage your assets throughout their lifecycle
-                      with our Asset Management Solution. This product provides
-                      comprehensive tools for asset tracking, maintenance
-                      planning, and work orders management.
-                    </>
-                  )}
-                  {selectedTab === "Property\nManagement" && (
-                    <>
-                      Optimize the management of your real estate portfolio with
-                      our Property Management Solution. This product streamlines
-                      property operations, lease management, and tenant
-                      interactions along with managing property sales contracts,
-                      buyers&apos; payments and their progress.
-                    </>
-                  )}
-                  {selectedTab === "Facility\nManagement" && (
-                    <>
-                      Transform the way you manage facilities with our Facility
-                      Management Solution. This product offers tools for
-                      maintenance planning, space utilization, and overall
-                      facility optimization.
-                    </>
-                  )}
+                  {selectedTabContent}
                 </p>
                 <a className="flex pt-4" href="/products">
                   Learn More
@@ -162,19 +105,19 @@ export const ProductsSection = () => {
               </div>
               <div className="flex flex-col self-end w-full my-5 lg:mt-0 lg:w-1/3 lg:pl-8">
                 {selectedTab === "SAP Business One" && (
-                <button
-                  onClick={() => router.push("/contact")}
-                  className="flex mx-auto sm:mx-0 sm:mr-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold text-[#005375]"
-                >
-                  Free Trial
-                  <Image
-                    src="./arrow_right_button.svg"
-                    alt="arrow_right_button.svg"
-                    width={24}
-                    height={24}
-                    className="ml-2"
-                  />
-                </button>
+                  <button
+                    onClick={() => router.push("/contact")}
+                    className="flex mx-auto sm:mx-0 sm:mr-auto rounded-full bg-white border-0 py-2 px-8 focus:outline-none hover:bg-opacity-60 text-base font-semibold text-[#005375]"
+                  >
+                    Free Trial
+                    <Image
+                      src="./arrow_right_button.svg"
+                      alt="arrow_right_button.svg"
+                      width={24}
+                      height={24}
+                      className="ml-2"
+                    />
+                  </button>
                 )}
               </div>
             </div>

@@ -52,9 +52,11 @@ export default async function Content({ title }) {
           </div>
         )}
       </div>
-      <h1 className="text-[#003E57] text-xl mt-2">
-        Main Modules and Functionalities:
-      </h1>
+      {productInfo?.modules.length > 0 && (
+        <h1 className="text-[#003E57] text-xl mt-2">
+          Main Modules and Functionalities:
+        </h1>
+      )}
       <div className="grid grid-cols-1 sm:grid sm:grid-cols-3 gap-6 mt-4">
         {productInfo?.modules.map((module) => (
           <Card theme={cardTheme} key={module.title}>
